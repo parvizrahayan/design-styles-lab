@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="قالب ادیتوریال کامل – Editorial | Magazine Art UI Template 2026" />
+  <title>Editorial – Complete Template</title>
+
+  <!-- Favicon – Editorial (serif mark) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F5F0E8'/%3E%3Crect x='6' y='4' width='20' height='24' fill='none' stroke='%231C1917' stroke-width='1.5'/%3E%3Ctext x='16' y='20' text-anchor='middle' font-size='14' font-family='Georgia,serif' font-weight='bold' fill='%231C1917'%3EE%3C/text%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F5F0E8'/%3E%3Crect x='6' y='4' width='20' height='24' fill='none' stroke='%231C1917' stroke-width='1.5'/%3E%3Ctext x='16' y='20' text-anchor='middle' font-size='14' font-family='Georgia,serif' font-weight='bold' fill='%231C1917'%3EE%3C/text%3E%3C/svg%3E">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ed: {
+              cream: '#F5F0E8',
+              paper: '#EDE6DA',
+              ink: '#1C1917',
+              charcoal: '#292524',
+              mute: '#78716C',
+              gold: '#A68A64',
+              soft: '#D6D0C4',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            serif: ['Playfair Display', 'Georgia', 'serif'],
+            editorial: ['Cormorant Garamond', 'Georgia', 'serif'],
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.9s ease-out forwards',
+            'slide-up': 'slideUp 0.8s ease-out forwards',
+          },
+          keyframes: {
+            fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+            slideUp: { '0%': { opacity: '0', transform: 'translateY(24px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background-color: #F5F0E8;
+      color: #1C1917;
+    }
+    ::selection { background: #1C1917; color: #F5F0E8; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #EDE6DA; }
+    ::-webkit-scrollbar-thumb { background: #A68A64; border-radius: 2px; }
+
+    .font-serif { font-family: 'Playfair Display', Georgia, serif; }
+    .font-editorial { font-family: 'Cormorant Garamond', Georgia, serif; }
+
+    .rule {
+      height: 1px;
+      background: #1C1917;
+    }
+  </style>
+</head>
+
+<body class="bg-ed-cream text-ed-ink antialiased overflow-x-hidden">
+
+  <!-- NAV -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-ed-cream/95 border-b border-ed-ink/10">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <div class="w-8 h-10 border border-ed-ink flex items-center justify-center">
+          <span class="font-serif text-sm font-bold">E</span>
+        </div>
+        <span class="text-xs tracking-[0.25em] uppercase font-medium text-ed-ink/70">Editorial</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-10 text-xs tracking-wide text-ed-mute uppercase">
+        <a href="#cover" class="hover:text-ed-ink transition-colors">جلد</a>
+        <a href="#principles" class="hover:text-ed-ink transition-colors">اصول</a>
+        <a href="#platforms" class="hover:text-ed-ink transition-colors">پلتفرم</a>
+        <a href="#agent" class="hover:text-ed-ink transition-colors">ایجنت</a>
+        <a href="#contact" class="hover:text-ed-ink transition-colors">تماس</a>
+      </nav>
+
+      <a href="#contact" class="text-xs tracking-wider uppercase px-4 py-2 border border-ed-ink text-ed-ink hover:bg-ed-ink hover:text-ed-cream transition-colors">
+        Subscribe
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO / COVER -->
+  <section class="min-h-screen flex items-center pt-16">
+    <div class="max-w-5xl mx-auto px-6 w-full py-16 md:py-20">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+
+        <!-- Text -->
+        <div class="lg:col-span-5 space-y-8">
+          <div class="animate-fade-in">
+            <p class="text-[10px] tracking-[0.3em] uppercase text-ed-mute mb-4">Issue 14 · Visual Culture</p>
+          </div>
+
+          <h1 class="font-serif text-5xl sm:text-6xl md:text-7xl font-bold leading-[0.95] tracking-tight animate-slide-up">
+            BROKEN
+          </h1>
+
+          <p class="font-editorial text-xl md:text-2xl text-ed-mute leading-snug max-w-sm animate-slide-up" style="animation-delay:80ms">
+            A visual artwork for those who still believe in the power of the page.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-5 pt-2 animate-slide-up" style="animation-delay:160ms">
+            <a href="#cover" class="inline-flex items-center gap-2 bg-ed-ink text-ed-cream px-7 py-3 text-xs tracking-wider uppercase font-medium hover:bg-ed-charcoal transition-colors">
+              Open Issue
+            </a>
+            <a href="#principles" class="text-xs tracking-wider uppercase text-ed-mute hover:text-ed-ink transition-colors border-b border-ed-soft hover:border-ed-ink pb-0.5">
+              Principles
+            </a>
+          </div>
+
+          <div class="pt-4 text-[10px] tracking-[0.2em] uppercase text-ed-mute/80 animate-slide-up" style="animation-delay:240ms">
+            <p>Hello Prayer · Save it for later</p>
+          </div>
+        </div>
+
+        <!-- Magazine cover visual -->
+        <div class="lg:col-span-7 flex justify-center lg:justify-end animate-fade-in" style="animation-delay:120ms">
+          <div class="relative w-full max-w-md">
+            <!-- Cover frame -->
+            <div class="bg-ed-paper border border-ed-ink/20 shadow-xl overflow-hidden">
+              <div class="aspect-[3/4] relative p-6 flex flex-col">
+                <!-- Masthead -->
+                <div class="flex items-start justify-between mb-2">
+                  <p class="text-[8px] tracking-[0.25em] uppercase text-ed-mute">Vol. XIV</p>
+                  <p class="text-[8px] tracking-[0.2em] uppercase text-ed-mute">2026</p>
+                </div>
+
+                <!-- Main title -->
+                <h2 class="font-serif text-4xl md:text-5xl font-bold tracking-tight text-center mt-2 mb-1">BROKEN</h2>
+                <p class="text-[9px] tracking-[0.15em] uppercase text-center text-ed-mute mb-4">A visual artwork</p>
+
+                <!-- Classical figure suggestion -->
+                <div class="flex-1 flex items-center justify-center relative">
+                  <div class="relative w-40 h-52">
+                    <!-- Pedestal -->
+                    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-28 h-3 bg-ed-soft"></div>
+                    <div class="absolute bottom-3 left-1/2 -translate-x-1/2 w-24 h-2 bg-ed-mute/30"></div>
+                    
+                    <!-- Body (classical statue) -->
+                    <div class="absolute bottom-5 left-1/2 -translate-x-1/2 w-20 h-32 bg-ed-soft/80" style="clip-path: polygon(20% 100%, 15% 40%, 25% 15%, 50% 0%, 75% 15%, 85% 40%, 80% 100%);"></div>
+                    
+                    <!-- Head -->
+                    <div class="absolute top-2 left-1/2 -translate-x-1/2 w-12 h-14 bg-ed-paper border border-ed-mute/40 rounded-t-full">
+                      <!-- Blindfold -->
+                      <div class="absolute top-[42%] left-0 right-0 h-2.5 bg-ed-ink/80"></div>
+                      <!-- Nose suggestion -->
+                      <div class="absolute top-[55%] left-1/2 -translate-x-1/2 w-1 h-2 bg-ed-mute/40"></div>
+                    </div>
+                    
+                    <!-- Hair mass -->
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-8 bg-ed-ink/10 rounded-t-full"></div>
+                  </div>
+                </div>
+
+                <!-- Bottom typography -->
+                <div class="mt-auto pt-4 border-t border-ed-ink/10">
+                  <p class="font-serif text-2xl md:text-3xl font-semibold tracking-tight text-center">HOLLO PRAYER</p>
+                  <div class="flex justify-between items-center mt-2 text-[8px] tracking-[0.15em] uppercase text-ed-mute">
+                    <span>Featured</span>
+                    <span>Save it for later</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COVER / INTRO -->
+  <section id="cover" class="py-24 md:py-28 bg-ed-ink text-ed-cream">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-14 items-start">
+        <div>
+          <div class="rule w-16 bg-ed-gold mb-8"></div>
+          <h2 class="font-serif text-3xl md:text-4xl font-bold leading-tight mb-6">
+            صفحه به‌عنوان<br>
+            <span class="text-ed-gold">صحنه</span>
+          </h2>
+          <p class="text-ed-soft/80 leading-relaxed mb-6 font-editorial text-lg">
+            ادیتوریال یعنی سلسله‌مراتب تایپ، فضای سفید، و تصویر به‌عنوان روایت. 
+            هر شماره یک جهان است؛ هر تیتر یک اعلامیه.
+          </p>
+          <p class="text-ed-mute text-sm leading-relaxed">
+            از مجسمه کلاسیک تا تایپوگرافی درشت — این سبک برای مجلات فرهنگی، گالری‌ها و برندهایی است که می‌خواهند جدی و زیبا دیده شوند.
+          </p>
+        </div>
+
+        <div class="space-y-6">
+          <div class="border border-ed-cream/20 p-6">
+            <p class="text-[10px] tracking-[0.2em] uppercase text-ed-gold mb-2">Typography</p>
+            <p class="font-serif text-2xl font-semibold">Display + Body</p>
+            <p class="text-sm text-ed-mute mt-2">سریف قوی برای تیتر، خوانا برای متن</p>
+          </div>
+          <div class="border border-ed-cream/20 p-6">
+            <p class="text-[10px] tracking-[0.2em] uppercase text-ed-gold mb-2">Imagery</p>
+            <p class="font-serif text-2xl font-semibold">Classical / Art</p>
+            <p class="text-sm text-ed-mute mt-2">تصویر به‌عنوان ستون روایت</p>
+          </div>
+          <div class="border border-ed-cream/20 p-6">
+            <p class="text-[10px] tracking-[0.2em] uppercase text-ed-gold mb-2">Tone</p>
+            <p class="font-serif text-2xl font-semibold">Quiet Authority</p>
+            <p class="text-sm text-ed-mute mt-2">آرام، دقیق، بدون هیاهو</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRINCIPLES -->
+  <section id="principles" class="py-24 md:py-28">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="max-w-xl mb-16">
+        <div class="rule w-16 mb-6"></div>
+        <h2 class="font-serif text-3xl md:text-4xl font-bold mb-4">سه اصل ادیتوریال</h2>
+        <p class="text-ed-mute">صفحه باید نفس بکشد و همزمان فرمان بدهد.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="border-t border-ed-ink pt-6">
+          <p class="text-[10px] tracking-[0.2em] uppercase text-ed-gold mb-3">01</p>
+          <h3 class="font-serif text-xl font-semibold mb-3">سلسله‌مراتب سخت</h3>
+          <p class="text-sm text-ed-mute leading-relaxed">
+            تیتر، زیرتیتر، متن، کپشن — هر کدام وزن مشخص دارند. هیچ چیز هم‌سطح نیست.
+          </p>
+        </div>
+        <div class="border-t border-ed-ink pt-6">
+          <p class="text-[10px] tracking-[0.2em] uppercase text-ed-gold mb-3">02</p>
+          <h3 class="font-serif text-xl font-semibold mb-3">فضای سفید فعال</h3>
+          <p class="text-sm text-ed-mute leading-relaxed">
+            خالی بودن تصادفی نیست. حاشیه و فاصله، ریتم خواندن را می‌سازند.
+          </p>
+        </div>
+        <div class="border-t border-ed-ink pt-6">
+          <p class="text-[10px] tracking-[0.2em] uppercase text-ed-gold mb-3">03</p>
+          <h3 class="font-serif text-xl font-semibold mb-3">تصویر به‌عنوان متن</h3>
+          <p class="text-sm text-ed-mute leading-relaxed">
+            مجسمه، پرتره یا عکس هنری فقط تزئین نیست — بخشی از روایت صفحه است.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATFORMS -->
+  <section id="platforms" class="py-24 md:py-28 bg-ed-paper">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center max-w-xl mx-auto mb-16">
+        <div class="rule w-16 mx-auto mb-6"></div>
+        <h2 class="font-serif text-3xl md:text-4xl font-bold mb-4">روی هر بستر</h2>
+        <p class="text-ed-mute">ادیتوریال برای وب، اپ و ایجنت — با همان وقار چاپی.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-ed-cream border border-ed-ink/10 p-8 hover:border-ed-ink/30 transition-colors">
+          <p class="text-[10px] tracking-[0.2em] uppercase text-ed-gold mb-4">Web</p>
+          <h3 class="font-serif text-xl font-semibold mb-3">وب‌سایت</h3>
+          <p class="text-sm text-ed-mute leading-relaxed mb-5">
+            مجلات دیجیتال، گالری‌ها، ناشران و برندهای فرهنگی با حس شماره چاپی.
+          </p>
+          <div class="flex gap-2">
+            <span class="text-[9px] tracking-wider uppercase px-2 py-1 border border-ed-soft text-ed-mute">Magazine</span>
+            <span class="text-[9px] tracking-wider uppercase px-2 py-1 border border-ed-soft text-ed-mute">Culture</span>
+          </div>
+        </div>
+
+        <div class="bg-ed-cream border border-ed-ink/10 p-8 hover:border-ed-ink/30 transition-colors">
+          <p class="text-[10px] tracking-[0.2em] uppercase text-ed-gold mb-4">App</p>
+          <h3 class="font-serif text-xl font-semibold mb-3">اپلیکیشن</h3>
+          <p class="text-sm text-ed-mute leading-relaxed mb-5">
+            اپ‌های خواندن، آرشیو هنری و نشریات با تایپوگرافی دقیق و آرام.
+          </p>
+          <div class="flex gap-2">
+            <span class="text-[9px] tracking-wider uppercase px-2 py-1 border border-ed-soft text-ed-mute">Reader</span>
+            <span class="text-[9px] tracking-wider uppercase px-2 py-1 border border-ed-soft text-ed-mute">Archive</span>
+          </div>
+        </div>
+
+        <div class="bg-ed-cream border border-ed-ink/10 p-8 hover:border-ed-ink/30 transition-colors">
+          <p class="text-[10px] tracking-[0.2em] uppercase text-ed-gold mb-4">Agent</p>
+          <h3 class="font-serif text-xl font-semibold mb-3">ایجنت هوشمند</h3>
+          <p class="text-sm text-ed-mute leading-relaxed mb-5">
+            ایجنت‌های تحریریه‌ای با پاسخ‌های ساخت‌یافته، تیتر واضح و لحن ادبی.
+          </p>
+          <div class="flex gap-2">
+            <span class="text-[9px] tracking-wider uppercase px-2 py-1 border border-ed-soft text-ed-mute">Editor</span>
+            <span class="text-[9px] tracking-wider uppercase px-2 py-1 border border-ed-soft text-ed-mute">Curate</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENT -->
+  <section id="agent" class="py-24 md:py-28">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-14 items-center">
+        <div>
+          <p class="text-[10px] tracking-[0.25em] uppercase text-ed-gold mb-4">Editorial Agent</p>
+          <h2 class="font-serif text-3xl md:text-4xl font-bold mb-5">
+            ایجنتی برای<br>
+            <span class="italic text-ed-mute">فکر کردن روی صفحه</span>
+          </h2>
+          <p class="text-ed-mute leading-relaxed mb-8">
+            در ادیتوریال، گفتگو هم ساخت‌یافته است. 
+            تیتر، بدنه، و یادداشت حاشیه‌ای — مثل یک شماره مجله.
+          </p>
+          <div class="space-y-3 text-sm">
+            <div class="flex items-center gap-3">
+              <div class="w-1.5 h-1.5 bg-ed-ink"></div>
+              <span class="text-ed-charcoal">سلسله‌مراتب تیتر و متن</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-1.5 h-1.5 bg-ed-ink"></div>
+              <span class="text-ed-charcoal">فضای سفید بین بلوک‌ها</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-1.5 h-1.5 bg-ed-ink"></div>
+              <span class="text-ed-charcoal">لحن آرام و دقیق</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Editorial chat -->
+        <div class="bg-ed-paper border border-ed-ink/15 overflow-hidden">
+          <div class="px-5 py-4 border-b border-ed-ink/10 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-9 h-10 border border-ed-ink flex items-center justify-center">
+                <span class="font-serif text-xs font-bold">E</span>
+              </div>
+              <div>
+                <p class="text-sm font-medium">Editor</p>
+                <p class="text-[10px] tracking-wider uppercase text-ed-mute">Issue Agent</p>
+              </div>
+            </div>
+            <span class="text-[9px] tracking-wider uppercase text-ed-gold">Active</span>
+          </div>
+
+          <div class="p-5 space-y-5 min-h-[200px]">
+            <div>
+              <p class="text-[9px] tracking-[0.2em] uppercase text-ed-mute mb-1">Agent</p>
+              <p class="text-sm text-ed-charcoal leading-relaxed">موضوع شماره بعد را مشخص کنید. ساختار پاسخ تحریریه‌ای خواهد بود.</p>
+            </div>
+            <div class="bg-ed-cream border-r-2 border-ed-ink pr-4 py-2">
+              <p class="text-[9px] tracking-[0.2em] uppercase text-ed-mute mb-1">You</p>
+              <p class="text-sm font-medium">یک جلد درباره هنر شکسته و بازسازی</p>
+            </div>
+            <div>
+              <p class="text-[9px] tracking-[0.2em] uppercase text-ed-mute mb-1">Agent</p>
+              <p class="text-sm text-ed-charcoal leading-relaxed">
+                <span class="font-serif font-semibold">پیشنهاد:</span> تیتر BROKEN، تصویر مجسمه با چشم‌بند، زیرتیتر «A visual artwork». فضای کرم، مرکب سیاه.
+              </p>
+            </div>
+          </div>
+
+          <div class="px-5 py-4 border-t border-ed-ink/10 flex gap-3">
+            <input type="text" placeholder="یادداشت خود را بنویسید..." 
+                   class="flex-1 border border-ed-soft bg-ed-cream px-4 py-2.5 text-sm focus:outline-none focus:border-ed-ink transition-colors">
+            <button class="bg-ed-ink text-ed-cream px-5 py-2.5 text-xs tracking-wider uppercase font-medium hover:bg-ed-charcoal transition-colors">
+              Send
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="py-28 md:py-36 bg-ed-ink text-ed-cream">
+    <div class="max-w-2xl mx-auto px-6 text-center">
+      <div class="w-3 h-3 border border-ed-gold mx-auto mb-10"></div>
+      
+      <h2 class="font-serif text-3xl md:text-5xl font-bold mb-6 leading-tight">
+        آماده انتشار<br>
+        <span class="text-ed-gold">شماره بعد؟</span>
+      </h2>
+      
+      <p class="text-ed-mute text-lg mb-12 max-w-md mx-auto font-editorial">
+        صفحه خالی منتظر تیتر بعدی است.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="mailto:hello@parvizmoin.ir" 
+           class="inline-flex items-center justify-center bg-ed-cream text-ed-ink px-10 py-3.5 text-xs tracking-wider uppercase font-medium hover:bg-ed-soft transition-colors">
+          Start Project
+        </a>
+        <a href="#" 
+           class="inline-flex items-center justify-center border border-ed-cream/40 text-ed-cream px-10 py-3.5 text-xs tracking-wider uppercase font-medium hover:border-ed-cream transition-colors">
+          View Archive
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-ed-ink/10">
+    <div class="max-w-5xl mx-auto px-6 py-10">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-ed-mute">
+        <div class="flex items-center gap-3">
+          <div class="w-5 h-6 border border-ed-ink/40 flex items-center justify-center">
+            <span class="font-serif text-[10px] font-bold text-ed-ink">E</span>
+          </div>
+          <span>© 2026 Editorial · Template 14</span>
+        </div>
+        
+        <div class="flex items-center gap-8 tracking-wide">
+          <a href="#" class="hover:text-ed-ink transition-colors uppercase text-[10px]">Privacy</a>
+          <a href="#" class="hover:text-ed-ink transition-colors uppercase text-[10px]">Terms</a>
+          <span>
+            by <a href="https://parvizmoin.ir" target="_blank" rel="noopener noreferrer" class="text-ed-ink/70 hover:text-ed-ink transition-colors underline underline-offset-2">parvizmoin.ir</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+    document.querySelectorAll('section > div').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(18px)';
+      el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+      obs.observe(el);
+    });
+  </script>
+</body>
+</html>

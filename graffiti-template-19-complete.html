@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="قالب گرافیتی کامل – Graffiti | Street Art UI Template 2026" />
+  <title>Graffiti – SPRING Template</title>
+
+  <!-- Favicon – Spray tag -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231A1A1A'/%3E%3Cpath d='M6 22 Q10 8 16 12 Q22 16 26 8' fill='none' stroke='%2300E5FF' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='8' cy='24' r='2' fill='%23A855F7'/%3E%3Ccircle cx='24' cy='10' r='1.5' fill='%2300E5FF'/%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231A1A1A'/%3E%3Cpath d='M6 22 Q10 8 16 12 Q22 16 26 8' fill='none' stroke='%2300E5FF' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='8' cy='24' r='2' fill='%23A855F7'/%3E%3Ccircle cx='24' cy='10' r='1.5' fill='%2300E5FF'/%3E%3C/svg%3E">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Bebas+Neue&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            graf: {
+              black: '#1A1A1A',
+              dark: '#2A2A2A',
+              brick: '#3D2B2B',
+              cyan: '#00E5FF',
+              teal: '#00B8D4',
+              purple: '#A855F7',
+              pink: '#EC4899',
+              cream: '#F5F5F0',
+              mute: '#888888',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Bebas Neue', 'Impact', 'sans-serif'],
+            street: ['Oswald', 'Arial Narrow', 'sans-serif'],
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.7s ease-out forwards',
+            'slide-up': 'slideUp 0.6s ease-out forwards',
+            'drip': 'drip 2s ease-in infinite',
+          },
+          keyframes: {
+            fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+            slideUp: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+            drip: { '0%': { height: '0' }, '100%': { height: '12px' } }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background-color: #1A1A1A;
+      color: #F5F5F0;
+    }
+    ::selection { background: #00E5FF; color: #1A1A1A; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #2A2A2A; }
+    ::-webkit-scrollbar-thumb { background: #00E5FF; }
+
+    .font-display { font-family: 'Bebas Neue', Impact, sans-serif; }
+    .font-street { font-family: 'Oswald', sans-serif; }
+
+    /* Spray paint text effect */
+    .spray-text {
+      text-shadow:
+        3px 3px 0 #00B8D4,
+        -1px -1px 0 #A855F7,
+        0 0 20px rgba(0, 229, 255, 0.4);
+    }
+
+    .tag-card {
+      background: #2A2A2A;
+      border: 2px solid #3D2B2B;
+      box-shadow: 4px 4px 0 #00E5FF;
+    }
+
+    /* Brick texture suggestion */
+    .brick-bg {
+      background-color: #2A2A2A;
+      background-image:
+        linear-gradient(90deg, transparent 49%, rgba(61,43,43,0.3) 50%, transparent 51%),
+        linear-gradient(transparent 49%, rgba(61,43,43,0.2) 50%, transparent 51%);
+      background-size: 40px 20px;
+    }
+  </style>
+</head>
+
+<body class="bg-graf-black text-graf-cream antialiased overflow-x-hidden">
+
+  <!-- NAV -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-graf-black/95 border-b-2 border-graf-cyan">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <div class="w-8 h-8 bg-graf-cyan flex items-center justify-center font-display text-graf-black text-lg font-bold rotate-[-6deg]">
+          G
+        </div>
+        <span class="font-street text-sm tracking-widest uppercase text-graf-cyan">Graffiti</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-7 text-sm font-street uppercase tracking-wide text-graf-mute">
+        <a href="#wall" class="hover:text-graf-cyan transition-colors">دیوار</a>
+        <a href="#rules" class="hover:text-graf-cyan transition-colors">قوانین</a>
+        <a href="#platforms" class="hover:text-graf-cyan transition-colors">پلتفرم</a>
+        <a href="#agent" class="hover:text-graf-cyan transition-colors">ایجنت</a>
+        <a href="#contact" class="hover:text-graf-cyan transition-colors">تماس</a>
+      </nav>
+
+      <a href="#contact" class="text-xs tracking-wide px-4 py-2 bg-graf-cyan text-graf-black font-street font-bold uppercase hover:bg-graf-teal transition-colors rotate-[-2deg]">
+        Tag It
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="min-h-screen flex items-center pt-16 relative overflow-hidden brick-bg">
+    <!-- Spray blobs -->
+    <div class="absolute top-24 right-10 w-32 h-32 rounded-full bg-graf-purple/20 blur-3xl"></div>
+    <div class="absolute bottom-32 left-10 w-40 h-40 rounded-full bg-graf-cyan/15 blur-3xl"></div>
+
+    <div class="max-w-6xl mx-auto px-6 w-full py-16 md:py-20 relative z-10">
+      <div class="grid lg:grid-cols-12 gap-10 items-center">
+
+        <!-- Text -->
+        <div class="lg:col-span-6 space-y-7">
+          <div class="animate-fade-in">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-graf-dark border border-graf-cyan/40 text-xs font-street tracking-widest text-graf-cyan uppercase mb-5">
+              Style 19 · Street Art
+            </div>
+          </div>
+
+          <h1 class="font-display text-6xl sm:text-7xl md:text-8xl leading-none tracking-wide animate-slide-up spray-text text-graf-cyan">
+            SPRING
+          </h1>
+
+          <p class="text-base text-graf-mute leading-relaxed max-w-md animate-slide-up font-medium" style="animation-delay:100ms">
+            دیوار شهر بوم توست.<br>
+            اسپری، تگ، و انرژی خیابان — بدون سانسور.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-1 animate-slide-up" style="animation-delay:200ms">
+            <a href="#wall" class="inline-flex items-center gap-2 bg-graf-cyan text-graf-black px-6 py-3 text-sm font-street font-bold uppercase hover:bg-graf-teal transition-colors">
+              Hit the Wall
+            </a>
+            <a href="#rules" class="text-sm font-street uppercase tracking-wide text-graf-mute hover:text-graf-cyan transition-colors border-b-2 border-graf-dark hover:border-graf-cyan pb-0.5">
+              قوانین خیابان
+            </a>
+          </div>
+
+          <!-- Tags -->
+          <div class="flex gap-3 pt-4 animate-slide-up" style="animation-delay:300ms">
+            <span class="text-[10px] px-2 py-1 bg-graf-purple/30 text-graf-purple font-street uppercase">Wildstyle</span>
+            <span class="text-[10px] px-2 py-1 bg-graf-cyan/20 text-graf-cyan font-street uppercase">Tag</span>
+            <span class="text-[10px] px-2 py-1 bg-graf-pink/20 text-graf-pink font-street uppercase">Spray</span>
+          </div>
+        </div>
+
+        <!-- Urban visual -->
+        <div class="lg:col-span-6 flex justify-center lg:justify-end animate-fade-in" style="animation-delay:150ms">
+          <div class="relative w-full max-w-sm">
+            <div class="tag-card overflow-hidden">
+              <div class="aspect-[4/5] relative brick-bg p-4 flex flex-col">
+                
+                <!-- SPRING graffiti title -->
+                <div class="absolute top-6 left-0 right-0 text-center z-20">
+                  <p class="font-display text-4xl md:text-5xl text-graf-cyan spray-text tracking-wider rotate-[-3deg]">SPRING</p>
+                  <!-- Drips -->
+                  <div class="flex justify-center gap-8 mt-1">
+                    <div class="w-1 h-3 bg-graf-cyan/60 rounded-b"></div>
+                    <div class="w-1 h-5 bg-graf-cyan/40 rounded-b"></div>
+                    <div class="w-1 h-2 bg-graf-teal/50 rounded-b"></div>
+                  </div>
+                </div>
+
+                <!-- Figure suggestion -->
+                <div class="flex-1 flex items-end justify-center pb-6 relative z-10">
+                  <div class="relative">
+                    <!-- Cap -->
+                    <div class="w-14 h-5 bg-graf-cream mx-auto rounded-t-lg relative">
+                      <div class="absolute -bottom-0.5 left-0 right-0 h-2 bg-graf-mute/40"></div>
+                    </div>
+                    <!-- Head -->
+                    <div class="w-12 h-12 rounded-full bg-[#C4A882] mx-auto -mt-1 relative">
+                      <div class="absolute top-4 left-2.5 w-1.5 h-1.5 rounded-full bg-graf-black"></div>
+                      <div class="absolute top-4 right-2.5 w-1.5 h-1.5 rounded-full bg-graf-black"></div>
+                    </div>
+                    <!-- Shirt white -->
+                    <div class="w-20 h-16 mx-auto -mt-1 bg-graf-cream relative">
+                      <div class="absolute top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-graf-mute/30"></div>
+                      <!-- Arms -->
+                      <div class="absolute top-2 -left-5 w-5 h-12 bg-graf-cream rounded-full rotate-[-20deg] origin-top"></div>
+                      <div class="absolute top-0 -right-3 w-5 h-10 bg-graf-cream rounded-full rotate-[40deg] origin-top"></div>
+                    </div>
+                    <!-- Pants -->
+                    <div class="w-16 h-14 mx-auto -mt-1 flex gap-1">
+                      <div class="flex-1 bg-graf-teal/80 rounded-b"></div>
+                      <div class="flex-1 bg-graf-teal/80 rounded-b"></div>
+                    </div>
+                    <!-- Shoes -->
+                    <div class="flex justify-center gap-4 -mt-0.5">
+                      <div class="w-6 h-3 bg-graf-cream rounded-full"></div>
+                      <div class="w-6 h-3 bg-graf-cream rounded-full"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Bottom tags -->
+                <div class="absolute bottom-3 left-3 right-3 flex justify-between items-end">
+                  <span class="font-display text-xs text-graf-purple opacity-70 rotate-[-5deg]">TAG</span>
+                  <span class="text-[9px] tracking-widest text-graf-mute uppercase">19</span>
+                </div>
+
+                <!-- Paint splatters -->
+                <div class="absolute top-20 left-4 w-3 h-3 rounded-full bg-graf-purple/50"></div>
+                <div class="absolute top-28 right-6 w-2 h-2 rounded-full bg-graf-cyan/40"></div>
+                <div class="absolute bottom-24 left-8 w-4 h-1 bg-graf-pink/30 rotate-12"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WALL -->
+  <section id="wall" class="py-24 md:py-28 bg-graf-dark">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-14 items-center">
+        <div>
+          <div class="w-14 h-1.5 bg-graf-cyan mb-6 rotate-[-2deg]"></div>
+          <h2 class="font-display text-4xl md:text-5xl tracking-wide text-graf-cream mb-5">
+            دیوار<br>
+            <span class="text-graf-cyan">حرف می‌زند</span>
+          </h2>
+          <p class="text-graf-mute leading-relaxed mb-8">
+            گرافیتی زبان خیابان است. 
+            حروف وحشی، رنگ‌های جیغ، و انرژی که نمی‌شود قاب کرد — فقط می‌شود روی دیوار زد.
+          </p>
+          <ul class="space-y-3 text-sm font-semibold text-graf-cream/80">
+            <li class="flex items-center gap-3">
+              <span class="w-6 h-6 bg-graf-cyan text-graf-black flex items-center justify-center text-xs font-display">1</span>
+              تایپوگرافی وحشی و لایه‌لایه
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-6 h-6 bg-graf-purple text-white flex items-center justify-center text-xs font-display">2</span>
+              رنگ‌های نئون روی زمینه تیره
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-6 h-6 bg-graf-pink text-white flex items-center justify-center text-xs font-display">3</span>
+              حس خام و دست‌ساز اسپری
+            </li>
+          </ul>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div class="bg-graf-cyan p-5 text-graf-black rotate-[-1deg]">
+            <p class="font-display text-2xl tracking-wide">CYAN</p>
+            <p class="text-xs font-bold mt-1 opacity-70">اسپری اصلی</p>
+          </div>
+          <div class="bg-graf-purple p-5 text-white rotate-[1deg]">
+            <p class="font-display text-2xl tracking-wide">PURPLE</p>
+            <p class="text-xs font-bold mt-1 opacity-70">لهجه خیابان</p>
+          </div>
+          <div class="bg-graf-black border-2 border-graf-cyan p-5 text-graf-cyan">
+            <p class="font-display text-2xl tracking-wide">TAG</p>
+            <p class="text-xs font-bold mt-1 opacity-70">امضا</p>
+          </div>
+          <div class="bg-graf-pink p-5 text-white rotate-[-1deg]">
+            <p class="font-display text-2xl tracking-wide">DRIP</p>
+            <p class="text-xs font-bold mt-1 opacity-70">چکه‌های رنگ</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RULES -->
+  <section id="rules" class="py-24 md:py-28">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="max-w-xl mb-14">
+        <div class="w-14 h-1.5 bg-graf-purple mb-6 rotate-[2deg]"></div>
+        <h2 class="font-display text-4xl md:text-5xl tracking-wide mb-4">سه قانون خیابان</h2>
+        <p class="text-graf-mute">اگر تمیز است، هنوز گرافیتی نیست.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="tag-card p-6">
+          <p class="text-graf-cyan font-display text-xl tracking-wide mb-3">01</p>
+          <h3 class="font-street text-lg font-bold uppercase mb-3">حروف وحشی</h3>
+          <p class="text-sm text-graf-mute leading-relaxed">
+            کشیده، لایه‌لایه، گاهی ناخوانا. خوانایی فدای انرژی می‌شود — و این خوب است.
+          </p>
+        </div>
+        <div class="tag-card p-6">
+          <p class="text-graf-purple font-display text-xl tracking-wide mb-3">02</p>
+          <h3 class="font-street text-lg font-bold uppercase mb-3">رنگ جیغ</h3>
+          <p class="text-sm text-graf-mute leading-relaxed">
+            سیان، بنفش، صورتی روی دیوار تیره. کنتراست باید از دور دیده شود.
+          </p>
+        </div>
+        <div class="tag-card p-6">
+          <p class="text-graf-pink font-display text-xl tracking-wide mb-3">03</p>
+          <h3 class="font-street text-lg font-bold uppercase mb-3">خام و واقعی</h3>
+          <p class="text-sm text-graf-mute leading-relaxed">
+            چکه، پاشش، لبه ناصاف. کمال صنعتی جای خود را به اثر دست می‌دهد.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATFORMS -->
+  <section id="platforms" class="py-24 md:py-28 bg-graf-dark">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center max-w-xl mx-auto mb-14">
+        <div class="w-14 h-1.5 bg-graf-cyan mx-auto mb-6"></div>
+        <h2 class="font-display text-4xl md:text-5xl tracking-wide mb-4">روی هر دیوار</h2>
+        <p class="text-graf-mute">گرافیتی برای وب، اپ و ایجنت — با همان انرژی خیابان.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="bg-graf-black border-2 border-graf-brick p-6 hover:border-graf-cyan transition-colors">
+          <div class="w-10 h-10 bg-graf-cyan text-graf-black flex items-center justify-center mb-5 font-display text-lg">W</div>
+          <h3 class="font-street font-bold text-lg uppercase mb-2">وب‌سایت</h3>
+          <p class="text-sm text-graf-mute leading-relaxed mb-5">
+            برندهای استریت‌ویر، موسیقی هیپ‌هاپ، رویدادهای شهری و کمپین‌های جوان.
+          </p>
+          <div class="flex gap-2">
+            <span class="text-[9px] px-2 py-1 bg-graf-cyan/20 text-graf-cyan font-street uppercase">Street</span>
+            <span class="text-[9px] px-2 py-1 bg-graf-purple/20 text-graf-purple font-street uppercase">Urban</span>
+          </div>
+        </div>
+
+        <div class="bg-graf-black border-2 border-graf-brick p-6 hover:border-graf-purple transition-colors">
+          <div class="w-10 h-10 bg-graf-purple text-white flex items-center justify-center mb-5 font-display text-lg">A</div>
+          <h3 class="font-street font-bold text-lg uppercase mb-2">اپلیکیشن</h3>
+          <p class="text-sm text-graf-mute leading-relaxed mb-5">
+            اپ‌های موسیقی، اسکیت، فیتنس خیابانی و شبکه‌های اجتماعی با حس خام.
+          </p>
+          <div class="flex gap-2">
+            <span class="text-[9px] px-2 py-1 bg-graf-purple/20 text-graf-purple font-street uppercase">Music</span>
+            <span class="text-[9px] px-2 py-1 bg-graf-cyan/15 text-graf-cyan font-street uppercase">Raw</span>
+          </div>
+        </div>
+
+        <div class="bg-graf-black border-2 border-graf-brick p-6 hover:border-graf-pink transition-colors">
+          <div class="w-10 h-10 bg-graf-pink text-white flex items-center justify-center mb-5 font-display text-lg">AI</div>
+          <h3 class="font-street font-bold text-lg uppercase mb-2">ایجنت هوشمند</h3>
+          <p class="text-sm text-graf-mute leading-relaxed mb-5">
+            ایجنت‌های باحال و رک با لحن خیابانی و فیدبک بصری اسپری‌مانند.
+          </p>
+          <div class="flex gap-2">
+            <span class="text-[9px] px-2 py-1 bg-graf-pink/20 text-graf-pink font-street uppercase">Crew</span>
+            <span class="text-[9px] px-2 py-1 bg-graf-cyan/15 text-graf-cyan font-street uppercase">Bold</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENT -->
+  <section id="agent" class="py-24 md:py-28">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-14 items-center">
+        <div>
+          <p class="text-xs tracking-widest text-graf-cyan uppercase font-street mb-4">Crew Agent</p>
+          <h2 class="font-display text-4xl md:text-5xl tracking-wide mb-5">
+            ایجنتی از<br>
+            <span class="text-graf-cyan">دیوار شهر</span>
+          </h2>
+          <p class="text-graf-mute leading-relaxed mb-8">
+            در گرافیتی، ایجنت رک و پرانرژی حرف می‌زند. 
+            کوتاه، تند، و با همان لحن خیابان.
+          </p>
+          <div class="space-y-3 text-sm font-semibold">
+            <div class="flex items-center gap-3">
+              <div class="w-3 h-3 bg-graf-cyan"></div>
+              <span class="text-graf-cream/80">حباب‌های تگ‌مانند</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-3 h-3 bg-graf-purple"></div>
+              <span class="text-graf-cream/80">لحن خام و مستقیم</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-3 h-3 bg-graf-pink"></div>
+              <span class="text-graf-cream/80">بدون تعارف رسمی</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Graffiti chat -->
+        <div class="tag-card overflow-hidden">
+          <div class="px-4 py-3 border-b-2 border-graf-cyan flex items-center gap-3 bg-graf-black">
+            <div class="w-9 h-9 bg-graf-cyan flex items-center justify-center font-display text-graf-black text-sm">
+              S
+            </div>
+            <div>
+              <p class="text-sm font-street font-bold uppercase text-graf-cyan">Spray</p>
+              <p class="text-[10px] text-graf-mute uppercase">Online · Tagging</p>
+            </div>
+          </div>
+
+          <div class="p-4 space-y-3 min-h-[180px]">
+            <div class="flex justify-start">
+              <div class="bg-graf-dark text-graf-cream px-3 py-2 max-w-[85%] border-l-4 border-graf-cyan text-sm">
+                دیوار خالیه. چی بنویسیم؟
+              </div>
+            </div>
+            <div class="flex justify-end">
+              <div class="bg-graf-cyan text-graf-black px-3 py-2 max-w-[85%] text-sm font-bold">
+                یه لندینگ گرافیتی برای برند استریت‌ویر
+              </div>
+            </div>
+            <div class="flex justify-start">
+              <div class="bg-graf-dark text-graf-cream px-3 py-2 max-w-[85%] border-l-4 border-graf-purple text-sm">
+                قبول. SPRING روی دیوار + سیان جیغ. بزن بریم.
+              </div>
+            </div>
+          </div>
+
+          <div class="px-4 py-3 border-t-2 border-graf-brick flex gap-2 bg-graf-black">
+            <input type="text" placeholder="تگ بزن..." 
+                   class="flex-1 bg-graf-dark border border-graf-brick px-3 py-2 text-sm focus:outline-none focus:border-graf-cyan">
+            <button class="bg-graf-cyan text-graf-black px-4 py-2 text-xs font-street font-bold uppercase hover:bg-graf-teal transition-colors">
+              GO
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="py-28 md:py-36 bg-graf-cyan text-graf-black">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <div class="flex justify-center gap-2 mb-8">
+        <div class="w-4 h-4 bg-graf-black rotate-45"></div>
+        <div class="w-4 h-4 bg-graf-purple"></div>
+        <div class="w-4 h-4 bg-graf-black rotate-45"></div>
+      </div>
+      
+      <h2 class="font-display text-4xl md:text-6xl tracking-wide mb-6">
+        READY TO<br>
+        TAG?
+      </h2>
+      
+      <p class="text-sm font-bold mb-10 opacity-80 max-w-md mx-auto">
+        دیوار منتظر امضای توست.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="mailto:hello@parvizmoin.ir" 
+           class="inline-flex items-center justify-center bg-graf-black text-graf-cyan px-8 py-3 text-sm font-street font-bold uppercase hover:bg-graf-dark transition-colors">
+          Start Project
+        </a>
+        <a href="#" 
+           class="inline-flex items-center justify-center border-2 border-graf-black text-graf-black px-8 py-3 text-sm font-street font-bold uppercase hover:bg-graf-black hover:text-graf-cyan transition-colors">
+          View Crew
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t-2 border-graf-cyan">
+    <div class="max-w-6xl mx-auto px-6 py-10">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-graf-mute">
+        <div class="flex items-center gap-3">
+          <div class="w-4 h-4 bg-graf-cyan"></div>
+          <span class="font-street uppercase tracking-wide">© 2026 Graffiti · Template 19</span>
+        </div>
+        
+        <div class="flex items-center gap-6 font-street uppercase tracking-wide">
+          <a href="#" class="hover:text-graf-cyan transition-colors">Privacy</a>
+          <a href="#" class="hover:text-graf-cyan transition-colors">Terms</a>
+          <span>
+            by <a href="https://parvizmoin.ir" target="_blank" rel="noopener noreferrer" class="text-graf-cyan hover:text-graf-teal transition-colors underline underline-offset-2 font-bold">parvizmoin.ir</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+    document.querySelectorAll('section > div').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(16px)';
+      el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+      obs.observe(el);
+    });
+  </script>
+</body>
+</html>

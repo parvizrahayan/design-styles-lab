@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="قالب بوهیمن کامل – Bohemian | Folk Desert UI Template 2026" />
+  <title>Bohemian – Complete Template</title>
+
+  <!-- Favicon – Sun, moon, cactus -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23E8D5B7'/%3E%3Ccircle cx='10' cy='10' r='5' fill='%23C45C26'/%3E%3Ccircle cx='24' cy='9' r='4' fill='none' stroke='%23A68B5B' stroke-width='1.5'/%3E%3Crect x='14' y='16' width='4' height='12' fill='%232D5A3D'/%3E%3Crect x='11' y='18' width='3' height='2' fill='%232D5A3D'/%3E%3Crect x='18' y='20' width='3' height='2' fill='%232D5A3D'/%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23E8D5B7'/%3E%3Ccircle cx='10' cy='10' r='5' fill='%23C45C26'/%3E%3Ccircle cx='24' cy='9' r='4' fill='none' stroke='%23A68B5B' stroke-width='1.5'/%3E%3Crect x='14' y='16' width='4' height='12' fill='%232D5A3D'/%3E%3Crect x='11' y='18' width='3' height='2' fill='%232D5A3D'/%3E%3Crect x='18' y='20' width='3' height='2' fill='%232D5A3D'/%3E%3C/svg%3E">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            boho: {
+              sand: '#E8D5B7',
+              cream: '#F5EDE0',
+              terracotta: '#C45C26',
+              rust: '#A3481F',
+              ochre: '#D4A017',
+              sage: '#2D5A3D',
+              moss: '#3D6B4F',
+              clay: '#A68B5B',
+              ink: '#3D2B1F',
+              mute: '#6B5B4F',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Nunito', 'Inter', 'sans-serif'],
+            serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.9s ease-out forwards',
+            'slide-up': 'slideUp 0.8s ease-out forwards',
+            'sway': 'sway 6s ease-in-out infinite',
+          },
+          keyframes: {
+            fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+            slideUp: { '0%': { opacity: '0', transform: 'translateY(22px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+            sway: { '0%, 100%': { transform: 'rotate(-1deg)' }, '50%': { transform: 'rotate(1deg)' } }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background-color: #F5EDE0;
+      color: #3D2B1F;
+    }
+    ::selection { background: #C45C26; color: #fff; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #E8D5B7; }
+    ::-webkit-scrollbar-thumb { background: #C45C26; border-radius: 3px; }
+
+    .font-display { font-family: 'Nunito', sans-serif; }
+    .font-serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+
+    /* Folk pattern dots */
+    .folk-dot {
+      background-image: radial-gradient(#A68B5B 1px, transparent 1px);
+      background-size: 12px 12px;
+    }
+
+    .boho-card {
+      background: #F5EDE0;
+      border: 1px solid rgba(61, 43, 31, 0.12);
+      box-shadow: 4px 4px 0 rgba(196, 92, 38, 0.08);
+    }
+  </style>
+</head>
+
+<body class="bg-boho-cream text-boho-ink antialiased overflow-x-hidden">
+
+  <!-- NAV -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-boho-cream/95 border-b border-boho-clay/30">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <div class="flex items-center gap-0.5">
+          <div class="w-3 h-3 rounded-full bg-boho-terracotta"></div>
+          <div class="w-2.5 h-2.5 rounded-full border border-boho-clay"></div>
+          <div class="w-2 h-4 bg-boho-sage rounded-t-sm"></div>
+        </div>
+        <span class="text-xs tracking-[0.2em] uppercase font-display font-bold text-boho-mute">Bohemian</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-boho-mute">
+        <a href="#desert" class="hover:text-boho-terracotta transition-colors">بیابان</a>
+        <a href="#rules" class="hover:text-boho-terracotta transition-colors">اصول</a>
+        <a href="#platforms" class="hover:text-boho-terracotta transition-colors">پلتفرم</a>
+        <a href="#agent" class="hover:text-boho-terracotta transition-colors">ایجنت</a>
+        <a href="#contact" class="hover:text-boho-terracotta transition-colors">تماس</a>
+      </nav>
+
+      <a href="#contact" class="text-xs tracking-wide px-5 py-2 rounded-full bg-boho-terracotta text-white font-bold hover:bg-boho-rust transition-colors">
+        Wander
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="min-h-screen flex items-center pt-16 relative overflow-hidden">
+    <div class="absolute inset-0 folk-dot opacity-20 pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto px-6 w-full py-16 md:py-20 relative z-10">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+
+        <!-- Text -->
+        <div class="lg:col-span-6 space-y-7">
+          <div class="animate-fade-in">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-boho-sand text-xs font-bold tracking-wider text-boho-mute mb-5">
+              Style 17 · Free Spirit
+            </div>
+          </div>
+
+          <h1 class="font-serif text-5xl sm:text-6xl md:text-7xl font-semibold leading-[1.05] tracking-tight animate-slide-up">
+            Bohemian
+          </h1>
+
+          <p class="text-lg text-boho-mute leading-relaxed max-w-md animate-slide-up font-medium" style="animation-delay:100ms">
+            خورشید و ماه در یک آسمان.<br>
+            بیابان، کاکتوس، و راهی که خودش را پیدا می‌کند.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-1 animate-slide-up" style="animation-delay:200ms">
+            <a href="#desert" class="inline-flex items-center gap-2 bg-boho-terracotta text-white px-8 py-3.5 text-sm font-bold rounded-full hover:bg-boho-rust transition-colors">
+              ورود به بیابان
+            </a>
+            <a href="#rules" class="text-sm font-semibold text-boho-mute hover:text-boho-ink transition-colors border-b border-boho-clay/40 hover:border-boho-terracotta pb-0.5">
+              اصول بوهیمن
+            </a>
+          </div>
+
+          <!-- Sun moon icons -->
+          <div class="flex items-center gap-4 pt-4 animate-slide-up" style="animation-delay:300ms">
+            <div class="w-8 h-8 rounded-full bg-boho-terracotta"></div>
+            <div class="w-8 h-8 rounded-full border-2 border-boho-clay"></div>
+            <div class="w-3 h-8 bg-boho-sage rounded-t"></div>
+          </div>
+        </div>
+
+        <!-- Desert landscape visual -->
+        <div class="lg:col-span-6 flex justify-center lg:justify-end animate-fade-in" style="animation-delay:150ms">
+          <div class="relative w-full max-w-sm">
+            <div class="boho-card rounded-2xl overflow-hidden">
+              <div class="aspect-[4/5] relative bg-gradient-to-b from-boho-sand via-[#E2C9A0] to-boho-clay/40 p-5 flex flex-col">
+                
+                <!-- Sky with sun & moon -->
+                <div class="flex justify-between items-start mb-2 px-2">
+                  <!-- Sun -->
+                  <div class="relative">
+                    <div class="w-12 h-12 rounded-full bg-boho-terracotta"></div>
+                    <div class="absolute -inset-1 border border-boho-rust/40 rounded-full"></div>
+                    <!-- Rays -->
+                    <div class="absolute -top-2 left-1/2 -translate-x-1/2 w-0.5 h-2 bg-boho-terracotta/60"></div>
+                    <div class="absolute top-1 -right-2 w-0.5 h-2 bg-boho-terracotta/60 rotate-45"></div>
+                    <div class="absolute top-1 -left-2 w-0.5 h-2 bg-boho-terracotta/60 -rotate-45"></div>
+                  </div>
+                  <!-- Moon -->
+                  <div class="w-10 h-10 rounded-full border-2 border-boho-clay relative">
+                    <div class="absolute top-1 right-1 w-2 h-2 rounded-full bg-boho-sand/50"></div>
+                  </div>
+                </div>
+
+                <!-- Geometric hills -->
+                <div class="flex-1 relative flex items-end justify-center">
+                  <!-- Back hills -->
+                  <div class="absolute bottom-16 left-0 right-0 flex justify-center">
+                    <div class="w-0 h-0 border-l-[60px] border-r-[60px] border-b-[40px] border-l-transparent border-r-transparent border-b-boho-ochre/50"></div>
+                  </div>
+                  <div class="absolute bottom-12 left-4 w-0 h-0 border-l-[40px] border-r-[40px] border-b-[30px] border-l-transparent border-r-transparent border-b-boho-terracotta/30"></div>
+                  <div class="absolute bottom-10 right-2 w-0 h-0 border-l-[50px] border-r-[50px] border-b-[35px] border-l-transparent border-r-transparent border-b-boho-clay/40"></div>
+
+                  <!-- Cacti -->
+                  <div class="absolute bottom-8 left-8 animate-sway" style="transform-origin: bottom center;">
+                    <div class="w-4 h-20 bg-boho-sage rounded-t-full relative mx-auto">
+                      <div class="absolute top-6 -left-3 w-3 h-2 bg-boho-sage rounded-l-full"></div>
+                      <div class="absolute top-10 -right-3 w-3 h-2 bg-boho-sage rounded-r-full"></div>
+                      <div class="absolute top-4 -left-2 w-2 h-5 bg-boho-sage rounded-t-full -rotate-12"></div>
+                      <div class="absolute top-8 -right-2 w-2 h-4 bg-boho-sage rounded-t-full rotate-12"></div>
+                    </div>
+                  </div>
+                  <div class="absolute bottom-8 right-10 animate-sway" style="animation-delay:1.5s; transform-origin: bottom center;">
+                    <div class="w-3 h-14 bg-boho-moss rounded-t-full relative mx-auto">
+                      <div class="absolute top-4 -left-2.5 w-2.5 h-1.5 bg-boho-moss rounded-l-full"></div>
+                      <div class="absolute top-7 -right-2.5 w-2.5 h-1.5 bg-boho-moss rounded-r-full"></div>
+                    </div>
+                  </div>
+
+                  <!-- Small figure on ridge -->
+                  <div class="absolute bottom-[4.5rem] left-1/2 -translate-x-1/2 flex flex-col items-center">
+                    <div class="w-2.5 h-2.5 rounded-full bg-boho-ink/70"></div>
+                    <div class="w-2 h-4 bg-boho-terracotta/80 rounded-sm"></div>
+                    <div class="flex gap-0.5">
+                      <div class="w-1 h-2.5 bg-boho-ink/50"></div>
+                      <div class="w-1 h-2.5 bg-boho-ink/50"></div>
+                    </div>
+                  </div>
+
+                  <!-- Ground pattern -->
+                  <div class="absolute bottom-0 left-0 right-0 h-8 bg-boho-clay/30">
+                    <div class="flex justify-around pt-2 px-4">
+                      <div class="w-4 h-4 rounded-full border border-boho-ochre/50"></div>
+                      <div class="w-3 h-3 rounded-full bg-boho-terracotta/20"></div>
+                      <div class="w-5 h-5 rounded-full border border-boho-sage/30"></div>
+                      <div class="w-3 h-3 rounded-full border border-boho-ochre/40"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <span class="absolute top-3 right-3 text-[9px] tracking-widest text-boho-mute/50 font-bold">17</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESERT -->
+  <section id="desert" class="py-24 md:py-28 bg-boho-sand/50">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-14 items-center">
+        <div>
+          <div class="w-14 h-1 bg-boho-terracotta rounded-full mb-6"></div>
+          <h2 class="font-serif text-3xl md:text-4xl font-semibold text-boho-ink mb-5">
+            آزاد، گرم،<br>
+            <span class="text-boho-terracotta">دست‌ساز</span>
+          </h2>
+          <p class="text-boho-mute leading-relaxed mb-8">
+            بوهیمن از بیابان، فولک‌آرت و روح آزاد می‌آید. 
+            رنگ‌های خاکی، الگوهای هندسی، خورشید و ماه در یک قاب — بدون عجله و بدون قانون خشک.
+          </p>
+          <ul class="space-y-3 text-sm font-semibold text-boho-ink/80">
+            <li class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-boho-terracotta text-white flex items-center justify-center text-xs">1</span>
+              پالت گرم خاکی و سفالی
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-boho-sage text-white flex items-center justify-center text-xs">2</span>
+              عناصر طبیعت (کاکتوس، خورشید، ماه)
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-boho-ochre text-boho-ink flex items-center justify-center text-xs">3</span>
+              حس دست‌ساز و فولکلور
+            </li>
+          </ul>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div class="boho-card rounded-2xl p-6">
+            <div class="w-10 h-10 rounded-full bg-boho-terracotta mb-4"></div>
+            <p class="font-display font-bold text-lg">Sun</p>
+            <p class="text-xs text-boho-mute mt-1">گرما و انرژی</p>
+          </div>
+          <div class="boho-card rounded-2xl p-6">
+            <div class="w-10 h-10 rounded-full border-2 border-boho-clay mb-4"></div>
+            <p class="font-display font-bold text-lg">Moon</p>
+            <p class="text-xs text-boho-mute mt-1">آرامش شب</p>
+          </div>
+          <div class="boho-card rounded-2xl p-6">
+            <div class="w-4 h-10 bg-boho-sage rounded-t-full mb-4 mx-auto"></div>
+            <p class="font-display font-bold text-lg">Cactus</p>
+            <p class="text-xs text-boho-mute mt-1">استقامت بیابان</p>
+          </div>
+          <div class="boho-card rounded-2xl p-6">
+            <div class="w-10 h-6 bg-boho-ochre/40 rounded-t-full mb-4"></div>
+            <p class="font-display font-bold text-lg">Path</p>
+            <p class="text-xs text-boho-mute mt-1">راه خودساخته</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RULES -->
+  <section id="rules" class="py-24 md:py-28">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="max-w-xl mb-14">
+        <div class="w-14 h-1 bg-boho-sage rounded-full mb-6"></div>
+        <h2 class="font-serif text-3xl md:text-4xl font-semibold mb-4">سه اصل بوهیمن</h2>
+        <p class="text-boho-mute">اگر رسمی به نظر می‌رسد، هنوز آزاد نیست.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="boho-card rounded-2xl p-8">
+          <p class="text-boho-terracotta font-display font-bold text-sm tracking-widest mb-4">01</p>
+          <h3 class="font-display text-xl font-bold mb-3">گرمای خاک</h3>
+          <p class="text-sm text-boho-mute leading-relaxed">
+            ترakota، شن، اخرایی و سبز بیابانی. رنگ‌ها باید حس دست و آفتاب بدهند.
+          </p>
+        </div>
+        <div class="boho-card rounded-2xl p-8">
+          <p class="text-boho-sage font-display font-bold text-sm tracking-widest mb-4">02</p>
+          <h3 class="font-display text-xl font-bold mb-3">الگوی فولک</h3>
+          <p class="text-sm text-boho-mute leading-relaxed">
+            دایره، مثلث، خطوط ساده. الگوها یادآور پارچه و سفال دست‌ساز باشند.
+          </p>
+        </div>
+        <div class="boho-card rounded-2xl p-8">
+          <p class="text-boho-ochre font-display font-bold text-sm tracking-widest mb-4">03</p>
+          <h3 class="font-display text-xl font-bold mb-3">روح آزاد</h3>
+          <p class="text-sm text-boho-mute leading-relaxed">
+            کمی نامتقارن، کمی خام. کمال صنعتی جای خود را به شخصیت انسانی می‌دهد.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATFORMS -->
+  <section id="platforms" class="py-24 md:py-28 bg-boho-sand/40">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center max-w-xl mx-auto mb-14">
+        <div class="w-14 h-1 bg-boho-terracotta rounded-full mx-auto mb-6"></div>
+        <h2 class="font-serif text-3xl md:text-4xl font-semibold mb-4">روی هر مسیر</h2>
+        <p class="text-boho-mute">بوهیمن برای وب، اپ و ایجنت — گرم و آزاد.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="boho-card rounded-2xl p-7 hover:shadow-md transition-shadow">
+          <div class="w-11 h-11 rounded-full bg-boho-terracotta flex items-center justify-center mb-5 text-white font-bold text-sm">W</div>
+          <h3 class="font-display font-bold text-lg mb-2">وب‌سایت</h3>
+          <p class="text-sm text-boho-mute leading-relaxed mb-5">
+            برندهای دست‌ساز، یوگا، سفر، فروشگاه‌های فولک و صفحات سبک زندگی آزاد.
+          </p>
+          <div class="flex gap-2">
+            <span class="text-[10px] px-2.5 py-1 rounded-full bg-boho-terracotta/15 text-boho-terracotta font-bold">FOLK</span>
+            <span class="text-[10px] px-2.5 py-1 rounded-full bg-boho-sage/15 text-boho-sage font-bold">TRAVEL</span>
+          </div>
+        </div>
+
+        <div class="boho-card rounded-2xl p-7 hover:shadow-md transition-shadow">
+          <div class="w-11 h-11 rounded-full bg-boho-sage flex items-center justify-center mb-5 text-white font-bold text-sm">A</div>
+          <h3 class="font-display font-bold text-lg mb-2">اپلیکیشن</h3>
+          <p class="text-sm text-boho-mute leading-relaxed mb-5">
+            اپ‌های مدیتیشن، ژورنال، طبیعت و عادت‌های آرام با حس دست‌ساز.
+          </p>
+          <div class="flex gap-2">
+            <span class="text-[10px] px-2.5 py-1 rounded-full bg-boho-sage/15 text-boho-sage font-bold">CALM</span>
+            <span class="text-[10px] px-2.5 py-1 rounded-full bg-boho-ochre/20 text-boho-ink font-bold">NATURE</span>
+          </div>
+        </div>
+
+        <div class="boho-card rounded-2xl p-7 hover:shadow-md transition-shadow">
+          <div class="w-11 h-11 rounded-full bg-boho-ochre flex items-center justify-center mb-5 text-boho-ink font-bold text-sm">AI</div>
+          <h3 class="font-display font-bold text-lg mb-2">ایجنت هوشمند</h3>
+          <p class="text-sm text-boho-mute leading-relaxed mb-5">
+            ایجنت‌های راهنما و الهام‌بخش با لحن گرم و پاسخ‌های آرام.
+          </p>
+          <div class="flex gap-2">
+            <span class="text-[10px] px-2.5 py-1 rounded-full bg-boho-terracotta/15 text-boho-terracotta font-bold">GUIDE</span>
+            <span class="text-[10px] px-2.5 py-1 rounded-full bg-boho-clay/20 text-boho-mute font-bold">WARM</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENT -->
+  <section id="agent" class="py-24 md:py-28">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-14 items-center">
+        <div>
+          <p class="text-xs tracking-[0.2em] text-boho-terracotta uppercase font-bold mb-4">Wander Agent</p>
+          <h2 class="font-serif text-3xl md:text-4xl font-semibold mb-5">
+            ایجنتی در<br>
+            <span class="text-boho-terracotta">مسیر بیابان</span>
+          </h2>
+          <p class="text-boho-mute leading-relaxed mb-8">
+            در بوهیمن، ایجنت مثل یک همراه سفر است. 
+            گرم، بی‌عجله، و همیشه آماده پیشنهاد یک راه جدید.
+          </p>
+          <div class="space-y-3 text-sm font-semibold">
+            <div class="flex items-center gap-3">
+              <div class="w-3 h-3 rounded-full bg-boho-terracotta"></div>
+              <span class="text-boho-ink/70">حباب‌های گرم و گرد</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-3 h-3 rounded-full bg-boho-sage"></div>
+              <span class="text-boho-ink/70">لحن آرام و الهام‌بخش</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-3 h-3 rounded-full bg-boho-ochre"></div>
+              <span class="text-boho-ink/70">بدون شتاب دیجیتال</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Boho chat -->
+        <div class="boho-card rounded-2xl overflow-hidden">
+          <div class="px-5 py-4 border-b border-boho-clay/20 flex items-center gap-3 bg-boho-sand/40">
+            <div class="w-10 h-10 rounded-full bg-boho-terracotta flex items-center justify-center">
+              <div class="w-4 h-4 rounded-full bg-boho-cream/40"></div>
+            </div>
+            <div>
+              <p class="text-sm font-display font-bold">Sol</p>
+              <p class="text-[11px] text-boho-mute">On the path · Warm</p>
+            </div>
+          </div>
+
+          <div class="p-5 space-y-4 min-h-[200px]">
+            <div class="flex justify-start">
+              <div class="bg-boho-sand text-boho-ink px-4 py-2.5 max-w-[80%] rounded-2xl rounded-tr-md text-sm font-medium">
+                خورشید بالاست. کجا می‌ری؟
+              </div>
+            </div>
+            <div class="flex justify-end">
+              <div class="bg-boho-terracotta text-white px-4 py-2.5 max-w-[80%] rounded-2xl rounded-tl-md text-sm font-medium">
+                یه لندینگ بوهیمن برای برند دست‌ساز
+              </div>
+            </div>
+            <div class="flex justify-start">
+              <div class="bg-boho-sage/20 text-boho-ink px-4 py-2.5 max-w-[80%] rounded-2xl rounded-tr-md text-sm font-medium">
+                عالی. ترakota + کاکتوس + خورشید و ماه. راه رو باز می‌کنیم.
+              </div>
+            </div>
+          </div>
+
+          <div class="px-5 py-4 border-t border-boho-clay/20 flex gap-3 bg-boho-sand/20">
+            <input type="text" placeholder="در مسیر بنویس..." 
+                   class="flex-1 bg-boho-cream rounded-full px-4 py-2.5 text-sm border border-boho-clay/20 focus:outline-none focus:border-boho-terracotta/50">
+            <button class="w-11 h-11 rounded-full bg-boho-terracotta text-white flex items-center justify-center hover:bg-boho-rust transition-colors">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="py-28 md:py-36 bg-boho-terracotta text-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <div class="flex justify-center gap-3 mb-8">
+        <div class="w-6 h-6 rounded-full bg-boho-cream/90"></div>
+        <div class="w-6 h-6 rounded-full border-2 border-boho-cream/70"></div>
+        <div class="w-2 h-6 bg-boho-sage rounded-t"></div>
+      </div>
+      
+      <h2 class="font-serif text-3xl md:text-5xl font-semibold mb-6">
+        آماده‌ای<br>
+        راه بیفتی؟
+      </h2>
+      
+      <p class="text-lg mb-10 max-w-md mx-auto opacity-90">
+        مسیر از همین‌جا شروع می‌شود — با یک قدم گرم و آزاد.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="mailto:hello@parvizmoin.ir" 
+           class="inline-flex items-center justify-center bg-boho-cream text-boho-ink px-10 py-4 text-sm font-bold rounded-full hover:bg-white transition-colors">
+          شروع پروژه
+        </a>
+        <a href="#" 
+           class="inline-flex items-center justify-center border-2 border-white/50 text-white px-10 py-4 text-sm font-bold rounded-full hover:bg-white/10 transition-colors">
+          مشاهده نمونه‌ها
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-boho-clay/25">
+    <div class="max-w-6xl mx-auto px-6 py-10">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-boho-mute">
+        <div class="flex items-center gap-3">
+          <div class="w-3 h-3 rounded-full bg-boho-terracotta"></div>
+          <span>© 2026 Bohemian · Template 17</span>
+        </div>
+        
+        <div class="flex items-center gap-8">
+          <a href="#" class="hover:text-boho-terracotta transition-colors">حریم خصوصی</a>
+          <a href="#" class="hover:text-boho-terracotta transition-colors">شرایط</a>
+          <span>
+            by <a href="https://parvizmoin.ir" target="_blank" rel="noopener noreferrer" class="text-boho-ink/70 hover:text-boho-terracotta transition-colors underline underline-offset-2 font-semibold">parvizmoin.ir</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+    document.querySelectorAll('section > div').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(18px)';
+      el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+      obs.observe(el);
+    });
+  </script>
+</body>
+</html>

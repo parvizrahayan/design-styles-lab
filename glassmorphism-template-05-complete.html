@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="قالب گلاسمورفیسم کامل – Elevate Your Brand | Glassmorphism UI Template 2026" />
+  <title>Elevate – Glassmorphism Template</title>
+
+  <!-- Favicon – Glassmorphism (soft frosted circle with glow) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23FF8A65'/%3E%3Cstop offset='50%25' stop-color='%23CE93D8'/%3E%3Cstop offset='100%25' stop-color='%234FC3F7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='%230D0D12'/%3E%3Ccircle cx='16' cy='16' r='10' fill='url(%23g)' opacity='0.9'/%3E%3Ccircle cx='16' cy='16' r='6' fill='rgba(255,255,255,0.25)'/%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23FF8A65'/%3E%3Cstop offset='50%25' stop-color='%23CE93D8'/%3E%3Cstop offset='100%25' stop-color='%234FC3F7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='%230D0D12'/%3E%3Ccircle cx='16' cy='16' r='10' fill='url(%23g)' opacity='0.9'/%3E%3Ccircle cx='16' cy='16' r='6' fill='rgba(255,255,255,0.25)'/%3E%3C/svg%3E">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Satoshi:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@500,700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            glass: {
+              950: '#0D0D12',
+              900: '#12121A',
+              800: '#1A1A24',
+              700: '#252532',
+            },
+            glow: {
+              orange: '#FF8A65',
+              purple: '#CE93D8',
+              blue: '#4FC3F7',
+              pink: '#F48FB1',
+            },
+            soft: {
+              100: '#F8F7FC',
+              200: '#E8E6F0',
+              300: '#C8C4D8',
+              400: '#9B96B0',
+              500: '#6B6680',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Satoshi', 'Inter', 'sans-serif'],
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.9s ease-out forwards',
+            'slide-up': 'slideUp 0.8s ease-out forwards',
+            'float': 'float 7s ease-in-out infinite',
+            'pulse-soft': 'pulseSoft 3s ease-in-out infinite',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            slideUp: {
+              '0%': { opacity: '0', transform: 'translateY(28px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-14px)' },
+            },
+            pulseSoft: {
+              '0%, 100%': { opacity: '0.6' },
+              '50%': { opacity: '1' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background-color: #0D0D12;
+      color: #E8E6F0;
+    }
+    ::selection {
+      background-color: rgba(206, 147, 216, 0.4);
+      color: #fff;
+    }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0D0D12; }
+    ::-webkit-scrollbar-thumb { background: #3A3A4A; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #CE93D8; }
+
+    .font-display { font-family: 'Satoshi', 'Inter', sans-serif; }
+
+    /* True glassmorphism */
+    .glass {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-strong {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .glass-card {
+      background: rgba(26, 26, 36, 0.6);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .accent-line {
+      width: 40px;
+      height: 2px;
+      background: linear-gradient(90deg, #FF8A65, #CE93D8, #4FC3F7);
+      border-radius: 2px;
+    }
+
+    /* Soft gradient orbs */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body class="bg-glass-950 text-soft-200 antialiased overflow-x-hidden">
+
+  <!-- Ambient gradient background -->
+  <div class="fixed inset-0 overflow-hidden pointer-events-none">
+    <div class="orb w-[500px] h-[500px] bg-glow-orange/20 -top-40 -right-40 animate-pulse-soft"></div>
+    <div class="orb w-[400px] h-[400px] bg-glow-purple/15 top-1/3 -left-32"></div>
+    <div class="orb w-[350px] h-[350px] bg-glow-blue/15 bottom-0 right-1/4 animate-pulse-soft" style="animation-delay: 1.5s;"></div>
+  </div>
+
+  <!-- NAV -->
+  <header class="fixed top-0 inset-x-0 z-50">
+    <div class="glass border-b border-white/5">
+      <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+        <a href="#" class="flex items-center gap-3 group">
+          <div class="w-8 h-8 rounded-full bg-gradient-to-br from-glow-orange via-glow-purple to-glow-blue opacity-90"></div>
+          <span class="text-xs tracking-[0.18em] text-soft-400 uppercase font-medium font-display">
+            Elevate
+          </span>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-9 text-sm text-soft-400">
+          <a href="#elevate" class="hover:text-white transition-colors duration-300">ارتقاء</a>
+          <a href="#principles" class="hover:text-white transition-colors duration-300">اصول</a>
+          <a href="#platforms" class="hover:text-white transition-colors duration-300">پلتفرم‌ها</a>
+          <a href="#agent" class="hover:text-white transition-colors duration-300">ایجنت</a>
+          <a href="#contact" class="hover:text-white transition-colors duration-300">تماس</a>
+        </nav>
+
+        <a href="#contact" 
+           class="text-xs tracking-wide px-5 py-2 rounded-full glass-strong text-white hover:bg-white/15 transition-all duration-300 font-medium">
+          شروع کنید
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="min-h-screen flex items-center pt-16 relative">
+    <div class="max-w-6xl mx-auto px-6 w-full py-24 md:py-28 relative z-10">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+
+        <!-- Text -->
+        <div class="lg:col-span-6 space-y-8">
+          <div class="animate-fade-in">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass text-xs text-soft-300 mb-6">
+              <span class="w-1.5 h-1.5 rounded-full bg-glow-blue animate-pulse"></span>
+              <span class="tracking-wider uppercase">Glassmorphism · 2026</span>
+            </div>
+          </div>
+
+          <h1 class="font-display text-5xl sm:text-6xl md:text-7xl font-bold leading-[1.05] tracking-tight animate-slide-up">
+            <span class="text-white">Elevate</span><br>
+            <span class="bg-gradient-to-r from-glow-orange via-glow-purple to-glow-blue bg-clip-text text-transparent">
+              Your Brand
+            </span>
+          </h1>
+
+          <p class="text-lg md:text-xl text-soft-400 leading-relaxed max-w-md animate-slide-up" style="animation-delay:100ms">
+            عمق نرم، شیشه‌های مات و گرادیان‌های زنده.<br>
+            مدرنیته‌ای که لمس می‌شود.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2 animate-slide-up" style="animation-delay:200ms">
+            <a href="#elevate" 
+               class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-white text-glass-950 text-sm font-semibold tracking-wide hover:bg-soft-100 transition-all duration-300 shadow-lg shadow-white/10">
+              کشف سبک
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+              </svg>
+            </a>
+            <a href="#principles" class="text-sm text-soft-400 hover:text-white transition-colors underline underline-offset-4 decoration-white/20 hover:decoration-white/50">
+              اصول گلاسمورفیسم
+            </a>
+          </div>
+        </div>
+
+        <!-- Glass Card Visual -->
+        <div class="lg:col-span-6 flex justify-center lg:justify-end animate-fade-in" style="animation-delay:150ms">
+          <div class="relative w-full max-w-sm">
+            <!-- Floating orbs behind card -->
+            <div class="absolute -top-8 -right-8 w-32 h-32 rounded-full bg-glow-orange/30 blur-2xl animate-float"></div>
+            <div class="absolute -bottom-6 -left-6 w-28 h-28 rounded-full bg-glow-blue/25 blur-2xl animate-float" style="animation-delay:2s;"></div>
+            <div class="absolute top-1/2 -right-4 w-20 h-20 rounded-full bg-glow-purple/30 blur-xl"></div>
+
+            <!-- Main glass card -->
+            <div class="relative glass-strong rounded-3xl overflow-hidden shadow-2xl shadow-black/40">
+              <div class="aspect-[4/5] p-8 flex flex-col justify-between relative">
+                <!-- Top meta -->
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <div class="w-2 h-2 rounded-full bg-glow-blue"></div>
+                    <span class="text-[10px] tracking-widest text-soft-400 uppercase">2026</span>
+                  </div>
+                  <div class="w-8 h-8 rounded-full glass flex items-center justify-center">
+                    <svg class="w-3.5 h-3.5 text-soft-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+                    </svg>
+                  </div>
+                </div>
+
+                <!-- Center content -->
+                <div class="text-center py-6">
+                  <p class="text-xs tracking-widest text-soft-400 uppercase mb-3">Scroll to discover</p>
+                  <h3 class="font-display text-2xl md:text-3xl font-bold text-white leading-tight mb-2">
+                    Elevate Your<br>Brand Modernity
+                  </h3>
+                  <p class="text-sm text-soft-400 max-w-[200px] mx-auto">
+                    Soft depth. Frosted layers. Living gradients.
+                  </p>
+                </div>
+
+                <!-- Bottom action -->
+                <div class="flex items-center justify-between">
+                  <div class="flex -space-x-2 space-x-reverse">
+                    <div class="w-7 h-7 rounded-full bg-glow-orange/80 border-2 border-glass-900"></div>
+                    <div class="w-7 h-7 rounded-full bg-glow-purple/80 border-2 border-glass-900"></div>
+                    <div class="w-7 h-7 rounded-full bg-glow-blue/80 border-2 border-glass-900"></div>
+                  </div>
+                  <span class="text-[11px] text-soft-400 tracking-wider">CreativeFlow →</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ELEVATE INTRO -->
+  <section id="elevate" class="py-28 md:py-36 relative z-10">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <div class="accent-line mb-6"></div>
+          <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-6">
+            عمق بدون<br>
+            <span class="bg-gradient-to-r from-glow-orange to-glow-purple bg-clip-text text-transparent">سنگینی</span>
+          </h2>
+          <p class="text-soft-400 leading-relaxed mb-8">
+            گلاسمورفیسم با لایه‌های شیشه‌ای مات، بلور پس‌زمینه و گرادیان‌های نرم، 
+            حس مدرن و لوکس را بدون شلوغی بصری ایجاد می‌کند. مناسب برندهای دیجیتال و محصولات SaaS.
+          </p>
+          <ul class="space-y-4 text-sm text-soft-300">
+            <li class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-glow-purple mt-2 shrink-0"></span>
+              <span>کارت‌های frosted با backdrop-blur واقعی</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-glow-purple mt-2 shrink-0"></span>
+              <span>گرادیان‌های نرم نارنجی–بنفش–آبی</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-glow-purple mt-2 shrink-0"></span>
+              <span>عمق لایه‌ای و المان‌های شناور</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-glow-purple mt-2 shrink-0"></span>
+              <span>نور و درخشش کنترل‌شده</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Layered glass demo -->
+        <div class="relative h-80 flex items-center justify-center">
+          <div class="absolute w-64 h-48 glass rounded-2xl -rotate-6 translate-x-4"></div>
+          <div class="absolute w-64 h-48 glass-strong rounded-2xl rotate-3 -translate-x-2"></div>
+          <div class="relative w-64 h-48 glass-strong rounded-2xl p-6 flex flex-col justify-between shadow-xl">
+            <div class="flex items-center gap-2">
+              <div class="w-3 h-3 rounded-full bg-gradient-to-r from-glow-orange to-glow-purple"></div>
+              <span class="text-xs text-soft-400">Layer System</span>
+            </div>
+            <div>
+              <p class="text-sm font-medium text-white mb-1">Frosted Depth</p>
+              <p class="text-xs text-soft-500">blur(20px) + opacity</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRINCIPLES -->
+  <section id="principles" class="py-28 relative z-10">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="max-w-2xl mb-20">
+        <div class="accent-line mb-6"></div>
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-5">سه اصل شیشه</h2>
+        <p class="text-soft-400 leading-relaxed">شفافیت کنترل‌شده، عمق نرم و نور هدایت‌شده.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="glass-card rounded-2xl p-8 hover:border-white/15 transition-colors duration-300">
+          <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-glow-orange/30 to-glow-orange/10 flex items-center justify-center mb-6">
+            <span class="text-glow-orange font-display font-bold text-sm">01</span>
+          </div>
+          <h3 class="text-xl font-display font-semibold text-white mb-3">شفافیت هوشمند</h3>
+          <p class="text-sm text-soft-400 leading-relaxed">
+            شیشه باید محتوا را نشان دهد، نه پنهان. blur و opacity باید خوانایی را حفظ کنند.
+          </p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-8 hover:border-white/15 transition-colors duration-300">
+          <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-glow-purple/30 to-glow-purple/10 flex items-center justify-center mb-6">
+            <span class="text-glow-purple font-display font-bold text-sm">02</span>
+          </div>
+          <h3 class="text-xl font-display font-semibold text-white mb-3">گرادیان زنده</h3>
+          <p class="text-sm text-soft-400 leading-relaxed">
+            رنگ‌های نرم و انتقال‌های طبیعی. گرادیان‌ها حس حرکت و زندگی به رابط می‌دهند.
+          </p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-8 hover:border-white/15 transition-colors duration-300">
+          <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-glow-blue/30 to-glow-blue/10 flex items-center justify-center mb-6">
+            <span class="text-glow-blue font-display font-bold text-sm">03</span>
+          </div>
+          <h3 class="text-xl font-display font-semibold text-white mb-3">عمق لایه‌ای</h3>
+          <p class="text-sm text-soft-400 leading-relaxed">
+            چند لایه شیشه با فاصله و سایه ملایم، حس سه‌بعدی نرم بدون سنگینی ایجاد می‌کند.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATFORMS -->
+  <section id="platforms" class="py-28 md:py-36 relative z-10">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-20">
+        <div class="accent-line mx-auto mb-6"></div>
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-5">برای هر سطح</h2>
+        <p class="text-soft-400">از لندینگ برند تا داشبورد ایجنت — یک زبان بصری واحد.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="glass-card rounded-2xl p-8 hover:border-white/12 transition-all duration-300">
+          <div class="w-12 h-12 rounded-xl glass flex items-center justify-center mb-6">
+            <svg class="w-5 h-5 text-soft-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-display font-semibold text-white mb-3">وب‌سایت</h3>
+          <p class="text-sm text-soft-400 leading-relaxed mb-6">
+            لندینگ‌های SaaS، صفحات محصول و برندهای دیجیتال با حس لوکس و مدرن.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-[11px] px-2.5 py-1 rounded-full glass text-soft-400">SaaS</span>
+            <span class="text-[11px] px-2.5 py-1 rounded-full glass text-soft-400">Brand</span>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-2xl p-8 hover:border-white/12 transition-all duration-300">
+          <div class="w-12 h-12 rounded-xl glass flex items-center justify-center mb-6">
+            <svg class="w-5 h-5 text-soft-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-display font-semibold text-white mb-3">اپلیکیشن</h3>
+          <p class="text-sm text-soft-400 leading-relaxed mb-6">
+            اپ‌های فین‌تک، بهره‌وری و سبک زندگی با رابط نرم و عمق بصری.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-[11px] px-2.5 py-1 rounded-full glass text-soft-400">Fintech</span>
+            <span class="text-[11px] px-2.5 py-1 rounded-full glass text-soft-400">Productivity</span>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-2xl p-8 hover:border-white/12 transition-all duration-300">
+          <div class="w-12 h-12 rounded-xl glass flex items-center justify-center mb-6">
+            <svg class="w-5 h-5 text-soft-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-display font-semibold text-white mb-3">ایجنت هوشمند</h3>
+          <p class="text-sm text-soft-400 leading-relaxed mb-6">
+            داشبورد و چت ایجنت‌های حرفه‌ای با حس مدرن و کاهش بار شناختی.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-[11px] px-2.5 py-1 rounded-full glass text-soft-400">Dashboard</span>
+            <span class="text-[11px] px-2.5 py-1 rounded-full glass text-soft-400">Chat</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENT UI -->
+  <section id="agent" class="py-28 relative z-10">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="text-xs tracking-[0.18em] text-glow-purple uppercase mb-4 font-medium">Soft Agent Interface</p>
+          <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-6">
+            ایجنتی با<br>
+            <span class="bg-gradient-to-r from-glow-purple to-glow-blue bg-clip-text text-transparent">عمق نرم</span>
+          </h2>
+          <p class="text-soft-400 leading-relaxed mb-8">
+            در گلاسمورفیسم، رابط ایجنت باید آرام و شفاف باشد. 
+            کارت‌های شیشه‌ای، گرادیان ملایم و تایپوگرافی تمیز، تمرکز را روی محتوا نگه می‌دارند.
+          </p>
+          <div class="space-y-4 text-sm">
+            <div class="flex items-center gap-3">
+              <div class="w-2 h-2 rounded-full bg-glow-orange"></div>
+              <span class="text-soft-300">لایه‌های شیشه‌ای برای جداسازی محتوا</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-2 h-2 rounded-full bg-glow-purple"></div>
+              <span class="text-soft-300">گرادیان برای وضعیت و تأکید</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-2 h-2 rounded-full bg-glow-blue"></div>
+              <span class="text-soft-300">فضای تنفس و تایپوگرافی خوانا</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Glass Chat Mock -->
+        <div class="glass-strong rounded-3xl overflow-hidden shadow-2xl shadow-black/30">
+          <div class="px-5 py-4 border-b border-white/5 flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-gradient-to-br from-glow-orange via-glow-purple to-glow-blue"></div>
+            <div>
+              <p class="text-sm font-medium text-white">Aura</p>
+              <p class="text-[11px] text-soft-500">Online · Ready</p>
+            </div>
+          </div>
+
+          <div class="p-5 space-y-4 min-h-[210px]">
+            <div class="flex justify-start">
+              <div class="glass rounded-2xl rounded-tl-md px-4 py-3 max-w-[80%]">
+                <p class="text-sm text-soft-200">چطور می‌تونم برندتون رو ارتقا بدم؟</p>
+              </div>
+            </div>
+            <div class="flex justify-end">
+              <div class="bg-white/90 text-glass-950 rounded-2xl rounded-tr-md px-4 py-3 max-w-[80%]">
+                <p class="text-sm font-medium">یک لندینگ مدرن با حس شیشه‌ای</p>
+              </div>
+            </div>
+            <div class="flex justify-start">
+              <div class="glass rounded-2xl rounded-tl-md px-4 py-3 max-w-[80%]">
+                <p class="text-sm text-soft-200">عالی. گرادیان نرم + کارت‌های frosted + فضای خالی. شروع می‌کنیم.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="px-5 py-4 border-t border-white/5">
+            <div class="flex gap-3">
+              <input type="text" placeholder="پیام به Aura..." 
+                     class="flex-1 glass rounded-full px-4 py-2.5 text-sm text-soft-200 placeholder-soft-500 focus:outline-none focus:border-white/20 transition-colors">
+              <button class="w-10 h-10 rounded-full bg-gradient-to-br from-glow-orange via-glow-purple to-glow-blue flex items-center justify-center hover:opacity-90 transition-opacity">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="py-32 md:py-40 relative z-10">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <div class="w-12 h-12 rounded-full bg-gradient-to-br from-glow-orange via-glow-purple to-glow-blue mx-auto mb-10 opacity-90"></div>
+      
+      <h2 class="font-display text-3xl md:text-5xl font-bold text-white mb-6">
+        آماده ارتقاء<br>
+        <span class="bg-gradient-to-r from-glow-orange via-glow-purple to-glow-blue bg-clip-text text-transparent">برند خود هستید؟</span>
+      </h2>
+      
+      <p class="text-soft-400 text-lg mb-12 max-w-md mx-auto">
+        عمق نرم و شفافیت هوشمند، تفاوت را می‌سازد.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="mailto:hello@parvizmoin.ir" 
+           class="inline-flex items-center justify-center gap-2 bg-white text-glass-950 px-10 py-4 text-sm font-semibold tracking-wide rounded-full hover:bg-soft-100 transition-all duration-300 shadow-lg shadow-white/10">
+          شروع گفتگو
+        </a>
+        <a href="#" 
+           class="inline-flex items-center justify-center gap-2 glass text-soft-300 px-10 py-4 text-sm font-medium tracking-wide rounded-full hover:bg-white/10 hover:text-white transition-all duration-300">
+          مشاهده نمونه‌ها
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="relative z-10 border-t border-white/5">
+    <div class="max-w-6xl mx-auto px-6 py-10">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-soft-500">
+        <div class="flex items-center gap-3">
+          <div class="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-glow-orange to-glow-purple"></div>
+          <span>© 2026 Elevate · Glassmorphism Template</span>
+        </div>
+        
+        <div class="flex items-center gap-8">
+          <a href="#" class="hover:text-soft-300 transition-colors">حریم خصوصی</a>
+          <a href="#" class="hover:text-soft-300 transition-colors">شرایط استفاده</a>
+          <span>
+            by <a href="https://parvizmoin.ir" target="_blank" rel="noopener noreferrer" class="text-soft-400 hover:text-glow-purple transition-colors underline underline-offset-2">parvizmoin.ir</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('section > div').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>

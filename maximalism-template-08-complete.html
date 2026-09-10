@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="قالب ماکسیمالیسم کامل – MAXIMALISM | Bold Layered UI Template 2026" />
+  <title>MAXIMALISM – Complete Template</title>
+
+  <!-- Favicon – Maximalism (bold colorful collision) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23111111'/%3E%3Crect x='2' y='2' width='14' height='14' fill='%23FF2D55'/%3E%3Crect x='16' y='2' width='14' height='14' fill='%23FFEE00'/%3E%3Crect x='2' y='16' width='14' height='14' fill='%2300C2FF'/%3E%3Crect x='16' y='16' width='14' height='14' fill='%23A855F7'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%23FFFFFF'/%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23111111'/%3E%3Crect x='2' y='2' width='14' height='14' fill='%23FF2D55'/%3E%3Crect x='16' y='2' width='14' height='14' fill='%23FFEE00'/%3E%3Crect x='2' y='16' width='14' height='14' fill='%2300C2FF'/%3E%3Crect x='16' y='16' width='14' height='14' fill='%23A855F7'/%3E%3Ccircle cx='16' cy='16' r='5' fill='%23FFFFFF'/%3E%3C/svg%3E">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            maxi: {
+              black: '#111111',
+              dark: '#1A1A1A',
+              panel: '#222222',
+            },
+            pop: {
+              pink: '#FF2D55',
+              yellow: '#FFEE00',
+              blue: '#00C2FF',
+              purple: '#A855F7',
+              orange: '#FF6B00',
+              green: '#00E676',
+              white: '#FFFFFF',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Space Grotesk', 'Inter', 'sans-serif'],
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.7s ease-out forwards',
+            'slide-up': 'slideUp 0.6s ease-out forwards',
+            'pop': 'pop 0.5s ease-out forwards',
+            'wiggle': 'wiggle 3s ease-in-out infinite',
+          },
+          keyframes: {
+            fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+            slideUp: { '0%': { opacity: '0', transform: 'translateY(24px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+            pop: { '0%': { opacity: '0', transform: 'scale(0.9)' }, '100%': { opacity: '1', transform: 'scale(1)' } },
+            wiggle: { '0%, 100%': { transform: 'rotate(-2deg)' }, '50%': { transform: 'rotate(2deg)' } }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background-color: #111111;
+      color: #FFFFFF;
+    }
+    ::selection { background: #FF2D55; color: #fff; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #111; }
+    ::-webkit-scrollbar-thumb { background: #FF2D55; border-radius: 2px; }
+
+    .font-display { font-family: 'Space Grotesk', sans-serif; }
+
+    .checker {
+      background-image:
+        linear-gradient(45deg, #222 25%, transparent 25%),
+        linear-gradient(-45deg, #222 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #222 75%),
+        linear-gradient(-45deg, transparent 75%, #222 75%);
+      background-size: 16px 16px;
+      background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+    }
+
+    .sticker {
+      border: 3px solid #111;
+      box-shadow: 4px 4px 0 #111;
+    }
+
+    .layer-card {
+      border: 3px solid #111;
+      box-shadow: 6px 6px 0 #FF2D55;
+    }
+  </style>
+</head>
+
+<body class="bg-maxi-black text-white antialiased overflow-x-hidden">
+
+  <!-- NAV -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-maxi-black/95 border-b-4 border-pop-pink">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <div class="flex">
+          <div class="w-4 h-4 bg-pop-pink"></div>
+          <div class="w-4 h-4 bg-pop-yellow"></div>
+          <div class="w-4 h-4 bg-pop-blue"></div>
+          <div class="w-4 h-4 bg-pop-purple"></div>
+        </div>
+        <span class="text-xs tracking-[0.15em] uppercase font-black font-display">MAXIMALISM</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-white/70">
+        <a href="#more" class="hover:text-pop-pink transition-colors">بیشتر</a>
+        <a href="#rules" class="hover:text-pop-yellow transition-colors">قوانین</a>
+        <a href="#platforms" class="hover:text-pop-blue transition-colors">پلتفرم</a>
+        <a href="#agent" class="hover:text-pop-purple transition-colors">ایجنت</a>
+        <a href="#contact" class="hover:text-pop-orange transition-colors">تماس</a>
+      </nav>
+
+      <a href="#contact" class="text-xs tracking-wide px-4 py-2 bg-pop-pink text-white font-black hover:bg-pop-yellow hover:text-maxi-black transition-colors sticker">
+        MORE IS MORE
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="min-h-screen flex items-center pt-16 relative overflow-hidden">
+    <!-- Background noise of color blocks -->
+    <div class="absolute top-20 left-10 w-24 h-24 bg-pop-pink/20 rotate-12 hidden lg:block"></div>
+    <div class="absolute bottom-32 right-16 w-20 h-20 bg-pop-yellow/30 -rotate-6 hidden lg:block"></div>
+    <div class="absolute top-1/3 right-1/4 w-16 h-16 bg-pop-blue/20 rotate-45 hidden lg:block"></div>
+    <div class="absolute bottom-1/4 left-1/3 w-12 h-12 bg-pop-purple/25 -rotate-12 hidden lg:block"></div>
+
+    <div class="max-w-6xl mx-auto px-6 w-full py-16 md:py-20 relative z-10">
+      <div class="grid lg:grid-cols-12 gap-10 items-center">
+
+        <!-- Text -->
+        <div class="lg:col-span-6 space-y-7">
+          <div class="animate-fade-in">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-pop-yellow text-maxi-black text-xs font-black tracking-wider uppercase sticker mb-5">
+              Style 08 · Bold & Loud
+            </div>
+          </div>
+
+          <h1 class="font-display text-5xl sm:text-6xl md:text-7xl font-black leading-[0.9] tracking-tight animate-slide-up">
+            <span class="text-pop-pink">MAXI</span><br>
+            <span class="text-pop-yellow">MAL</span><br>
+            <span class="text-pop-blue">ISM</span>
+          </h1>
+
+          <p class="text-lg text-white/70 leading-relaxed max-w-md animate-slide-up font-medium" style="animation-delay:100ms">
+            بیشتر، بیشتر است.<br>
+            لایه‌ها، رنگ‌ها، الگوها و انرژی — هیچ چیز کم نگذار.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-1 animate-slide-up" style="animation-delay:200ms">
+            <a href="#more" class="inline-flex items-center gap-2 bg-pop-pink text-white px-7 py-3.5 text-sm font-black tracking-wide sticker hover:bg-pop-orange transition-colors">
+              LAYER IT
+            </a>
+            <a href="#rules" class="text-sm font-bold text-white/60 hover:text-pop-yellow transition-colors border-b-2 border-white/20 hover:border-pop-yellow pb-0.5">
+              قوانین ماکسیمال
+            </a>
+          </div>
+
+          <!-- Color chips -->
+          <div class="flex gap-2 pt-4 animate-slide-up" style="animation-delay:300ms">
+            <div class="w-8 h-8 bg-pop-pink border-2 border-white"></div>
+            <div class="w-8 h-8 bg-pop-yellow border-2 border-white"></div>
+            <div class="w-8 h-8 bg-pop-blue border-2 border-white"></div>
+            <div class="w-8 h-8 bg-pop-purple border-2 border-white"></div>
+            <div class="w-8 h-8 bg-pop-orange border-2 border-white"></div>
+            <div class="w-8 h-8 bg-pop-green border-2 border-white"></div>
+          </div>
+        </div>
+
+        <!-- Collage Visual -->
+        <div class="lg:col-span-6 flex justify-center lg:justify-end animate-pop" style="animation-delay:150ms">
+          <div class="relative w-full max-w-md">
+            <!-- Layered sticker stack -->
+            <div class="relative">
+              <!-- Back layer - checker -->
+              <div class="absolute -inset-3 checker opacity-40 rounded-lg"></div>
+
+              <!-- Main collage panel -->
+              <div class="relative bg-maxi-panel border-4 border-white overflow-hidden">
+                <div class="aspect-[4/5] p-5 flex flex-col relative">
+                  <!-- Top badges -->
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="px-2 py-0.5 bg-pop-pink text-[10px] font-black uppercase">BOLD</span>
+                    <span class="px-2 py-0.5 bg-pop-yellow text-maxi-black text-[10px] font-black uppercase">LOUD</span>
+                    <span class="px-2 py-0.5 bg-pop-blue text-[10px] font-black uppercase">UNAPOLOGETIC</span>
+                  </div>
+
+                  <!-- Big title block -->
+                  <div class="flex-1 flex flex-col justify-center">
+                    <div class="space-y-1">
+                      <div class="bg-pop-pink text-white font-display font-black text-3xl md:text-4xl px-3 py-1 -rotate-1 inline-block">MAXI</div>
+                      <div class="bg-pop-yellow text-maxi-black font-display font-black text-3xl md:text-4xl px-3 py-1 rotate-1 inline-block">MAL</div>
+                      <div class="bg-pop-blue text-white font-display font-black text-3xl md:text-4xl px-3 py-1 -rotate-2 inline-block">ISM</div>
+                    </div>
+                  </div>
+
+                  <!-- Bottom stickers row -->
+                  <div class="flex items-end justify-between mt-4">
+                    <div class="flex gap-2">
+                      <div class="w-10 h-10 bg-pop-purple border-2 border-white flex items-center justify-center text-xs font-black">♥</div>
+                      <div class="w-10 h-10 bg-pop-orange border-2 border-white flex items-center justify-center text-xs font-black">★</div>
+                      <div class="w-10 h-10 bg-pop-green border-2 border-white flex items-center justify-center text-xs font-black">✦</div>
+                    </div>
+                    <div class="text-right">
+                      <p class="text-[9px] font-bold tracking-widest text-white/50 uppercase">Layer it</p>
+                      <p class="text-[9px] font-bold tracking-widest text-pop-pink uppercase">Love it</p>
+                    </div>
+                  </div>
+
+                  <!-- Floating eye sticker -->
+                  <div class="absolute top-16 left-4 w-12 h-8 bg-white border-2 border-maxi-black rounded-full flex items-center justify-center rotate-[-8deg]">
+                    <div class="w-5 h-5 rounded-full bg-maxi-black flex items-center justify-center">
+                      <div class="w-2 h-2 rounded-full bg-pop-pink"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Offset color bars -->
+              <div class="absolute -bottom-3 -right-3 w-full h-full border-4 border-pop-pink -z-10"></div>
+              <div class="absolute -bottom-6 -right-6 w-full h-full border-4 border-pop-yellow -z-20"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MORE IS MORE -->
+  <section id="more" class="py-24 md:py-28 bg-pop-pink text-maxi-black">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="text-xs tracking-[0.2em] uppercase font-black mb-4 opacity-70">The Philosophy</p>
+          <h2 class="font-display text-4xl md:text-5xl font-black leading-tight mb-6">
+            بیشتر<br>بیشتر است
+          </h2>
+          <p class="text-lg font-medium leading-relaxed mb-6 opacity-90">
+            ماکسیمالیسم ضد مینیمالیسم نیست — تکمیل‌کننده آن است. 
+            جایی که هر لایه معنا دارد، هر رنگ فریاد می‌زند و هر الگو داستان می‌گوید.
+          </p>
+          <ul class="space-y-3 text-sm font-semibold">
+            <li class="flex items-center gap-3"><span class="w-6 h-6 bg-maxi-black text-pop-pink flex items-center justify-center text-xs font-black">1</span> لایه‌های روی هم بدون ترس</li>
+            <li class="flex items-center gap-3"><span class="w-6 h-6 bg-maxi-black text-pop-yellow flex items-center justify-center text-xs font-black">2</span> رنگ‌های اشباع و متضاد</li>
+            <li class="flex items-center gap-3"><span class="w-6 h-6 bg-maxi-black text-pop-blue flex items-center justify-center text-xs font-black">3</span> تایپوگرافی درشت و جسور</li>
+            <li class="flex items-center gap-3"><span class="w-6 h-6 bg-maxi-black text-white flex items-center justify-center text-xs font-black">4</span> الگو و بافت در همه جا</li>
+          </ul>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div class="bg-pop-yellow p-5 border-4 border-maxi-black">
+            <p class="font-display font-black text-2xl mb-1">LAYER</p>
+            <p class="text-xs font-bold opacity-70">همه چیز را روی هم بگذار</p>
+          </div>
+          <div class="bg-pop-blue p-5 border-4 border-maxi-black text-white">
+            <p class="font-display font-black text-2xl mb-1">CLASH</p>
+            <p class="text-xs font-bold opacity-80">رنگ‌ها باید بجنگند</p>
+          </div>
+          <div class="bg-pop-purple p-5 border-4 border-maxi-black text-white">
+            <p class="font-display font-black text-2xl mb-1">SHOUT</p>
+            <p class="text-xs font-bold opacity-80">تایپ باید فریاد بزند</p>
+          </div>
+          <div class="bg-maxi-black p-5 border-4 border-white text-white">
+            <p class="font-display font-black text-2xl mb-1 text-pop-pink">REPEAT</p>
+            <p class="text-xs font-bold opacity-70">الگو را تکرار کن</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RULES -->
+  <section id="rules" class="py-24 md:py-28">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="max-w-xl mb-14">
+        <div class="w-16 h-2 bg-pop-yellow mb-5"></div>
+        <h2 class="font-display text-3xl md:text-4xl font-black mb-4">سه قانون ماکسیمال</h2>
+        <p class="text-white/50">اگر شک داری، یک لایه دیگر اضافه کن.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="bg-maxi-panel border-4 border-pop-pink p-7 layer-card">
+          <p class="text-pop-pink font-black text-sm tracking-widest mb-4">01</p>
+          <h3 class="font-display text-xl font-black mb-3">تراکم هدفمند</h3>
+          <p class="text-sm text-white/60 leading-relaxed">
+            شلوغی تصادفی نیست. هر عنصر باید جای خود را بداند و به انرژی کلی کمک کند. ماکسیمالیسمِ خوب، هرج‌ومرج سازمان‌یافته است.
+          </p>
+        </div>
+        <div class="bg-maxi-panel border-4 border-pop-yellow p-7" style="box-shadow: 6px 6px 0 #FFEE00;">
+          <p class="text-pop-yellow font-black text-sm tracking-widest mb-4">02</p>
+          <h3 class="font-display text-xl font-black mb-3">کنتراست رنگی</h3>
+          <p class="text-sm text-white/60 leading-relaxed">
+            رنگ‌های مکمل و متضاد را کنار هم بگذار. زرد روی صورتی، آبی روی بنفش. چشم باید حرکت کند و هیجان‌زده شود.
+          </p>
+        </div>
+        <div class="bg-maxi-panel border-4 border-pop-blue p-7" style="box-shadow: 6px 6px 0 #00C2FF;">
+          <p class="text-pop-blue font-black text-sm tracking-widest mb-4">03</p>
+          <h3 class="font-display text-xl font-black mb-3">تایپ به‌عنوان فرم</h3>
+          <p class="text-sm text-white/60 leading-relaxed">
+            حروف فقط خوانده نمی‌شوند — دیده می‌شوند. اندازه، چرخش، رنگ و لایه، تایپ را به یک المان گرافیکی تبدیل می‌کند.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATFORMS -->
+  <section id="platforms" class="py-24 md:py-28 bg-maxi-dark">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center max-w-xl mx-auto mb-14">
+        <div class="w-16 h-2 bg-pop-blue mx-auto mb-5"></div>
+        <h2 class="font-display text-3xl md:text-4xl font-black mb-4">برای هر صحنه</h2>
+        <p class="text-white/50">ماکسیمالیسم روی وب، اپ و ایجنت — با همان انرژی.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="bg-maxi-panel border-4 border-white p-7 hover:border-pop-pink transition-colors">
+          <div class="w-12 h-12 bg-pop-pink flex items-center justify-center mb-5 font-black text-lg">W</div>
+          <h3 class="font-display font-black text-lg mb-2">وب‌سایت</h3>
+          <p class="text-sm text-white/55 leading-relaxed mb-5">
+            لندینگ‌های برندهای جسور، فستیوال‌ها، فروشگاه‌های استریت و کمپین‌های پرانرژی.
+          </p>
+          <div class="flex gap-2">
+            <span class="text-[10px] px-2 py-1 bg-pop-pink/20 text-pop-pink font-bold">CAMPAIGN</span>
+            <span class="text-[10px] px-2 py-1 bg-pop-yellow/20 text-pop-yellow font-bold">STREET</span>
+          </div>
+        </div>
+
+        <div class="bg-maxi-panel border-4 border-white p-7 hover:border-pop-yellow transition-colors">
+          <div class="w-12 h-12 bg-pop-yellow text-maxi-black flex items-center justify-center mb-5 font-black text-lg">A</div>
+          <h3 class="font-display font-black text-lg mb-2">اپلیکیشن</h3>
+          <p class="text-sm text-white/55 leading-relaxed mb-5">
+            اپ‌های اجتماعی، موسیقی، مد و سرگرمی که باید پر از شخصیت و انرژی باشند.
+          </p>
+          <div class="flex gap-2">
+            <span class="text-[10px] px-2 py-1 bg-pop-blue/20 text-pop-blue font-bold">SOCIAL</span>
+            <span class="text-[10px] px-2 py-1 bg-pop-purple/20 text-pop-purple font-bold">MUSIC</span>
+          </div>
+        </div>
+
+        <div class="bg-maxi-panel border-4 border-white p-7 hover:border-pop-blue transition-colors">
+          <div class="w-12 h-12 bg-pop-blue flex items-center justify-center mb-5 font-black text-lg">AI</div>
+          <h3 class="font-display font-black text-lg mb-2">ایجنت هوشمند</h3>
+          <p class="text-sm text-white/55 leading-relaxed mb-5">
+            ایجنت‌های خلاق، ایده‌پردازی و برندینگ با رابط پررنگ و بدون خجالت.
+          </p>
+          <div class="flex gap-2">
+            <span class="text-[10px] px-2 py-1 bg-pop-orange/20 text-pop-orange font-bold">CREATIVE</span>
+            <span class="text-[10px] px-2 py-1 bg-pop-green/20 text-pop-green font-bold">IDEA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENT -->
+  <section id="agent" class="py-24 md:py-28">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="text-xs tracking-[0.2em] text-pop-pink uppercase font-black mb-4">Loud Agent</p>
+          <h2 class="font-display text-3xl md:text-4xl font-black mb-5">
+            ایجنتی که<br>
+            <span class="text-pop-yellow">فریاد می‌زند</span>
+          </h2>
+          <p class="text-white/55 leading-relaxed mb-8">
+            در ماکسیمالیسم، ایجنت هم باید پررنگ باشد. 
+            حباب‌های رنگی، استیکر، و پاسخ‌های کوتاه و پرانرژی.
+          </p>
+          <div class="space-y-3 text-sm font-semibold">
+            <div class="flex items-center gap-3">
+              <div class="w-4 h-4 bg-pop-pink"></div>
+              <span class="text-white/70">پاسخ‌های کوتاه و لایه‌ای</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-4 h-4 bg-pop-yellow"></div>
+              <span class="text-white/70">رنگ برای هر نوع پیام</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-4 h-4 bg-pop-blue"></div>
+              <span class="text-white/70">استیکر و نشانه‌های بصری</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Maximal Agent Chat -->
+        <div class="bg-maxi-panel border-4 border-white overflow-hidden">
+          <div class="px-4 py-3 border-b-4 border-white flex items-center justify-between bg-pop-pink">
+            <div class="flex items-center gap-2">
+              <div class="w-8 h-8 bg-white flex items-center justify-center font-black text-pop-pink text-sm">M</div>
+              <div>
+                <p class="text-sm font-black text-white">MAX Agent</p>
+                <p class="text-[10px] font-bold text-white/80">ONLINE · LOUD</p>
+              </div>
+            </div>
+            <span class="text-[10px] font-black bg-white text-pop-pink px-2 py-0.5">LIVE</span>
+          </div>
+
+          <div class="p-4 space-y-3 min-h-[200px]">
+            <div class="flex justify-start">
+              <div class="bg-pop-yellow text-maxi-black px-3 py-2 max-w-[80%] border-2 border-white font-semibold text-sm">
+                آماده‌ای یه چیزی بزرگ بسازی؟
+              </div>
+            </div>
+            <div class="flex justify-end">
+              <div class="bg-pop-blue text-white px-3 py-2 max-w-[80%] border-2 border-white font-semibold text-sm">
+                یه کمپین پرانرژی برای برند خیابانی
+              </div>
+            </div>
+            <div class="flex justify-start">
+              <div class="bg-pop-purple text-white px-3 py-2 max-w-[80%] border-2 border-white font-semibold text-sm">
+                عالی! رنگ‌های متضاد + تایپ درشت + لایه‌های استیکر. شروع کنیم.
+              </div>
+            </div>
+          </div>
+
+          <div class="px-4 py-3 border-t-4 border-white flex gap-2 bg-maxi-dark">
+            <input type="text" placeholder="پیام پرانرژی بنویس..." 
+                   class="flex-1 bg-maxi-black border-2 border-white px-3 py-2 text-sm font-medium focus:outline-none focus:border-pop-pink">
+            <button class="bg-pop-pink text-white px-4 py-2 font-black text-sm border-2 border-white hover:bg-pop-yellow hover:text-maxi-black transition-colors">
+              SEND
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="py-28 md:py-36 bg-pop-yellow text-maxi-black">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <div class="flex justify-center gap-2 mb-8">
+        <div class="w-6 h-6 bg-pop-pink border-2 border-maxi-black"></div>
+        <div class="w-6 h-6 bg-pop-blue border-2 border-maxi-black"></div>
+        <div class="w-6 h-6 bg-pop-purple border-2 border-maxi-black"></div>
+      </div>
+      
+      <h2 class="font-display text-4xl md:text-6xl font-black leading-tight mb-6">
+        آماده‌ای<br>
+        بیشتر بذاری؟
+      </h2>
+      
+      <p class="text-lg font-semibold mb-10 opacity-80 max-w-md mx-auto">
+        اگر کم است، اضافه کن. اگر زیاد است، باز هم اضافه کن.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="mailto:hello@parvizmoin.ir" 
+           class="inline-flex items-center justify-center bg-maxi-black text-white px-10 py-4 text-sm font-black tracking-wide border-4 border-maxi-black hover:bg-pop-pink transition-colors">
+          شروع پروژه
+        </a>
+        <a href="#" 
+           class="inline-flex items-center justify-center border-4 border-maxi-black text-maxi-black px-10 py-4 text-sm font-black tracking-wide hover:bg-maxi-black hover:text-white transition-colors">
+          مشاهده نمونه‌ها
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t-4 border-white bg-maxi-black">
+    <div class="max-w-6xl mx-auto px-6 py-10">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-sm">
+        <div class="flex items-center gap-3">
+          <div class="flex">
+            <div class="w-3 h-3 bg-pop-pink"></div>
+            <div class="w-3 h-3 bg-pop-yellow"></div>
+            <div class="w-3 h-3 bg-pop-blue"></div>
+          </div>
+          <span class="font-bold text-white/60">© 2026 MAXIMALISM · Template 08</span>
+        </div>
+        
+        <div class="flex items-center gap-8 text-white/50 font-medium">
+          <a href="#" class="hover:text-pop-pink transition-colors">حریم خصوصی</a>
+          <a href="#" class="hover:text-pop-yellow transition-colors">شرایط</a>
+          <span>
+            by <a href="https://parvizmoin.ir" target="_blank" rel="noopener noreferrer" class="text-white/70 hover:text-pop-pink transition-colors underline underline-offset-2 font-bold">parvizmoin.ir</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+    document.querySelectorAll('section > div').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+      obs.observe(el);
+    });
+  </script>
+</body>
+</html>

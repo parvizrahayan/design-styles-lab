@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="قالب وکتور آرت کامل – Vector Art | Graphic Design Style Template 2026" />
+  <title>Vector Art – Complete Template</title>
+
+  <!-- Favicon – Vector Art (geometric face / sunglasses style) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231A1025'/%3E%3Ccircle cx='16' cy='14' r='8' fill='%232D1B4E'/%3E%3Crect x='9' y='12' width='14' height='5' rx='2.5' fill='%23E8E0F0'/%3E%3Ccircle cx='12.5' cy='14.5' r='1.8' fill='%231A1025'/%3E%3Ccircle cx='19.5' cy='14.5' r='1.8' fill='%231A1025'/%3E%3Cpath d='M11 20 Q16 24 21 20' stroke='%23A78BFA' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231A1025'/%3E%3Ccircle cx='16' cy='14' r='8' fill='%232D1B4E'/%3E%3Crect x='9' y='12' width='14' height='5' rx='2.5' fill='%23E8E0F0'/%3E%3Ccircle cx='12.5' cy='14.5' r='1.8' fill='%231A1025'/%3E%3Ccircle cx='19.5' cy='14.5' r='1.8' fill='%231A1025'/%3E%3Cpath d='M11 20 Q16 24 21 20' stroke='%23A78BFA' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            vector: {
+              950: '#12091C',
+              900: '#1A1025',
+              800: '#2D1B4E',
+              700: '#3B2766',
+              600: '#4C1D95',
+            },
+            accent: {
+              purple: '#A78BFA',
+              violet: '#8B5CF6',
+              soft: '#E8E0F0',
+              pink: '#F0ABFC',
+              blue: '#67E8F9',
+            },
+            flat: {
+              100: '#F5F3FF',
+              200: '#EDE9FE',
+              300: '#DDD6FE',
+              400: '#C4B5FD',
+              500: '#A78BFA',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Outfit', 'Inter', 'sans-serif'],
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.8s ease-out forwards',
+            'slide-up': 'slideUp 0.7s ease-out forwards',
+            'float': 'float 6s ease-in-out infinite',
+            'pop': 'pop 0.5s ease-out forwards',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            slideUp: {
+              '0%': { opacity: '0', transform: 'translateY(24px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-12px)' },
+            },
+            pop: {
+              '0%': { opacity: '0', transform: 'scale(0.92)' },
+              '100%': { opacity: '1', transform: 'scale(1)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background-color: #12091C;
+      color: #E8E0F0;
+    }
+
+    ::selection {
+      background-color: #A78BFA;
+      color: #12091C;
+    }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #1A1025; }
+    ::-webkit-scrollbar-thumb { background: #4C1D95; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #A78BFA; }
+
+    .font-display { font-family: 'Outfit', sans-serif; }
+
+    .accent-line {
+      width: 36px;
+      height: 3px;
+      background: #A78BFA;
+      border-radius: 2px;
+    }
+
+    /* Flat vector card */
+    .vector-card {
+      background: #1A1025;
+      border: 2px solid #2D1B4E;
+    }
+
+    /* Geometric shapes helper */
+    .geo-circle {
+      border-radius: 50%;
+    }
+  </style>
+</head>
+
+<body class="bg-vector-950 text-accent-soft antialiased overflow-x-hidden">
+
+  <!-- ========== NAVIGATION ========== -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-vector-950/85 backdrop-blur-lg border-b border-vector-800">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-8 h-8 rounded-full bg-vector-800 border-2 border-accent-purple flex items-center justify-center">
+          <div class="w-3 h-3 rounded-full bg-accent-purple"></div>
+        </div>
+        <span class="text-xs tracking-[0.18em] text-flat-400 uppercase font-medium font-display">
+          Vector Art
+        </span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-9 text-sm text-flat-400">
+        <a href="#style" class="hover:text-accent-soft transition-colors duration-300">سبک</a>
+        <a href="#principles" class="hover:text-accent-soft transition-colors duration-300">اصول</a>
+        <a href="#platforms" class="hover:text-accent-soft transition-colors duration-300">پلتفرم‌ها</a>
+        <a href="#agent" class="hover:text-accent-soft transition-colors duration-300">ایجنت</a>
+        <a href="#contact" class="hover:text-accent-soft transition-colors duration-300">تماس</a>
+      </nav>
+
+      <a href="#contact" 
+         class="text-xs tracking-wide px-5 py-2 rounded-full bg-accent-purple text-vector-950 font-semibold hover:bg-accent-violet transition-all duration-300">
+        شروع طراحی
+      </a>
+    </div>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="min-h-screen flex items-center pt-16 relative overflow-hidden">
+    <!-- Decorative geometric shapes -->
+    <div class="absolute top-24 left-10 w-24 h-24 rounded-full bg-vector-800/60 border-2 border-vector-700 hidden lg:block"></div>
+    <div class="absolute bottom-32 right-16 w-16 h-16 rotate-45 bg-accent-purple/20 border-2 border-accent-purple/40 hidden lg:block"></div>
+    <div class="absolute top-1/3 right-1/4 w-3 h-3 rounded-full bg-accent-blue"></div>
+
+    <div class="max-w-6xl mx-auto px-6 w-full py-24 md:py-28 relative z-10">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+        
+        <!-- Text -->
+        <div class="lg:col-span-6 space-y-8">
+          <div class="animate-fade-in">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-vector-800 border border-vector-700 mb-6">
+              <span class="w-2 h-2 rounded-full bg-accent-purple"></span>
+              <span class="text-[11px] tracking-widest text-flat-400 uppercase font-medium">Flat · Geometric · Bold</span>
+            </div>
+          </div>
+
+          <h1 class="font-display text-5xl sm:text-6xl md:text-7xl font-bold leading-[1.05] tracking-tight animate-slide-up">
+            <span class="text-accent-soft">Vector</span><br>
+            <span class="text-accent-purple">Art.</span>
+          </h1>
+
+          <p class="text-lg md:text-xl text-flat-400 leading-relaxed max-w-md animate-slide-up" style="animation-delay: 100ms">
+            طراحی تخت، شخصیت‌محور و هندسی.<br>
+            جایی که تصویرسازی و رابط کاربری یکی می‌شوند.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2 animate-slide-up" style="animation-delay: 200ms">
+            <a href="#style" 
+               class="inline-flex items-center gap-2 bg-accent-purple text-vector-950 px-8 py-3.5 text-sm font-bold tracking-wide rounded-full hover:bg-accent-violet transition-all duration-300">
+              کشف سبک
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/>
+              </svg>
+            </a>
+            <a href="#principles" 
+               class="text-sm text-flat-400 hover:text-accent-soft transition-colors border-b border-vector-700 hover:border-accent-purple pb-0.5">
+              اصول وکتور
+            </a>
+          </div>
+        </div>
+
+        <!-- Vector Character Visual (inspired by the poster) -->
+        <div class="lg:col-span-6 flex justify-center lg:justify-end animate-pop" style="animation-delay: 150ms">
+          <div class="relative w-full max-w-sm">
+            <!-- Background geometric frame -->
+            <div class="absolute -inset-4 bg-vector-800 rounded-3xl rotate-3 border-2 border-vector-700"></div>
+            <div class="absolute -inset-2 bg-vector-900 rounded-3xl -rotate-2 border-2 border-vector-800"></div>
+
+            <!-- Main illustration card -->
+            <div class="relative vector-card rounded-3xl overflow-hidden">
+              <div class="aspect-[4/5] bg-gradient-to-b from-vector-800 to-vector-900 relative flex flex-col items-center justify-center p-8">
+                
+                <!-- Stylized vector face with sunglasses -->
+                <div class="relative w-44 h-52">
+                  <!-- Hair / Head shape -->
+                  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-36 h-36 rounded-full bg-vector-700 border-2 border-vector-600"></div>
+                  
+                  <!-- Face -->
+                  <div class="absolute top-8 left-1/2 -translate-x-1/2 w-28 h-32 rounded-[2rem] bg-accent-soft/90 border-2 border-flat-300"></div>
+                  
+                  <!-- Sunglasses – large round -->
+                  <div class="absolute top-[4.2rem] left-1/2 -translate-x-1/2 flex items-center gap-1">
+                    <div class="w-11 h-11 rounded-full bg-vector-950 border-[3px] border-vector-700 flex items-center justify-center">
+                      <div class="w-4 h-4 rounded-full bg-accent-blue/80"></div>
+                    </div>
+                    <div class="w-3 h-1 bg-vector-700 rounded-full"></div>
+                    <div class="w-11 h-11 rounded-full bg-vector-950 border-[3px] border-vector-700 flex items-center justify-center">
+                      <div class="w-4 h-4 rounded-full bg-accent-blue/80"></div>
+                    </div>
+                  </div>
+
+                  <!-- Lips -->
+                  <div class="absolute top-[8.5rem] left-1/2 -translate-x-1/2 w-8 h-3 rounded-full bg-accent-pink/80"></div>
+
+                  <!-- Neck / Shoulders suggestion -->
+                  <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-14 bg-vector-700 rounded-t-[2rem] border-2 border-vector-600 border-b-0"></div>
+                  <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-40 h-8 bg-accent-purple/30 rounded-full blur-sm"></div>
+                </div>
+
+                <!-- Floating geometric accents -->
+                <div class="absolute top-6 right-6 w-4 h-4 rotate-45 bg-accent-purple"></div>
+                <div class="absolute bottom-8 left-6 w-3 h-3 rounded-full bg-accent-blue"></div>
+              </div>
+
+              <!-- Caption bar -->
+              <div class="px-6 py-4 border-t-2 border-vector-800 bg-vector-900 flex items-center justify-between">
+                <div>
+                  <p class="text-[10px] tracking-widest text-flat-500 uppercase">Character Study</p>
+                  <p class="text-sm font-display font-semibold text-accent-soft">Vector Portrait</p>
+                </div>
+                <div class="flex gap-1.5">
+                  <div class="w-2.5 h-2.5 rounded-full bg-accent-purple"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-accent-blue"></div>
+                  <div class="w-2.5 h-2.5 rounded-full bg-accent-pink"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== STYLE INTRO ========== -->
+  <section id="style" class="py-28 md:py-36">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <div class="accent-line mb-6"></div>
+          <h2 class="font-display text-3xl md:text-4xl font-bold tracking-tight text-accent-soft mb-6">
+            تصویرسازی<br>
+            <span class="text-accent-purple">مسطح و قدرتمند</span>
+          </h2>
+          <p class="text-flat-400 leading-relaxed mb-8">
+            سبک Vector Art بر پایه اشکال هندسی، رنگ‌های تخت و شخصیت‌پردازی قوی ساخته شده. 
+            هیچ گرادیان پیچیده‌ای وجود ندارد — فقط فرم، رنگ و شخصیت.
+          </p>
+          
+          <ul class="space-y-4 text-sm text-flat-300">
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 rounded-full bg-accent-purple mt-1.5 shrink-0"></span>
+              <span>اشکال هندسی واضح و لبه‌های تمیز</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 rounded-full bg-accent-purple mt-1.5 shrink-0"></span>
+              <span>پالت رنگی محدود و با کنتراست بالا</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 rounded-full bg-accent-purple mt-1.5 shrink-0"></span>
+              <span>شخصیت‌محور و مناسب برندینگ</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 rounded-full bg-accent-purple mt-1.5 shrink-0"></span>
+              <span>مقیاس‌پذیر بدون افت کیفیت (حقیقت وکتور)</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Color + Shape palette visual -->
+        <div class="vector-card rounded-3xl p-8">
+          <p class="text-[11px] tracking-widest text-flat-500 uppercase mb-6">Palette & Geometry</p>
+          
+          <div class="grid grid-cols-4 gap-3 mb-8">
+            <div class="aspect-square rounded-2xl bg-vector-950 border-2 border-vector-700"></div>
+            <div class="aspect-square rounded-2xl bg-vector-800 border-2 border-vector-700"></div>
+            <div class="aspect-square rounded-2xl bg-accent-purple"></div>
+            <div class="aspect-square rounded-2xl bg-accent-soft"></div>
+            <div class="aspect-square rounded-2xl bg-accent-blue"></div>
+            <div class="aspect-square rounded-2xl bg-accent-pink"></div>
+            <div class="aspect-square rounded-2xl bg-vector-700"></div>
+            <div class="aspect-square rounded-2xl bg-flat-300"></div>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <div class="flex gap-3">
+              <div class="w-10 h-10 rounded-full border-2 border-accent-purple"></div>
+              <div class="w-10 h-10 rotate-45 border-2 border-accent-blue"></div>
+              <div class="w-10 h-10 rounded-lg border-2 border-accent-pink"></div>
+            </div>
+            <p class="text-xs text-flat-500 font-display">8 Colors · 3 Shapes</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PRINCIPLES ========== -->
+  <section id="principles" class="py-28 bg-vector-900/60">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="max-w-2xl mb-20">
+        <div class="accent-line mb-6"></div>
+        <h2 class="font-display text-3xl md:text-4xl font-bold tracking-tight text-accent-soft mb-5">
+          سه قانون وکتور
+        </h2>
+        <p class="text-flat-400 leading-relaxed">
+          سادگی فرم، قدرت رنگ، و شخصیت — این سه ستون سبک Vector Art هستند.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-7">
+        <div class="vector-card rounded-3xl p-8 hover:border-accent-purple/50 transition-colors duration-300">
+          <div class="w-12 h-12 rounded-2xl bg-accent-purple/20 border-2 border-accent-purple/40 flex items-center justify-center mb-6">
+            <span class="text-accent-purple font-display font-bold">01</span>
+          </div>
+          <h3 class="text-xl font-display font-semibold text-accent-soft mb-3">فرم تخت</h3>
+          <p class="text-sm text-flat-400 leading-relaxed">
+            بدون سایه پیچیده و بدون گرادیان سنگین. هر شکل باید با یک رنگ تخت خوانا باشد.
+          </p>
+        </div>
+
+        <div class="vector-card rounded-3xl p-8 hover:border-accent-purple/50 transition-colors duration-300">
+          <div class="w-12 h-12 rounded-2xl bg-accent-purple/20 border-2 border-accent-purple/40 flex items-center justify-center mb-6">
+            <span class="text-accent-purple font-display font-bold">02</span>
+          </div>
+          <h3 class="text-xl font-display font-semibold text-accent-soft mb-3">هندسه قوی</h3>
+          <p class="text-sm text-flat-400 leading-relaxed">
+            دایره، مربع و خطوط صاف. ترکیب این عناصر ساده، شخصیت‌های پیچیده می‌سازد.
+          </p>
+        </div>
+
+        <div class="vector-card rounded-3xl p-8 hover:border-accent-purple/50 transition-colors duration-300">
+          <div class="w-12 h-12 rounded-2xl bg-accent-purple/20 border-2 border-accent-purple/40 flex items-center justify-center mb-6">
+            <span class="text-accent-purple font-display font-bold">03</span>
+          </div>
+          <h3 class="text-xl font-display font-semibold text-accent-soft mb-3">شخصیت‌محور</h3>
+          <p class="text-sm text-flat-400 leading-relaxed">
+            چهره‌ها، ژست‌ها و اشیاء باید هویت داشته باشند. وکتور فقط تزئین نیست — داستان می‌گوید.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PLATFORMS ========== -->
+  <section id="platforms" class="py-28 md:py-36">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-20">
+        <div class="accent-line mx-auto mb-6"></div>
+        <h2 class="font-display text-3xl md:text-4xl font-bold tracking-tight text-accent-soft mb-5">
+          مناسب هر بوم
+        </h2>
+        <p class="text-flat-400">
+          از لندینگ‌پیج برندینگ تا رابط ایجنت‌های شخصیتی — Vector Art همه جا می‌درخشد.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Web -->
+        <div class="vector-card rounded-3xl p-8 hover:border-accent-purple/40 transition-all duration-300">
+          <div class="w-12 h-12 rounded-2xl bg-vector-800 border-2 border-vector-700 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-accent-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-display font-semibold text-accent-soft mb-3">وب‌سایت</h3>
+          <p class="text-sm text-flat-400 leading-relaxed mb-6">
+            صفحات معرفی برند، پورتفولیو تصویرسازان، سایت‌های سبک‌زندگی و کمپین‌های شخصیتی.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-[11px] px-2.5 py-1 rounded-full bg-vector-800 text-flat-400 border border-vector-700">Branding</span>
+            <span class="text-[11px] px-2.5 py-1 rounded-full bg-vector-800 text-flat-400 border border-vector-700">Portfolio</span>
+          </div>
+        </div>
+
+        <!-- App -->
+        <div class="vector-card rounded-3xl p-8 hover:border-accent-purple/40 transition-all duration-300">
+          <div class="w-12 h-12 rounded-2xl bg-vector-800 border-2 border-vector-700 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-accent-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-display font-semibold text-accent-soft mb-3">اپلیکیشن</h3>
+          <p class="text-sm text-flat-400 leading-relaxed mb-6">
+            اپ‌های اجتماعی، سبک زندگی، آموزشی کودک و ابزارهای خلاق با شخصیت بصری قوی.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-[11px] px-2.5 py-1 rounded-full bg-vector-800 text-flat-400 border border-vector-700">Social</span>
+            <span class="text-[11px] px-2.5 py-1 rounded-full bg-vector-800 text-flat-400 border border-vector-700">Lifestyle</span>
+          </div>
+        </div>
+
+        <!-- Agent -->
+        <div class="vector-card rounded-3xl p-8 hover:border-accent-purple/40 transition-all duration-300">
+          <div class="w-12 h-12 rounded-2xl bg-vector-800 border-2 border-vector-700 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6 text-accent-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-display font-semibold text-accent-soft mb-3">ایجنت هوشمند</h3>
+          <p class="text-sm text-flat-400 leading-relaxed mb-6">
+            چت‌بات‌های دوستانه، ایجنت‌های شخصیتی و دستیارهای بصری با آواتار وکتوری جذاب.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-[11px] px-2.5 py-1 rounded-full bg-vector-800 text-flat-400 border border-vector-700">Avatar</span>
+            <span class="text-[11px] px-2.5 py-1 rounded-full bg-vector-800 text-flat-400 border border-vector-700">Chat UI</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== AGENT UI PREVIEW ========== -->
+  <section id="agent" class="py-28 relative">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="text-xs tracking-[0.18em] text-accent-purple uppercase mb-4 font-medium">Character Agent</p>
+          <h2 class="font-display text-3xl md:text-4xl font-bold tracking-tight text-accent-soft mb-6">
+            ایجنتی با<br>
+            <span class="text-accent-purple">شخصیت وکتوری</span>
+          </h2>
+          <p class="text-flat-400 leading-relaxed mb-8">
+            در این سبک، ایجنت فقط متن نیست — یک کاراکتر زنده است. 
+            آواتار تخت، رنگ‌های واضح و حباب‌های گفتگوی هندسی حس نزدیکی ایجاد می‌کنند.
+          </p>
+          
+          <div class="space-y-4 text-sm">
+            <div class="flex items-center gap-3">
+              <div class="w-2.5 h-2.5 rounded-full bg-accent-purple"></div>
+              <span class="text-flat-300">آواتار وکتوری ثابت و قابل تشخیص</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-2.5 h-2.5 rounded-full bg-accent-purple"></div>
+              <span class="text-flat-300">حباب‌های گفتگو با گوشه‌های نرم هندسی</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-2.5 h-2.5 rounded-full bg-accent-purple"></div>
+              <span class="text-flat-300">پالت رنگی محدود برای تمرکز روی محتوا</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mock Chat with Vector Avatar -->
+        <div class="vector-card rounded-3xl overflow-hidden">
+          <!-- Header -->
+          <div class="px-5 py-4 border-b-2 border-vector-800 flex items-center gap-3 bg-vector-900">
+            <div class="w-11 h-11 rounded-full bg-vector-800 border-2 border-accent-purple flex items-center justify-center relative">
+              <!-- Mini vector face -->
+              <div class="w-6 h-6 rounded-full bg-accent-soft/90"></div>
+              <div class="absolute top-3.5 left-2.5 w-2.5 h-2.5 rounded-full bg-vector-950"></div>
+              <div class="absolute top-3.5 right-2.5 w-2.5 h-2.5 rounded-full bg-vector-950"></div>
+            </div>
+            <div>
+              <p class="text-sm font-display font-semibold text-accent-soft">Pixel</p>
+              <p class="text-[11px] text-flat-500">Vector Agent · Online</p>
+            </div>
+          </div>
+
+          <!-- Messages -->
+          <div class="p-5 space-y-4 min-h-[210px] bg-vector-950/50">
+            <div class="flex justify-start">
+              <div class="bg-vector-800 border border-vector-700 rounded-2xl rounded-tl-md px-4 py-3 max-w-[80%]">
+                <p class="text-sm text-flat-200">سلام! امروز چه چیزی طراحی کنیم؟</p>
+              </div>
+            </div>
+            <div class="flex justify-end">
+              <div class="bg-accent-purple rounded-2xl rounded-tr-md px-4 py-3 max-w-[80%]">
+                <p class="text-sm text-vector-950 font-medium">یک کاراکتر برای اپ اجتماعی</p>
+              </div>
+            </div>
+            <div class="flex justify-start">
+              <div class="bg-vector-800 border border-vector-700 rounded-2xl rounded-tl-md px-4 py-3 max-w-[80%]">
+                <p class="text-sm text-flat-200">عالی. عینک بزرگ + موهای هندسی؟ رنگ بنفش و آبی پیشنهاد می‌کنم.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Input -->
+          <div class="px-5 py-4 border-t-2 border-vector-800 bg-vector-900">
+            <div class="flex gap-3">
+              <input type="text" 
+                     placeholder="پیام به Pixel..." 
+                     class="flex-1 bg-vector-800 border-2 border-vector-700 rounded-full px-4 py-2.5 text-sm text-accent-soft placeholder-flat-500 focus:outline-none focus:border-accent-purple transition-colors">
+              <button class="w-10 h-10 rounded-full bg-accent-purple flex items-center justify-center hover:bg-accent-violet transition-colors">
+                <svg class="w-4 h-4 text-vector-950" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FINAL CTA ========== -->
+  <section id="contact" class="py-32 md:py-40">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <div class="flex justify-center gap-2 mb-10">
+        <div class="w-3 h-3 rounded-full bg-accent-purple"></div>
+        <div class="w-3 h-3 rounded-full bg-accent-blue"></div>
+        <div class="w-3 h-3 rounded-full bg-accent-pink"></div>
+      </div>
+      
+      <h2 class="font-display text-3xl md:text-5xl font-bold tracking-tight text-accent-soft mb-6">
+        آماده‌ای یک<br>
+        <span class="text-accent-purple">شخصیت بسازی؟</span>
+      </h2>
+      
+      <p class="text-flat-400 text-lg mb-12 max-w-md mx-auto">
+        فرم‌های ساده + رنگ‌های قوی = هویت ماندگار.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="mailto:hello@parvizmoin.ir" 
+           class="inline-flex items-center justify-center gap-2 bg-accent-purple text-vector-950 px-10 py-4 text-sm font-bold tracking-wide rounded-full hover:bg-accent-violet transition-all duration-300">
+          شروع پروژه
+        </a>
+        <a href="#" 
+           class="inline-flex items-center justify-center gap-2 border-2 border-vector-700 text-flat-300 px-10 py-4 text-sm font-medium tracking-wide rounded-full hover:border-accent-purple hover:text-accent-soft transition-all duration-300">
+          مشاهده نمونه‌ها
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="border-t-2 border-vector-800">
+    <div class="max-w-6xl mx-auto px-6 py-10">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-flat-500">
+        <div class="flex items-center gap-3">
+          <div class="w-2.5 h-2.5 rounded-full bg-accent-purple"></div>
+          <span>© 2026 Vector Art · Template</span>
+        </div>
+        
+        <div class="flex items-center gap-8">
+          <a href="#" class="hover:text-flat-300 transition-colors">حریم خصوصی</a>
+          <a href="#" class="hover:text-flat-300 transition-colors">شرایط استفاده</a>
+          <span>
+            by <a href="https://parvizmoin.ir" target="_blank" rel="noopener noreferrer" class="text-flat-400 hover:text-accent-purple transition-colors underline underline-offset-2">parvizmoin.ir</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Reveal script -->
+  <script>
+    const observerOptions = {
+      threshold: 0.08,
+      rootMargin: '0px 0px -40px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('section > div').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.7s ease-out, transform 0.7s ease-out';
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>

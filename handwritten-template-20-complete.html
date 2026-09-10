@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="قالب دست‌نویس کامل – Handwritten | Offbeat Script UI Template 2026" />
+  <title>Handwritten – Prickly Pear Template</title>
+
+  <!-- Favicon – Handwritten mark -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23C41E3A'/%3E%3Cpath d='M8 20 Q12 10 16 14 Q20 18 24 12' fill='none' stroke='%23F5E6C8' stroke-width='2.5' stroke-linecap='round'/%3E%3Cpath d='M10 22 Q14 16 18 20' fill='none' stroke='%23F5E6C8' stroke-width='1.5' stroke-linecap='round' opacity='0.7'/%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23C41E3A'/%3E%3Cpath d='M8 20 Q12 10 16 14 Q20 18 24 12' fill='none' stroke='%23F5E6C8' stroke-width='2.5' stroke-linecap='round'/%3E%3Cpath d='M10 22 Q14 16 18 20' fill='none' stroke='%23F5E6C8' stroke-width='1.5' stroke-linecap='round' opacity='0.7'/%3E%3C/svg%3E">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Caveat:wght@500;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            hand: {
+              red: '#C41E3A',
+              redDeep: '#9B1830',
+              cream: '#F5E6C8',
+              paper: '#FAF3E8',
+              ink: '#2C1810',
+              mute: '#6B4F3F',
+              soft: '#E8D5B7',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            script: ['Caveat', 'cursive'],
+            hand: ['Patrick Hand', 'cursive'],
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.9s ease-out forwards',
+            'slide-up': 'slideUp 0.8s ease-out forwards',
+          },
+          keyframes: {
+            fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+            slideUp: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background-color: #FAF3E8;
+      color: #2C1810;
+    }
+    ::selection { background: #C41E3A; color: #F5E6C8; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #F5E6C8; }
+    ::-webkit-scrollbar-thumb { background: #C41E3A; border-radius: 3px; }
+
+    .font-script { font-family: 'Caveat', cursive; }
+    .font-hand { font-family: 'Patrick Hand', cursive; }
+
+    /* Slight rotation for hand-drawn feel */
+    .wobble { transform: rotate(-1.5deg); }
+    .wobble-r { transform: rotate(1.2deg); }
+
+    .note-card {
+      background: #FAF3E8;
+      border: 1.5px solid rgba(44, 24, 16, 0.15);
+      box-shadow: 3px 3px 0 rgba(196, 30, 58, 0.08);
+    }
+
+    /* Underline scribble */
+    .scribble-underline {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 8'%3E%3Cpath d='M0 4 Q25 0 50 4 Q75 8 100 3' fill='none' stroke='%23C41E3A' stroke-width='2'/%3E%3C/svg%3E");
+      background-repeat: repeat-x;
+      background-size: 80px 6px;
+      background-position: bottom;
+      padding-bottom: 6px;
+    }
+  </style>
+</head>
+
+<body class="bg-hand-paper text-hand-ink antialiased overflow-x-hidden">
+
+  <!-- NAV -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-hand-paper/95 border-b border-hand-soft">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full bg-hand-red flex items-center justify-center">
+          <span class="font-script text-hand-cream text-lg leading-none">p</span>
+        </div>
+        <span class="font-script text-xl text-hand-ink">handwritten</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-hand text-hand-mute">
+        <a href="#note" class="hover:text-hand-red transition-colors">یادداشت</a>
+        <a href="#rules" class="hover:text-hand-red transition-colors">اصول</a>
+        <a href="#platforms" class="hover:text-hand-red transition-colors">پلتفرم</a>
+        <a href="#agent" class="hover:text-hand-red transition-colors">ایجنت</a>
+        <a href="#contact" class="hover:text-hand-red transition-colors">تماس</a>
+      </nav>
+
+      <a href="#contact" class="text-sm font-hand px-5 py-2 rounded-full bg-hand-red text-hand-cream hover:bg-hand-redDeep transition-colors">
+        write something
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="min-h-screen flex items-center pt-16">
+    <div class="max-w-5xl mx-auto px-6 w-full py-16 md:py-20">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+
+        <!-- Text -->
+        <div class="lg:col-span-6 space-y-7">
+          <div class="animate-fade-in">
+            <p class="font-hand text-sm text-hand-mute mb-4">Style 20 · Offbeat & Human</p>
+          </div>
+
+          <h1 class="font-script text-5xl sm:text-6xl md:text-7xl leading-[1.1] animate-slide-up text-hand-ink">
+            prickly<br>
+            <span class="text-hand-red">pear.</span>
+          </h1>
+
+          <p class="font-hand text-xl text-hand-mute leading-relaxed max-w-md animate-slide-up" style="animation-delay:100ms">
+            a delightfully offbeat<br>
+            handwriting font.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2 animate-slide-up" style="animation-delay:200ms">
+            <a href="#note" class="inline-flex items-center gap-2 bg-hand-red text-hand-cream px-7 py-3 text-sm font-hand hover:bg-hand-redDeep transition-colors rounded-full">
+              read the note
+            </a>
+            <a href="#rules" class="text-sm font-hand text-hand-mute hover:text-hand-ink transition-colors scribble-underline">
+              the rules
+            </a>
+          </div>
+        </div>
+
+        <!-- Note card visual -->
+        <div class="lg:col-span-6 flex justify-center lg:justify-end animate-fade-in" style="animation-delay:150ms">
+          <div class="relative w-full max-w-sm">
+            <div class="bg-hand-red rounded-sm overflow-hidden shadow-xl wobble">
+              <div class="aspect-[3/4] p-8 flex flex-col justify-center items-center text-center relative">
+                
+                <!-- Small typehint -->
+                <p class="font-hand text-xs text-hand-cream/50 absolute top-6 left-0 right-0 tracking-wide">TYPEHINT, ...</p>
+
+                <!-- Main handwritten title -->
+                <div class="relative">
+                  <div class="bg-hand-cream px-6 py-3 rounded-sm wobble-r mb-2 inline-block">
+                    <span class="font-script text-4xl md:text-5xl text-hand-ink">Prickly</span>
+                  </div>
+                  <div class="bg-hand-cream px-6 py-3 rounded-sm wobble inline-block">
+                    <span class="font-script text-4xl md:text-5xl text-hand-ink">pear.</span>
+                  </div>
+                </div>
+
+                <p class="font-hand text-hand-cream/80 text-sm mt-8 leading-relaxed max-w-[200px]">
+                  a delightfully<br>
+                  offbeat<br>
+                  handwriting<br>
+                  font.
+                </p>
+
+                <!-- Scribble decoration -->
+                <div class="absolute bottom-8 left-8 right-8">
+                  <svg viewBox="0 0 200 20" class="w-full opacity-30">
+                    <path d="M10 10 Q50 2 90 12 Q130 20 190 8" fill="none" stroke="#F5E6C8" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </div>
+
+                <span class="absolute bottom-4 right-4 font-hand text-xs text-hand-cream/40">20</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOTE -->
+  <section id="note" class="py-24 md:py-28 bg-hand-red text-hand-cream">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-14 items-center">
+        <div>
+          <p class="font-hand text-sm opacity-60 mb-4">the idea</p>
+          <h2 class="font-script text-4xl md:text-5xl leading-tight mb-6">
+            imperfect<br>
+            is the point
+          </h2>
+          <p class="font-hand text-lg leading-relaxed opacity-90 mb-6">
+            دست‌نویس یعنی انسان. 
+            خطوط کمی کج، فاصله‌های ناهماهنگ، و حسی که انگار کسی با خودکار روی کاغذ نوشته.
+          </p>
+          <p class="text-sm opacity-70 leading-relaxed">
+            مناسب برندهای شخصی، کافه‌ها، استودیوهای کوچک، و هر جایی که می‌خواهد صمیمی و واقعی به نظر برسد.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <div class="bg-hand-cream/10 border border-hand-cream/20 p-6 rounded-sm">
+            <p class="font-script text-2xl mb-1">human</p>
+            <p class="font-hand text-sm opacity-70">نه ربات، نه قالب خشک</p>
+          </div>
+          <div class="bg-hand-cream/10 border border-hand-cream/20 p-6 rounded-sm">
+            <p class="font-script text-2xl mb-1">offbeat</p>
+            <p class="font-hand text-sm opacity-70">کمی عجیب، کاملاً دوست‌داشتنی</p>
+          </div>
+          <div class="bg-hand-cream/10 border border-hand-cream/20 p-6 rounded-sm">
+            <p class="font-script text-2xl mb-1">warm</p>
+            <p class="font-hand text-sm opacity-70">قرمز و کرم، مثل نامه قدیمی</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RULES -->
+  <section id="rules" class="py-24 md:py-28">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="max-w-xl mb-14">
+        <p class="font-hand text-sm text-hand-mute mb-3">three notes</p>
+        <h2 class="font-script text-4xl md:text-5xl mb-4">اصول دست‌نویس</h2>
+        <p class="font-hand text-hand-mute">اگر خیلی صاف است، هنوز با دست نوشته نشده.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="note-card p-7 rounded-sm wobble">
+          <p class="font-script text-3xl text-hand-red mb-3">01</p>
+          <h3 class="font-hand text-xl mb-3">ناقص باش</h3>
+          <p class="text-sm text-hand-mute leading-relaxed">
+            خطوط صاف ممنوع. کمی کجی، کمی لرزش — همان چیزی که حس انسان می‌دهد.
+          </p>
+        </div>
+        <div class="note-card p-7 rounded-sm wobble-r">
+          <p class="font-script text-3xl text-hand-red mb-3">02</p>
+          <h3 class="font-hand text-xl mb-3">فاصله آزاد</h3>
+          <p class="text-sm text-hand-mute leading-relaxed">
+            فاصله حروف و سطرها یکنواخت نباشد. ریتم طبیعی دست مهم‌تر از شبکه است.
+          </p>
+        </div>
+        <div class="note-card p-7 rounded-sm wobble">
+          <p class="font-script text-3xl text-hand-red mb-3">03</p>
+          <h3 class="font-hand text-xl mb-3">صمیمی بنویس</h3>
+          <p class="text-sm text-hand-mute leading-relaxed">
+            لحن مثل نامه به دوست باشد، نه بیانیه رسمی. کوتاه، گرم، و کمی شوخ.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATFORMS -->
+  <section id="platforms" class="py-24 md:py-28 bg-hand-soft/40">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center max-w-xl mx-auto mb-14">
+        <p class="font-hand text-sm text-hand-mute mb-3">everywhere</p>
+        <h2 class="font-script text-4xl md:text-5xl mb-4">روی هر صفحه</h2>
+        <p class="font-hand text-hand-mute">دست‌نویس برای وب، اپ و ایجنت — با همان حس نامه.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="note-card p-7 rounded-sm hover:shadow-md transition-shadow">
+          <p class="font-script text-2xl text-hand-red mb-3">web</p>
+          <h3 class="font-hand text-lg mb-2">وب‌سایت</h3>
+          <p class="text-sm text-hand-mute leading-relaxed mb-4">
+            کافه، استودیو شخصی، برندهای دست‌ساز، وبلاگ و صفحات «درباره من».
+          </p>
+          <span class="text-xs font-hand text-hand-red">personal · warm</span>
+        </div>
+
+        <div class="note-card p-7 rounded-sm hover:shadow-md transition-shadow">
+          <p class="font-script text-2xl text-hand-red mb-3">app</p>
+          <h3 class="font-hand text-lg mb-2">اپلیکیشن</h3>
+          <p class="text-sm text-hand-mute leading-relaxed mb-4">
+            ژورنال، یادداشت، عادت‌سازی و اپ‌های خلاق با حس دفترچه واقعی.
+          </p>
+          <span class="text-xs font-hand text-hand-red">journal · soft</span>
+        </div>
+
+        <div class="note-card p-7 rounded-sm hover:shadow-md transition-shadow">
+          <p class="font-script text-2xl text-hand-red mb-3">agent</p>
+          <h3 class="font-hand text-lg mb-2">ایجنت هوشمند</h3>
+          <p class="text-sm text-hand-mute leading-relaxed mb-4">
+            ایجنت‌های دوستانه و صمیمی با پاسخ‌های کوتاه مثل یادداشت روی کاغذ.
+          </p>
+          <span class="text-xs font-hand text-hand-red">friend · note</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENT -->
+  <section id="agent" class="py-24 md:py-28">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-14 items-center">
+        <div>
+          <p class="font-hand text-sm text-hand-red mb-4">pen pal agent</p>
+          <h2 class="font-script text-4xl md:text-5xl mb-5">
+            ایجنتی که<br>
+            <span class="text-hand-red">با دست می‌نویسد</span>
+          </h2>
+          <p class="font-hand text-lg text-hand-mute leading-relaxed mb-8">
+            در دست‌نویس، ایجنت مثل یک دوست روی کاغذ جواب می‌دهد. 
+            کوتاه، گرم، و بدون فرم رسمی.
+          </p>
+          <div class="space-y-3 font-hand text-sm">
+            <div class="flex items-center gap-3">
+              <div class="w-2 h-2 rounded-full bg-hand-red"></div>
+              <span class="text-hand-ink/70">حباب‌های نامنظم</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-2 h-2 rounded-full bg-hand-red"></div>
+              <span class="text-hand-ink/70">لحن دوستانه و کوتاه</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-2 h-2 rounded-full bg-hand-red"></div>
+              <span class="text-hand-ink/70">بدون دکمه‌های خشک</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Handwritten chat -->
+        <div class="note-card rounded-sm overflow-hidden">
+          <div class="px-5 py-4 border-b border-hand-soft flex items-center gap-3 bg-hand-cream">
+            <div class="w-9 h-9 rounded-full bg-hand-red flex items-center justify-center">
+              <span class="font-script text-hand-cream text-sm">p</span>
+            </div>
+            <div>
+              <p class="font-script text-lg">pear</p>
+              <p class="font-hand text-xs text-hand-mute">writing · offline sometimes</p>
+            </div>
+          </div>
+
+          <div class="p-5 space-y-4 min-h-[200px]">
+            <div class="flex justify-start">
+              <div class="bg-hand-soft/60 text-hand-ink px-4 py-2.5 max-w-[80%] rounded-sm text-sm font-hand wobble">
+                سلام. امروز چی بنویسیم؟
+              </div>
+            </div>
+            <div class="flex justify-end">
+              <div class="bg-hand-red text-hand-cream px-4 py-2.5 max-w-[80%] rounded-sm text-sm font-hand wobble-r">
+                یه لندینگ دست‌نویس برای کافه
+              </div>
+            </div>
+            <div class="flex justify-start">
+              <div class="bg-hand-soft/60 text-hand-ink px-4 py-2.5 max-w-[80%] rounded-sm text-sm font-hand wobble">
+                عالیه. قرمز + کرم + یه کم کجی. شروع کنیم.
+              </div>
+            </div>
+          </div>
+
+          <div class="px-5 py-4 border-t border-hand-soft flex gap-3">
+            <input type="text" placeholder="یه چیزی بنویس..." 
+                   class="flex-1 bg-hand-cream border border-hand-soft px-4 py-2.5 text-sm font-hand rounded-sm focus:outline-none focus:border-hand-red/40">
+            <button class="bg-hand-red text-hand-cream px-5 py-2.5 text-sm font-hand rounded-sm hover:bg-hand-redDeep transition-colors">
+              send
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="py-28 md:py-36 bg-hand-red text-hand-cream">
+    <div class="max-w-2xl mx-auto px-6 text-center">
+      <p class="font-hand text-sm opacity-60 mb-6">the last page</p>
+      
+      <h2 class="font-script text-4xl md:text-6xl leading-tight mb-6">
+        ready to write<br>
+        something real?
+      </h2>
+      
+      <p class="font-hand text-lg mb-10 max-w-md mx-auto opacity-90">
+        کاغذ خالی منتظر خط اول توست.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="mailto:hello@parvizmoin.ir" 
+           class="inline-flex items-center justify-center bg-hand-cream text-hand-ink px-10 py-3.5 text-sm font-hand hover:bg-white transition-colors rounded-full">
+          start a project
+        </a>
+        <a href="#" 
+           class="inline-flex items-center justify-center border border-hand-cream/50 text-hand-cream px-10 py-3.5 text-sm font-hand hover:bg-hand-cream/10 transition-colors rounded-full">
+          see more notes
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-hand-soft">
+    <div class="max-w-5xl mx-auto px-6 py-10">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-hand-mute">
+        <div class="flex items-center gap-3">
+          <div class="w-3 h-3 rounded-full bg-hand-red"></div>
+          <span class="font-hand">© 2026 handwritten · template 20</span>
+        </div>
+        
+        <div class="flex items-center gap-8 font-hand">
+          <a href="#" class="hover:text-hand-red transition-colors">privacy</a>
+          <a href="#" class="hover:text-hand-red transition-colors">terms</a>
+          <span>
+            by <a href="https://parvizmoin.ir" target="_blank" rel="noopener noreferrer" class="text-hand-ink/70 hover:text-hand-red transition-colors underline underline-offset-2">parvizmoin.ir</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+    document.querySelectorAll('section > div').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(16px)';
+      el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+      obs.observe(el);
+    });
+  </script>
+</body>
+</html>

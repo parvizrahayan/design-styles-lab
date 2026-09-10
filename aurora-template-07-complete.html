@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="قالب آرورا کامل – AURORAE | Aurora Surreal UI Template 2026" />
+  <title>AURORAE – Aurora Surreal Template</title>
+
+  <!-- Favicon – Aurora (glowing gradient orb) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23C084FC'/%3E%3Cstop offset='40%25' stop-color='%23F472B6'/%3E%3Cstop offset='70%25' stop-color='%23FB923C'/%3E%3Cstop offset='100%25' stop-color='%2360A5FA'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='%23050508'/%3E%3Ccircle cx='16' cy='16' r='11' fill='url(%23a)' opacity='0.85'/%3E%3Ccircle cx='16' cy='16' r='5' fill='rgba(255,255,255,0.35)'/%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23C084FC'/%3E%3Cstop offset='40%25' stop-color='%23F472B6'/%3E%3Cstop offset='70%25' stop-color='%23FB923C'/%3E%3Cstop offset='100%25' stop-color='%2360A5FA'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='%23050508'/%3E%3Ccircle cx='16' cy='16' r='11' fill='url(%23a)' opacity='0.85'/%3E%3Ccircle cx='16' cy='16' r='5' fill='rgba(255,255,255,0.35)'/%3E%3C/svg%3E">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            aurora: {
+              950: '#050508',
+              900: '#0A0A10',
+              800: '#12121C',
+              700: '#1A1A28',
+            },
+            glow: {
+              purple: '#C084FC',
+              pink: '#F472B6',
+              orange: '#FB923C',
+              blue: '#60A5FA',
+              violet: '#A78BFA',
+            },
+            mist: {
+              100: '#F5F3FF',
+              200: '#E9E5F5',
+              300: '#C4B8E0',
+              400: '#9B8BB8',
+              500: '#6B5B8A',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Outfit', 'Inter', 'sans-serif'],
+          },
+          animation: {
+            'fade-in': 'fadeIn 1s ease-out forwards',
+            'slide-up': 'slideUp 0.9s ease-out forwards',
+            'float': 'float 8s ease-in-out infinite',
+            'pulse-glow': 'pulseGlow 4s ease-in-out infinite',
+            'aurora-shift': 'auroraShift 12s ease-in-out infinite',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            slideUp: {
+              '0%': { opacity: '0', transform: 'translateY(30px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-16px)' },
+            },
+            pulseGlow: {
+              '0%, 100%': { opacity: '0.5' },
+              '50%': { opacity: '0.9' },
+            },
+            auroraShift: {
+              '0%, 100%': { transform: 'translateX(0) scale(1)' },
+              '33%': { transform: 'translateX(3%) scale(1.05)' },
+              '66%': { transform: 'translateX(-2%) scale(0.98)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background-color: #050508;
+      color: #E9E5F5;
+    }
+    ::selection {
+      background-color: rgba(192, 132, 252, 0.4);
+      color: #fff;
+    }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: #050508; }
+    ::-webkit-scrollbar-thumb { background: #3A2A5A; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #C084FC; }
+
+    .font-display { font-family: 'Outfit', sans-serif; }
+
+    /* Soft glass */
+    .aurora-glass {
+      background: rgba(18, 18, 28, 0.55);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .aurora-glass-strong {
+      background: rgba(26, 26, 40, 0.7);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+    }
+
+    .accent-line {
+      width: 48px;
+      height: 2px;
+      background: linear-gradient(90deg, #C084FC, #F472B6, #FB923C);
+      border-radius: 2px;
+    }
+
+    /* Aurora orbs */
+    .aurora-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(90px);
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body class="bg-aurora-950 text-mist-200 antialiased overflow-x-hidden">
+
+  <!-- Living Aurora Background -->
+  <div class="fixed inset-0 overflow-hidden pointer-events-none">
+    <div class="aurora-orb w-[600px] h-[500px] bg-glow-purple/25 -top-40 left-1/4 animate-aurora-shift"></div>
+    <div class="aurora-orb w-[500px] h-[400px] bg-glow-pink/20 top-1/3 -right-20 animate-pulse-glow" style="animation-delay:1s;"></div>
+    <div class="aurora-orb w-[450px] h-[350px] bg-glow-orange/15 bottom-0 left-1/3 animate-aurora-shift" style="animation-delay:3s;"></div>
+    <div class="aurora-orb w-[300px] h-[300px] bg-glow-blue/20 bottom-1/4 right-1/4 animate-pulse-glow" style="animation-delay:2s;"></div>
+  </div>
+
+  <!-- NAV -->
+  <header class="fixed top-0 inset-x-0 z-50">
+    <div class="aurora-glass border-b border-white/5">
+      <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+        <a href="#" class="flex items-center gap-3 group">
+          <div class="w-8 h-8 rounded-full bg-gradient-to-br from-glow-purple via-glow-pink to-glow-orange opacity-90"></div>
+          <span class="text-xs tracking-[0.2em] text-mist-400 uppercase font-medium font-display">
+            AURORAE
+          </span>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-9 text-sm text-mist-400">
+          <a href="#aurora" class="hover:text-white transition-colors duration-300">آرورا</a>
+          <a href="#principles" class="hover:text-white transition-colors duration-300">اصول</a>
+          <a href="#platforms" class="hover:text-white transition-colors duration-300">پلتفرم‌ها</a>
+          <a href="#agent" class="hover:text-white transition-colors duration-300">ایجنت</a>
+          <a href="#contact" class="hover:text-white transition-colors duration-300">تماس</a>
+        </nav>
+
+        <a href="#contact" 
+           class="text-xs tracking-wide px-5 py-2 rounded-full aurora-glass-strong text-white hover:bg-white/10 transition-all duration-300 font-medium">
+          ورود به نور
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="min-h-screen flex items-center pt-16 relative">
+    <div class="max-w-6xl mx-auto px-6 w-full py-24 md:py-28 relative z-10">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+
+        <!-- Text -->
+        <div class="lg:col-span-6 space-y-8">
+          <div class="animate-fade-in">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full aurora-glass text-xs text-mist-300 mb-6">
+              <span class="w-1.5 h-1.5 rounded-full bg-glow-pink animate-pulse"></span>
+              <span class="tracking-wider uppercase">Surreal · Ethereal · 2026</span>
+            </div>
+          </div>
+
+          <h1 class="font-display text-5xl sm:text-6xl md:text-7xl font-bold leading-[1.05] tracking-tight animate-slide-up">
+            <span class="text-white">AUROR</span><span class="bg-gradient-to-r from-glow-purple via-glow-pink to-glow-orange bg-clip-text text-transparent">AE</span>
+          </h1>
+
+          <p class="text-lg md:text-xl text-mist-400 leading-relaxed max-w-md animate-slide-up" style="animation-delay:100ms">
+            نورهای شمالی در رابط کاربری.<br>
+            سورئال، اترال و درخشان.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2 animate-slide-up" style="animation-delay:200ms">
+            <a href="#aurora" 
+               class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-glow-purple via-glow-pink to-glow-orange text-white text-sm font-semibold tracking-wide hover:opacity-90 transition-all duration-300 shadow-lg shadow-glow-purple/20">
+              کشف نور
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+              </svg>
+            </a>
+            <a href="#principles" class="text-sm text-mist-400 hover:text-white transition-colors underline underline-offset-4 decoration-white/20 hover:decoration-white/50">
+              اصول سورئال
+            </a>
+          </div>
+        </div>
+
+        <!-- Visual – Aurora Card -->
+        <div class="lg:col-span-6 flex justify-center lg:justify-end animate-fade-in" style="animation-delay:150ms">
+          <div class="relative w-full max-w-sm">
+            <!-- Glow behind -->
+            <div class="absolute -inset-8 bg-gradient-to-br from-glow-purple/30 via-glow-pink/20 to-glow-orange/20 rounded-full blur-3xl animate-pulse-glow"></div>
+
+            <div class="relative aurora-glass-strong rounded-3xl overflow-hidden shadow-2xl shadow-black/50">
+              <div class="aspect-[4/5] p-8 flex flex-col justify-between relative">
+                <!-- Soft aurora wash inside card -->
+                <div class="absolute inset-0 bg-gradient-to-br from-glow-purple/10 via-transparent to-glow-orange/10 pointer-events-none"></div>
+
+                <!-- Top -->
+                <div class="relative flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <div class="w-2 h-2 rounded-full bg-glow-pink animate-pulse"></div>
+                    <span class="text-[10px] tracking-widest text-mist-400 uppercase">Northern Light</span>
+                  </div>
+                  <span class="text-[10px] tracking-widest text-mist-500">v07</span>
+                </div>
+
+                <!-- Center -->
+                <div class="relative text-center py-8">
+                  <div class="w-28 h-28 mx-auto mb-6 rounded-full bg-gradient-to-br from-glow-purple via-glow-pink to-glow-orange opacity-80 blur-[2px] animate-float"></div>
+                  <h3 class="font-display text-2xl font-bold text-white mb-2 tracking-wide">
+                    AURORAE
+                  </h3>
+                  <p class="text-sm text-mist-400 max-w-[180px] mx-auto">
+                    Where light becomes emotion
+                  </p>
+                </div>
+
+                <!-- Bottom -->
+                <div class="relative flex items-center justify-between">
+                  <div class="flex gap-1.5">
+                    <div class="w-2 h-2 rounded-full bg-glow-purple"></div>
+                    <div class="w-2 h-2 rounded-full bg-glow-pink"></div>
+                    <div class="w-2 h-2 rounded-full bg-glow-orange"></div>
+                    <div class="w-2 h-2 rounded-full bg-glow-blue"></div>
+                  </div>
+                  <span class="text-[11px] text-mist-400 tracking-wider">Ethereal Flow →</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AURORA INTRO -->
+  <section id="aurora" class="py-28 md:py-36 relative z-10">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <div class="accent-line mb-6"></div>
+          <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-6">
+            نورهایی که<br>
+            <span class="bg-gradient-to-r from-glow-purple via-glow-pink to-glow-orange bg-clip-text text-transparent">
+              احساس می‌شوند
+            </span>
+          </h2>
+          <p class="text-mist-400 leading-relaxed mb-8">
+            سبک Aurora از شفق قطبی الهام گرفته. گرادیان‌های نرم و درخشان، 
+            عمق تاریک و حس سورئال، فضایی شاعرانه و مدرن می‌سازند.
+          </p>
+          <ul class="space-y-4 text-sm text-mist-300">
+            <li class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-glow-purple mt-2 shrink-0"></span>
+              <span>گرادیان‌های زنده بنفش–صورتی–نارنجی–آبی</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-glow-pink mt-2 shrink-0"></span>
+              <span>درخشش نرم و لایه‌های نوری</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-glow-orange mt-2 shrink-0"></span>
+              <span>حس سورئال و اترال</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-glow-blue mt-2 shrink-0"></span>
+              <span>مناسب تجربه‌های احساسی و خلاق</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Gradient showcase -->
+        <div class="relative h-72 rounded-3xl overflow-hidden aurora-glass-strong">
+          <div class="absolute inset-0 bg-gradient-to-br from-glow-purple/40 via-glow-pink/30 to-glow-orange/40 animate-aurora-shift"></div>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center relative z-10">
+              <p class="text-[10px] tracking-[0.25em] text-white/60 uppercase mb-3">Spectrum</p>
+              <p class="font-display text-xl font-semibold text-white">Living Gradient</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRINCIPLES -->
+  <section id="principles" class="py-28 relative z-10">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="max-w-2xl mb-20">
+        <div class="accent-line mb-6"></div>
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-5">سه اصل نور</h2>
+        <p class="text-mist-400 leading-relaxed">درخشش کنترل‌شده، عمق تاریک و احساس سیال.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="aurora-glass rounded-2xl p-8 hover:border-white/10 transition-colors duration-300">
+          <div class="w-11 h-11 rounded-xl bg-glow-purple/20 flex items-center justify-center mb-6">
+            <span class="text-glow-purple font-display font-bold text-sm">01</span>
+          </div>
+          <h3 class="text-xl font-display font-semibold text-white mb-3">گرادیان زنده</h3>
+          <p class="text-sm text-mist-400 leading-relaxed">
+            رنگ‌ها باید حرکت کنند. انتقال نرم بین بنفش، صورتی و نارنجی حس نفس کشیدن می‌دهد.
+          </p>
+        </div>
+
+        <div class="aurora-glass rounded-2xl p-8 hover:border-white/10 transition-colors duration-300">
+          <div class="w-11 h-11 rounded-xl bg-glow-pink/20 flex items-center justify-center mb-6">
+            <span class="text-glow-pink font-display font-bold text-sm">02</span>
+          </div>
+          <h3 class="text-xl font-display font-semibold text-white mb-3">عمق تاریک</h3>
+          <p class="text-sm text-mist-400 leading-relaxed">
+            پس‌زمینه تقریباً سیاه، نورها را برجسته می‌کند. تاریکی بوم است، نور نقاشی.
+          </p>
+        </div>
+
+        <div class="aurora-glass rounded-2xl p-8 hover:border-white/10 transition-colors duration-300">
+          <div class="w-11 h-11 rounded-xl bg-glow-orange/20 flex items-center justify-center mb-6">
+            <span class="text-glow-orange font-display font-bold text-sm">03</span>
+          </div>
+          <h3 class="text-xl font-display font-semibold text-white mb-3">حس سورئال</h3>
+          <p class="text-sm text-mist-400 leading-relaxed">
+            کمی رویا، کمی رمز و راز. رابط نباید کاملاً زمینی باشد — باید کمی شناور بماند.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATFORMS -->
+  <section id="platforms" class="py-28 md:py-36 relative z-10">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-20">
+        <div class="accent-line mx-auto mb-6"></div>
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-5">برای هر افق</h2>
+        <p class="text-mist-400">از تجربه‌های احساسی تا ایجنت‌های خلاق.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="aurora-glass rounded-2xl p-8 hover:border-white/10 transition-all duration-300">
+          <div class="w-12 h-12 rounded-xl aurora-glass-strong flex items-center justify-center mb-6">
+            <svg class="w-5 h-5 text-mist-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-display font-semibold text-white mb-3">وب‌سایت</h3>
+          <p class="text-sm text-mist-400 leading-relaxed mb-6">
+            لندینگ‌های خلاق، برندهای هنری، استودیوهای تجربه و صفحات شاعرانه.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-[11px] px-2.5 py-1 rounded-full aurora-glass text-mist-400">Creative</span>
+            <span class="text-[11px] px-2.5 py-1 rounded-full aurora-glass text-mist-400">Art</span>
+          </div>
+        </div>
+
+        <div class="aurora-glass rounded-2xl p-8 hover:border-white/10 transition-all duration-300">
+          <div class="w-12 h-12 rounded-xl aurora-glass-strong flex items-center justify-center mb-6">
+            <svg class="w-5 h-5 text-mist-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-display font-semibold text-white mb-3">اپلیکیشن</h3>
+          <p class="text-sm text-mist-400 leading-relaxed mb-6">
+            اپ‌های مدیتیشن، خواب، موسیقی و تجربه‌های احساسی با نور نرم.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-[11px] px-2.5 py-1 rounded-full aurora-glass text-mist-400">Wellness</span>
+            <span class="text-[11px] px-2.5 py-1 rounded-full aurora-glass text-mist-400">Mood</span>
+          </div>
+        </div>
+
+        <div class="aurora-glass rounded-2xl p-8 hover:border-white/10 transition-all duration-300">
+          <div class="w-12 h-12 rounded-xl aurora-glass-strong flex items-center justify-center mb-6">
+            <svg class="w-5 h-5 text-mist-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-display font-semibold text-white mb-3">ایجنت هوشمند</h3>
+          <p class="text-sm text-mist-400 leading-relaxed mb-6">
+            ایجنت‌های خلاق، نویسندگی و ایده‌پردازی با فضای آرام و الهام‌بخش.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-[11px] px-2.5 py-1 rounded-full aurora-glass text-mist-400">Creative AI</span>
+            <span class="text-[11px] px-2.5 py-1 rounded-full aurora-glass text-mist-400">Inspire</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENT -->
+  <section id="agent" class="py-28 relative z-10">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="text-xs tracking-[0.18em] text-glow-pink uppercase mb-4 font-medium">Ethereal Agent</p>
+          <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-6">
+            ایجنتی از<br>
+            <span class="bg-gradient-to-r from-glow-purple via-glow-pink to-glow-orange bg-clip-text text-transparent">جنس نور</span>
+          </h2>
+          <p class="text-mist-400 leading-relaxed mb-8">
+            در سبک Aurora، ایجنت باید الهام‌بخش و آرام باشد. 
+            گرادیان‌های نرم، فضای تاریک و تایپوگرافی لطیف، تمرکز را روی خلاقیت نگه می‌دارند.
+          </p>
+          <div class="space-y-4 text-sm">
+            <div class="flex items-center gap-3">
+              <div class="w-2 h-2 rounded-full bg-glow-purple"></div>
+              <span class="text-mist-300">پاسخ‌های شاعرانه و لایه‌ای</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-2 h-2 rounded-full bg-glow-pink"></div>
+              <span class="text-mist-300">نور برای تأکید، نه شلوغی</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-2 h-2 rounded-full bg-glow-orange"></div>
+              <span class="text-mist-300">حس شناور و بدون مرز</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aurora Chat -->
+        <div class="aurora-glass-strong rounded-3xl overflow-hidden shadow-2xl shadow-black/40">
+          <div class="px-5 py-4 border-b border-white/5 flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full bg-gradient-to-br from-glow-purple via-glow-pink to-glow-orange"></div>
+            <div>
+              <p class="text-sm font-medium text-white">Lumina</p>
+              <p class="text-[11px] text-mist-500">Creative Agent · Glowing</p>
+            </div>
+          </div>
+
+          <div class="p-5 space-y-4 min-h-[210px]">
+            <div class="flex justify-start">
+              <div class="aurora-glass rounded-2xl rounded-tl-md px-4 py-3 max-w-[80%]">
+                <p class="text-sm text-mist-200">امروز چه نوری می‌خواهی بسازی؟</p>
+              </div>
+            </div>
+            <div class="flex justify-end">
+              <div class="bg-gradient-to-r from-glow-purple/90 to-glow-pink/90 rounded-2xl rounded-tr-md px-4 py-3 max-w-[80%]">
+                <p class="text-sm text-white font-medium">یک تجربه احساسی برای اپ مدیتیشن</p>
+              </div>
+            </div>
+            <div class="flex justify-start">
+              <div class="aurora-glass rounded-2xl rounded-tl-md px-4 py-3 max-w-[80%]">
+                <p class="text-sm text-mist-200">گرادیان آهسته + تاریکی عمیق + یک نقطه نور. مثل شفق در شب.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="px-5 py-4 border-t border-white/5">
+            <div class="flex gap-3">
+              <input type="text" placeholder="با Lumina حرف بزن..." 
+                     class="flex-1 aurora-glass rounded-full px-4 py-2.5 text-sm text-mist-200 placeholder-mist-500 focus:outline-none focus:border-white/15 transition-colors">
+              <button class="w-10 h-10 rounded-full bg-gradient-to-br from-glow-purple via-glow-pink to-glow-orange flex items-center justify-center hover:opacity-90 transition-opacity">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="py-32 md:py-40 relative z-10">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <div class="w-14 h-14 rounded-full bg-gradient-to-br from-glow-purple via-glow-pink to-glow-orange mx-auto mb-10 opacity-90 animate-pulse-glow"></div>
+      
+      <h2 class="font-display text-3xl md:text-5xl font-bold text-white mb-6">
+        آماده ورود به<br>
+        <span class="bg-gradient-to-r from-glow-purple via-glow-pink to-glow-orange bg-clip-text text-transparent">نور؟</span>
+      </h2>
+      
+      <p class="text-mist-400 text-lg mb-12 max-w-md mx-auto">
+        گاهی زیباترین رابط‌ها، آن‌هایی هستند که کمی شبیه رویا می‌مانند.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="mailto:hello@parvizmoin.ir" 
+           class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-glow-purple via-glow-pink to-glow-orange text-white px-10 py-4 text-sm font-semibold tracking-wide rounded-full hover:opacity-90 transition-all duration-300 shadow-lg shadow-glow-purple/25">
+          شروع گفتگو
+        </a>
+        <a href="#" 
+           class="inline-flex items-center justify-center gap-2 aurora-glass text-mist-300 px-10 py-4 text-sm font-medium tracking-wide rounded-full hover:bg-white/10 hover:text-white transition-all duration-300">
+          مشاهده نمونه‌ها
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="relative z-10 border-t border-white/5">
+    <div class="max-w-6xl mx-auto px-6 py-10">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-mist-500">
+        <div class="flex items-center gap-3">
+          <div class="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-glow-purple to-glow-orange"></div>
+          <span>© 2026 AURORAE · Aurora Surreal Template</span>
+        </div>
+        
+        <div class="flex items-center gap-8">
+          <a href="#" class="hover:text-mist-300 transition-colors">حریم خصوصی</a>
+          <a href="#" class="hover:text-mist-300 transition-colors">شرایط استفاده</a>
+          <span>
+            by <a href="https://parvizmoin.ir" target="_blank" rel="noopener noreferrer" class="text-mist-400 hover:text-glow-pink transition-colors underline underline-offset-2">parvizmoin.ir</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('section > div').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity 0.9s ease-out, transform 0.9s ease-out';
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>

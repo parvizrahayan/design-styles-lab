@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="قالب فیوچریستیک کامل – FUTURE VISION | Futuristic UI Template 2026" />
+  <title>FUTURE VISION – Futuristic Complete Template</title>
+
+  <!-- Favicon – Futuristic (neon red split circle on black) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23050505'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%23FF1A1A' stroke-width='2'/%3E%3Cline x1='16' y1='7' x2='16' y2='25' stroke='%23FF1A1A' stroke-width='1.5'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%23FF1A1A'/%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23050505'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%23FF1A1A' stroke-width='2'/%3E%3Cline x1='16' y1='7' x2='16' y2='25' stroke='%23FF1A1A' stroke-width='1.5'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%23FF1A1A'/%3E%3C/svg%3E">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            void: {
+              950: '#050505',
+              900: '#0A0A0A',
+              800: '#121212',
+              700: '#1A1A1A',
+              600: '#262626',
+            },
+            neon: {
+              red: '#FF1A1A',
+              redsoft: '#FF3333',
+              glow: '#FF0040',
+            },
+            metal: {
+              100: '#F5F5F5',
+              200: '#E5E5E5',
+              300: '#D4D4D4',
+              400: '#A3A3A3',
+              500: '#737373',
+              600: '#525252',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Space Grotesk', 'Inter', 'sans-serif'],
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.9s ease-out forwards',
+            'slide-up': 'slideUp 0.8s ease-out forwards',
+            'glitch': 'glitch 4s infinite',
+            'pulse-neon': 'pulseNeon 2.5s ease-in-out infinite',
+            'scan': 'scan 6s linear infinite',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            slideUp: {
+              '0%': { opacity: '0', transform: 'translateY(30px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            glitch: {
+              '0%, 90%, 100%': { transform: 'translate(0)' },
+              '92%': { transform: 'translate(-2px, 1px)' },
+              '94%': { transform: 'translate(2px, -1px)' },
+              '96%': { transform: 'translate(-1px, 2px)' },
+              '98%': { transform: 'translate(1px, -2px)' },
+            },
+            pulseNeon: {
+              '0%, 100%': { opacity: '1', boxShadow: '0 0 20px rgba(255, 26, 26, 0.4)' },
+              '50%': { opacity: '0.85', boxShadow: '0 0 40px rgba(255, 26, 26, 0.7)' },
+            },
+            scan: {
+              '0%': { transform: 'translateY(-100%)' },
+              '100%': { transform: 'translateY(100%)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background-color: #050505;
+      color: #E5E5E5;
+    }
+
+    ::selection {
+      background-color: #FF1A1A;
+      color: #FFFFFF;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: #0A0A0A; }
+    ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #FF1A1A; }
+
+    .font-display { font-family: 'Space Grotesk', sans-serif; }
+
+    /* Neon text glow */
+    .neon-text {
+      text-shadow: 0 0 10px rgba(255, 26, 26, 0.5),
+                   0 0 20px rgba(255, 26, 26, 0.3);
+    }
+
+    /* Cyber grid background */
+    .cyber-grid {
+      background-image: 
+        linear-gradient(rgba(255, 26, 26, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 26, 26, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    /* Scan line effect */
+    .scanlines::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(255, 26, 26, 0.03) 50%,
+        transparent 100%
+      );
+      background-size: 100% 4px;
+      pointer-events: none;
+      animation: scan 8s linear infinite;
+      opacity: 0.4;
+    }
+
+    /* Glass dark card */
+    .dark-glass {
+      background: rgba(18, 18, 18, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    /* Accent line */
+    .accent-line {
+      width: 40px;
+      height: 2px;
+      background: #FF1A1A;
+      box-shadow: 0 0 12px rgba(255, 26, 26, 0.6);
+    }
+
+    /* Split face visual */
+    .split-mask {
+      mask-image: linear-gradient(to right, black 48%, transparent 52%);
+      -webkit-mask-image: linear-gradient(to right, black 48%, transparent 52%);
+    }
+  </style>
+</head>
+
+<body class="bg-void-950 text-metal-200 antialiased overflow-x-hidden">
+
+  <!-- ========== NAVIGATION ========== -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-void-950/80 backdrop-blur-xl border-b border-white/5">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-2.5 h-2.5 rounded-full bg-neon-red animate-pulse-neon"></div>
+        <span class="text-xs tracking-[0.2em] text-metal-400 uppercase font-medium font-display">
+          FUTURE VISION
+        </span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-9 text-sm text-metal-400">
+        <a href="#vision" class="hover:text-white transition-colors duration-300">چشم‌انداز</a>
+        <a href="#principles" class="hover:text-white transition-colors duration-300">اصول</a>
+        <a href="#platforms" class="hover:text-white transition-colors duration-300">پلتفرم‌ها</a>
+        <a href="#agent" class="hover:text-white transition-colors duration-300">ایجنت</a>
+        <a href="#contact" class="hover:text-white transition-colors duration-300">تماس</a>
+      </nav>
+
+      <a href="#contact" 
+         class="text-xs tracking-wide px-5 py-2 rounded-full border border-neon-red/40 text-neon-red hover:bg-neon-red hover:text-white transition-all duration-300 font-medium">
+        فعال‌سازی
+      </a>
+    </div>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="min-h-screen flex items-center pt-16 relative overflow-hidden cyber-grid">
+    <!-- Ambient glow -->
+    <div class="absolute top-1/3 left-1/4 w-96 h-96 bg-neon-red/10 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-72 h-72 bg-neon-red/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto px-6 w-full py-24 md:py-28 relative z-10">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Text Content -->
+        <div class="lg:col-span-6 space-y-8">
+          <div class="animate-fade-in">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-neon-red/30 bg-neon-red/5 mb-6">
+              <span class="w-1.5 h-1.5 rounded-full bg-neon-red animate-pulse"></span>
+              <span class="text-[11px] tracking-widest text-neon-red uppercase font-medium">System Online · 2026</span>
+            </div>
+          </div>
+
+          <h1 class="font-display text-5xl sm:text-6xl md:text-7xl lg:text-[5.2rem] font-bold leading-[0.95] tracking-tight animate-slide-up">
+            <span class="text-white">FUTURE</span><br>
+            <span class="text-neon-red neon-text">VISION</span>
+          </h1>
+
+          <p class="text-lg md:text-xl text-metal-400 leading-relaxed max-w-md animate-slide-up" style="animation-delay: 100ms">
+            نیمه‌انسان. نیمه‌دیجیتال.<br>
+            جایی که واقعیت و داده در هم ادغام می‌شوند.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-2 animate-slide-up" style="animation-delay: 200ms">
+            <a href="#vision" 
+               class="inline-flex items-center gap-2 bg-neon-red text-white px-8 py-3.5 text-sm font-semibold tracking-wide rounded-full hover:bg-neon-redsoft transition-all duration-300 shadow-[0_0_30px_rgba(255,26,26,0.35)] hover:shadow-[0_0_40px_rgba(255,26,26,0.5)]">
+              ورود به سیستم
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+              </svg>
+            </a>
+            <a href="#principles" 
+               class="text-sm text-metal-400 hover:text-white transition-colors border-b border-metal-600 hover:border-metal-300 pb-0.5">
+              پروتکل‌ها
+            </a>
+          </div>
+
+          <!-- Stats -->
+          <div class="flex gap-10 pt-8 animate-slide-up" style="animation-delay: 300ms">
+            <div>
+              <p class="text-2xl font-display font-bold text-white">01.2026</p>
+              <p class="text-xs text-metal-500 tracking-wider uppercase mt-1">Release</p>
+            </div>
+            <div>
+              <p class="text-2xl font-display font-bold text-white">∞</p>
+              <p class="text-xs text-metal-500 tracking-wider uppercase mt-1">Possibilities</p>
+            </div>
+            <div>
+              <p class="text-2xl font-display font-bold text-neon-red">LIVE</p>
+              <p class="text-xs text-metal-500 tracking-wider uppercase mt-1">Status</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual – Split Face Concept -->
+        <div class="lg:col-span-6 flex justify-center lg:justify-end animate-fade-in" style="animation-delay: 200ms">
+          <div class="relative w-full max-w-md">
+            <!-- Outer frame -->
+            <div class="absolute -inset-3 border border-neon-red/20 rounded-2xl"></div>
+            <div class="absolute -inset-6 border border-white/5 rounded-2xl"></div>
+
+            <!-- Main visual card -->
+            <div class="relative dark-glass rounded-2xl overflow-hidden scanlines">
+              <div class="aspect-[4/5] bg-gradient-to-br from-void-800 to-void-950 relative flex items-center justify-center">
+                
+                <!-- Abstract split face representation -->
+                <div class="relative w-48 h-64 md:w-56 md:h-72">
+                  <!-- Left side (human) -->
+                  <div class="absolute inset-0 bg-gradient-to-br from-metal-400/20 to-metal-600/10 rounded-full blur-sm"></div>
+                  
+                  <!-- Core shape -->
+                  <div class="absolute inset-4 rounded-full bg-gradient-to-br from-void-700 to-void-900 border border-white/10 overflow-hidden">
+                    <!-- Split line -->
+                    <div class="absolute top-0 bottom-0 left-1/2 w-px bg-neon-red/60 z-10"></div>
+                    
+                    <!-- Left half -->
+                    <div class="absolute inset-0 right-1/2 bg-gradient-to-br from-metal-300/15 to-transparent"></div>
+                    
+                    <!-- Right half – digital -->
+                    <div class="absolute inset-0 left-1/2 bg-gradient-to-bl from-neon-red/20 to-transparent">
+                      <div class="absolute inset-0 opacity-40" style="background-image: radial-gradient(circle at 30% 40%, rgba(255,26,26,0.3) 0%, transparent 50%);"></div>
+                    </div>
+
+                    <!-- Eye indicators -->
+                    <div class="absolute top-[38%] left-[28%] w-3 h-3 rounded-full bg-metal-300/60"></div>
+                    <div class="absolute top-[38%] right-[28%] w-3 h-3 rounded-full bg-neon-red shadow-[0_0_12px_rgba(255,26,26,0.8)]"></div>
+                  </div>
+
+                  <!-- Floating data points -->
+                  <div class="absolute -top-2 -right-2 w-2 h-2 rounded-full bg-neon-red animate-pulse"></div>
+                  <div class="absolute -bottom-1 -left-3 w-1.5 h-1.5 rounded-full bg-metal-400"></div>
+                </div>
+
+                <!-- Corner labels -->
+                <div class="absolute top-5 left-5 text-[10px] tracking-widest text-metal-500 uppercase font-display">HUMAN</div>
+                <div class="absolute top-5 right-5 text-[10px] tracking-widest text-neon-red uppercase font-display">DIGITAL</div>
+                <div class="absolute bottom-5 left-5 text-[10px] tracking-widest text-metal-600 font-display">01.2026</div>
+                <div class="absolute bottom-5 right-5 text-[10px] tracking-widest text-metal-600 font-display">v2.0</div>
+              </div>
+
+              <!-- Bottom bar -->
+              <div class="px-6 py-4 border-t border-white/5 flex items-center justify-between bg-void-900/80">
+                <div>
+                  <p class="text-[10px] tracking-widest text-metal-500 uppercase">Neural Interface</p>
+                  <p class="text-sm font-medium text-white font-display">FUTURE VISION</p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-neon-red animate-pulse"></span>
+                  <span class="text-[11px] text-neon-red font-medium">ACTIVE</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== VISION / INTRO ========== -->
+  <section id="vision" class="py-28 md:py-36 relative">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <div class="accent-line mb-6"></div>
+          <h2 class="font-display text-3xl md:text-4xl font-bold tracking-tight text-white mb-6">
+            آینده از قبل<br>
+            <span class="text-neon-red">اینجاست</span>
+          </h2>
+          <p class="text-metal-400 leading-relaxed mb-8">
+            این قالب بر اساس پوستر FUTURE VISION طراحی شده. ترکیب کنتراست بالا، 
+            تایپوگرافی قوی و المان‌های نیمه‌دیجیتال، حس سایبر و پیشرفت را منتقل می‌کند.
+          </p>
+          
+          <ul class="space-y-4 text-sm text-metal-300">
+            <li class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-neon-red mt-2 shrink-0"></span>
+              <span>پالت تیره با تأکید نئون قرمز (Cyber Aesthetic)</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-neon-red mt-2 shrink-0"></span>
+              <span>تایپوگرافی Display و فشرده برای عناوین</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-neon-red mt-2 shrink-0"></span>
+              <span>افکت‌های نوری و گلیچ بسیار کنترل‌شده</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-neon-red mt-2 shrink-0"></span>
+              <span>سازگار با وب، اپ و رابط ایجنت‌های پیشرفته</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Code / Data visual -->
+        <div class="dark-glass rounded-2xl p-8 relative overflow-hidden">
+          <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neon-red/50 to-transparent"></div>
+          
+          <div class="space-y-3 font-mono text-xs text-metal-400">
+            <div class="flex gap-3">
+              <span class="text-neon-red">01</span>
+              <span class="text-metal-300">init_neural_link()</span>
+            </div>
+            <div class="flex gap-3">
+              <span class="text-neon-red">02</span>
+              <span>load_vision_module(2026)</span>
+            </div>
+            <div class="flex gap-3">
+              <span class="text-neon-red">03</span>
+              <span class="text-metal-300">merge_human_digital()</span>
+            </div>
+            <div class="flex gap-3">
+              <span class="text-neon-red">04</span>
+              <span>status: <span class="text-neon-red">ONLINE</span></span>
+            </div>
+            <div class="flex gap-3">
+              <span class="text-neon-red">05</span>
+              <span class="text-metal-500">awaiting_input...</span>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-white/5 flex items-center justify-between">
+            <span class="text-[11px] tracking-widest text-metal-500 uppercase">System Log</span>
+            <span class="text-[11px] text-neon-red font-medium">REAL-TIME</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PRINCIPLES ========== -->
+  <section id="principles" class="py-28 bg-void-900/50">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="max-w-2xl mb-20">
+        <div class="accent-line mb-6"></div>
+        <h2 class="font-display text-3xl md:text-4xl font-bold tracking-tight text-white mb-5">
+          پروتکل‌های طراحی
+        </h2>
+        <p class="text-metal-400 leading-relaxed">
+          فیوچریسم فقط ظاهر تاریک نیست. سیستم ارتباطی بین انسان و ماشین است.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Principle 1 -->
+        <div class="dark-glass rounded-2xl p-8 group hover:border-neon-red/30 transition-colors duration-300">
+          <div class="w-11 h-11 rounded-lg bg-neon-red/10 border border-neon-red/20 flex items-center justify-center mb-6 group-hover:bg-neon-red/20 transition-colors">
+            <span class="text-neon-red font-display font-bold text-sm">01</span>
+          </div>
+          <h3 class="text-xl font-display font-semibold text-white mb-3">کنتراست حداکثری</h3>
+          <p class="text-sm text-metal-400 leading-relaxed">
+            سیاه عمیق در برابر سفید و قرمز نئون. هر المان باید در تاریکی بدرخشد و توجه را هدایت کند.
+          </p>
+        </div>
+
+        <!-- Principle 2 -->
+        <div class="dark-glass rounded-2xl p-8 group hover:border-neon-red/30 transition-colors duration-300">
+          <div class="w-11 h-11 rounded-lg bg-neon-red/10 border border-neon-red/20 flex items-center justify-center mb-6 group-hover:bg-neon-red/20 transition-colors">
+            <span class="text-neon-red font-display font-bold text-sm">02</span>
+          </div>
+          <h3 class="text-xl font-display font-semibold text-white mb-3">تایپوگرافی قدرتمند</h3>
+          <p class="text-sm text-metal-400 leading-relaxed">
+            فونت‌های Display و فشرده برای عناوین. حس تکنولوژی و آینده‌نگری از طریق وزن و فاصله حروف.
+          </p>
+        </div>
+
+        <!-- Principle 3 -->
+        <div class="dark-glass rounded-2xl p-8 group hover:border-neon-red/30 transition-colors duration-300">
+          <div class="w-11 h-11 rounded-lg bg-neon-red/10 border border-neon-red/20 flex items-center justify-center mb-6 group-hover:bg-neon-red/20 transition-colors">
+            <span class="text-neon-red font-display font-bold text-sm">03</span>
+          </div>
+          <h3 class="text-xl font-display font-semibold text-white mb-3">نیمه‌دیجیتال</h3>
+          <p class="text-sm text-metal-400 leading-relaxed">
+            المان‌های انسانی و ماشینی در کنار هم. مرز بین ارگانیک و مصنوعی باید حس شود، نه کامل محو شود.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PLATFORMS ========== -->
+  <section id="platforms" class="py-28 md:py-36">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-20">
+        <div class="accent-line mx-auto mb-6"></div>
+        <h2 class="font-display text-3xl md:text-4xl font-bold tracking-tight text-white mb-5">
+          آماده برای هر جبهه
+        </h2>
+        <p class="text-metal-400">
+          یک سیستم بصری واحد برای وب‌سایت‌های تکنولوژی، اپ‌های آینده‌نگر و رابط ایجنت‌های پیشرفته.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Web -->
+        <div class="dark-glass rounded-2xl p-8 hover:border-neon-red/25 transition-all duration-300 group">
+          <div class="w-12 h-12 rounded-xl bg-void-700 border border-white/5 flex items-center justify-center mb-6 group-hover:border-neon-red/30 transition-colors">
+            <svg class="w-6 h-6 text-metal-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-display font-semibold text-white mb-3">وب‌سایت</h3>
+          <p class="text-sm text-metal-400 leading-relaxed mb-6">
+            لندینگ‌پیج محصولات AI، استودیوهای تکنولوژی، برندهای سایبر و پلتفرم‌های آینده‌نگر.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-[11px] px-2.5 py-1 rounded-full bg-void-700 text-metal-400 border border-white/5">AI Landing</span>
+            <span class="text-[11px] px-2.5 py-1 rounded-full bg-void-700 text-metal-400 border border-white/5">Tech Brand</span>
+          </div>
+        </div>
+
+        <!-- App -->
+        <div class="dark-glass rounded-2xl p-8 hover:border-neon-red/25 transition-all duration-300 group">
+          <div class="w-12 h-12 rounded-xl bg-void-700 border border-white/5 flex items-center justify-center mb-6 group-hover:border-neon-red/30 transition-colors">
+            <svg class="w-6 h-6 text-metal-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-display font-semibold text-white mb-3">اپلیکیشن</h3>
+          <p class="text-sm text-metal-400 leading-relaxed mb-6">
+            اپ‌های AR/VR، ابزارهای نورال، داشبوردهای داده‌محور و تجربه‌های فراگیر.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-[11px] px-2.5 py-1 rounded-full bg-void-700 text-metal-400 border border-white/5">AR / VR</span>
+            <span class="text-[11px] px-2.5 py-1 rounded-full bg-void-700 text-metal-400 border border-white/5">Neural</span>
+          </div>
+        </div>
+
+        <!-- Agent -->
+        <div class="dark-glass rounded-2xl p-8 hover:border-neon-red/25 transition-all duration-300 group">
+          <div class="w-12 h-12 rounded-xl bg-void-700 border border-white/5 flex items-center justify-center mb-6 group-hover:border-neon-red/30 transition-colors">
+            <svg class="w-6 h-6 text-metal-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-display font-semibold text-white mb-3">ایجنت هوشمند</h3>
+          <p class="text-sm text-metal-400 leading-relaxed mb-6">
+            رابط‌های گفتگوی پیشرفته، داشبوردهای تحلیلی و سیستم‌های تصمیم‌یار با حس سایبر.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-[11px] px-2.5 py-1 rounded-full bg-void-700 text-metal-400 border border-white/5">AI Agent</span>
+            <span class="text-[11px] px-2.5 py-1 rounded-full bg-void-700 text-metal-400 border border-white/5">Analytics</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== AGENT UI PREVIEW ========== -->
+  <section id="agent" class="py-28 relative overflow-hidden">
+    <div class="absolute inset-0 cyber-grid opacity-50"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-neon-red/5 rounded-full blur-[150px] pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="text-xs tracking-[0.2em] text-neon-red uppercase mb-4 font-medium">Neural Agent Interface</p>
+          <h2 class="font-display text-3xl md:text-4xl font-bold tracking-tight text-white mb-6">
+            ایجنتی که<br>
+            <span class="text-neon-red">آینده را می‌بیند</span>
+          </h2>
+          <p class="text-metal-400 leading-relaxed mb-8">
+            رابط ایجنت در این سبک باید قدرتمند، دقیق و کمی مرموز باشد. 
+            قرمز نئون فقط برای وضعیت‌های حیاتی و اقدامات اصلی استفاده می‌شود.
+          </p>
+          
+          <div class="space-y-4 text-sm">
+            <div class="flex items-center gap-3">
+              <div class="w-2 h-2 rounded-full bg-neon-red shadow-[0_0_8px_rgba(255,26,26,0.8)]"></div>
+              <span class="text-metal-300">پاسخ‌های لایه‌ای و ساختاریافته</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-2 h-2 rounded-full bg-neon-red shadow-[0_0_8px_rgba(255,26,26,0.8)]"></div>
+              <span class="text-metal-300">نمایش وضعیت سیستم به صورت زنده</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-2 h-2 rounded-full bg-neon-red shadow-[0_0_8px_rgba(255,26,26,0.8)]"></div>
+              <span class="text-metal-300">کنتراست بالا برای محیط‌های کم‌نور</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mock Agent Chat -->
+        <div class="dark-glass rounded-2xl overflow-hidden border border-white/5">
+          <!-- Header -->
+          <div class="px-5 py-4 border-b border-white/5 flex items-center justify-between bg-void-900/80">
+            <div class="flex items-center gap-3">
+              <div class="relative">
+                <div class="w-9 h-9 rounded-full bg-gradient-to-br from-neon-red/30 to-void-700 border border-neon-red/40 flex items-center justify-center">
+                  <div class="w-2.5 h-2.5 rounded-full bg-neon-red animate-pulse"></div>
+                </div>
+              </div>
+              <div>
+                <p class="text-sm font-medium text-white font-display">VISION Agent</p>
+                <p class="text-[11px] text-metal-500">Neural Link · Active</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-neon-red"></span>
+              <span class="text-[10px] tracking-wider text-neon-red uppercase">Live</span>
+            </div>
+          </div>
+
+          <!-- Messages -->
+          <div class="p-5 space-y-4 min-h-[220px]">
+            <div class="flex justify-start">
+              <div class="bg-void-700/80 rounded-2xl rounded-tl-md px-4 py-3 max-w-[85%] border border-white/5">
+                <p class="text-sm text-metal-200">سیستم آماده است. دستور خود را وارد کنید.</p>
+              </div>
+            </div>
+            <div class="flex justify-end">
+              <div class="bg-neon-red rounded-2xl rounded-tr-md px-4 py-3 max-w-[85%] shadow-[0_0_20px_rgba(255,26,26,0.25)]">
+                <p class="text-sm text-white">تحلیل روندهای طراحی ۲۰۲۶</p>
+              </div>
+            </div>
+            <div class="flex justify-start">
+              <div class="bg-void-700/80 rounded-2xl rounded-tl-md px-4 py-3 max-w-[85%] border border-white/5">
+                <p class="text-sm text-metal-200">در حال پردازش...<br>
+                <span class="text-neon-red text-xs">فیوچریسم + گلاس‌مورفیسم غالب هستند.</span></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Input -->
+          <div class="px-5 py-4 border-t border-white/5 bg-void-900/50">
+            <div class="flex gap-3">
+              <input type="text" 
+                     placeholder="دستور را وارد کنید..." 
+                     class="flex-1 bg-void-800 border border-white/10 rounded-full px-4 py-2.5 text-sm text-metal-200 placeholder-metal-600 focus:outline-none focus:border-neon-red/50 transition-colors">
+              <button class="w-10 h-10 rounded-full bg-neon-red flex items-center justify-center hover:bg-neon-redsoft transition-colors shadow-[0_0_15px_rgba(255,26,26,0.4)]">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FINAL CTA ========== -->
+  <section id="contact" class="py-32 md:py-40 relative">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-neon-red/5 to-transparent pointer-events-none"></div>
+    
+    <div class="max-w-3xl mx-auto px-6 text-center relative z-10">
+      <div class="w-3 h-3 rounded-full bg-neon-red mx-auto mb-10 animate-pulse-neon"></div>
+      
+      <h2 class="font-display text-3xl md:text-5xl font-bold tracking-tight text-white mb-6">
+        آماده ورود به<br>
+        <span class="text-neon-red neon-text">آینده؟</span>
+      </h2>
+      
+      <p class="text-metal-400 text-lg mb-12 max-w-md mx-auto">
+        مرز بین انسان و ماشین در حال محو شدن است.<br>
+        طراحی باید پیش‌تر از زمان حرکت کند.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="mailto:vision@example.com" 
+           class="inline-flex items-center justify-center gap-2 bg-neon-red text-white px-10 py-4 text-sm font-semibold tracking-wide rounded-full hover:bg-neon-redsoft transition-all duration-300 shadow-[0_0_30px_rgba(255,26,26,0.35)]">
+          شروع همکاری
+        </a>
+        <a href="#" 
+           class="inline-flex items-center justify-center gap-2 border border-metal-600 text-metal-300 px-10 py-4 text-sm font-medium tracking-wide rounded-full hover:border-metal-400 hover:text-white transition-all duration-300">
+          مشاهده مستندات
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="border-t border-white/5">
+    <div class="max-w-6xl mx-auto px-6 py-10">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-metal-500">
+        <div class="flex items-center gap-3">
+          <div class="w-2 h-2 rounded-full bg-neon-red"></div>
+          <span>© 2026 FUTURE VISION · Futuristic Template</span>
+        </div>
+        
+        <div class="flex items-center gap-8">
+          <a href="#" class="hover:text-metal-300 transition-colors">حریم خصوصی</a>
+          <a href="#" class="hover:text-metal-300 transition-colors">شرایط استفاده</a>
+          <span class="text-metal-500">
+            by <a href="https://parvizmoin.ir" target="_blank" rel="noopener noreferrer" class="text-metal-300 hover:text-neon-red transition-colors underline underline-offset-2">parvizmoin.ir</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Subtle reveal script -->
+  <script>
+    const observerOptions = {
+      threshold: 0.08,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('section > div').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>

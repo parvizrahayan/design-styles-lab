@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="قالب سایبرپانک کامل – BRAIN MATER | Cyberpunk Collage Retro UI Template 2026" />
+  <title>BRAIN MATER – Cyberpunk Template</title>
+
+  <!-- Favicon – Cyberpunk (neon yellow brain / tech mark) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%230A0A0A'/%3E%3Crect x='4' y='4' width='24' height='24' rx='2' fill='%23FFEE00'/%3E%3Cpath d='M10 12 Q16 8 22 12 Q24 16 22 20 Q16 24 10 20 Q8 16 10 12' fill='none' stroke='%230A0A0A' stroke-width='1.8'/%3E%3Ccircle cx='13' cy='15' r='1.2' fill='%230A0A0A'/%3E%3Ccircle cx='19' cy='15' r='1.2' fill='%230A0A0A'/%3E%3Cpath d='M12 19 Q16 21 20 19' stroke='%230A0A0A' stroke-width='1.2' fill='none'/%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%230A0A0A'/%3E%3Crect x='4' y='4' width='24' height='24' rx='2' fill='%23FFEE00'/%3E%3Cpath d='M10 12 Q16 8 22 12 Q24 16 22 20 Q16 24 10 20 Q8 16 10 12' fill='none' stroke='%230A0A0A' stroke-width='1.8'/%3E%3Ccircle cx='13' cy='15' r='1.2' fill='%230A0A0A'/%3E%3Ccircle cx='19' cy='15' r='1.2' fill='%230A0A0A'/%3E%3Cpath d='M12 19 Q16 21 20 19' stroke='%230A0A0A' stroke-width='1.2' fill='none'/%3E%3C/svg%3E">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cyber: {
+              black: '#0A0A0A',
+              dark: '#111111',
+              panel: '#161616',
+              border: '#2A2A2A',
+            },
+            neon: {
+              yellow: '#FFEE00',
+              yellowsoft: '#FFF44F',
+              purple: '#B026FF',
+              pink: '#FF2A6D',
+              green: '#05FFA1',
+            },
+            acid: {
+              100: '#F5F5F0',
+              200: '#E8E8E0',
+              400: '#A0A090',
+              500: '#707060',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Space Grotesk', 'Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.8s ease-out forwards',
+            'slide-up': 'slideUp 0.7s ease-out forwards',
+            'glitch-text': 'glitchText 3.5s infinite',
+            'pulse-yellow': 'pulseYellow 2s ease-in-out infinite',
+            'scan': 'scan 5s linear infinite',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            slideUp: {
+              '0%': { opacity: '0', transform: 'translateY(28px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            glitchText: {
+              '0%, 92%, 100%': { transform: 'translate(0)', skew: '0deg' },
+              '93%': { transform: 'translate(-3px, 1px)', skew: '1deg' },
+              '94%': { transform: 'translate(3px, -1px)', skew: '-1deg' },
+              '95%': { transform: 'translate(-2px, 2px)' },
+              '96%': { transform: 'translate(2px, -2px)' },
+            },
+            pulseYellow: {
+              '0%, 100%': { boxShadow: '0 0 0 0 rgba(255, 238, 0, 0.4)' },
+              '50%': { boxShadow: '0 0 0 10px rgba(255, 238, 0, 0)' },
+            },
+            scan: {
+              '0%': { top: '-10%' },
+              '100%': { top: '110%' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background-color: #0A0A0A;
+      color: #E8E8E0;
+    }
+    ::selection {
+      background-color: #FFEE00;
+      color: #0A0A0A;
+    }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: #0A0A0A; }
+    ::-webkit-scrollbar-thumb { background: #FFEE00; border-radius: 2px; }
+
+    .font-display { font-family: 'Space Grotesk', sans-serif; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+    .neon-yellow-text {
+      color: #FFEE00;
+      text-shadow: 0 0 12px rgba(255, 238, 0, 0.5);
+    }
+
+    .cyber-border {
+      border: 1px solid #2A2A2A;
+    }
+
+    .yellow-panel {
+      background: #FFEE00;
+      color: #0A0A0A;
+    }
+
+    .scanline {
+      position: relative;
+      overflow: hidden;
+    }
+    .scanline::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(to bottom, transparent, rgba(255, 238, 0, 0.15), transparent);
+      animation: scan 6s linear infinite;
+      pointer-events: none;
+    }
+
+    .accent-bar {
+      width: 48px;
+      height: 3px;
+      background: #FFEE00;
+    }
+  </style>
+</head>
+
+<body class="bg-cyber-black text-acid-100 antialiased overflow-x-hidden">
+
+  <!-- NAV -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-cyber-black/90 backdrop-blur-md border-b border-cyber-border">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-7 h-7 yellow-panel flex items-center justify-center font-display font-bold text-xs">
+          BM
+        </div>
+        <span class="text-xs tracking-[0.2em] text-acid-400 uppercase font-medium font-display">
+          BRAIN MATER
+        </span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm text-acid-400">
+        <a href="#signal" class="hover:text-neon-yellow transition-colors">سیگنال</a>
+        <a href="#protocols" class="hover:text-neon-yellow transition-colors">پروتکل</a>
+        <a href="#platforms" class="hover:text-neon-yellow transition-colors">پلتفرم</a>
+        <a href="#agent" class="hover:text-neon-yellow transition-colors">ایجنت</a>
+        <a href="#contact" class="hover:text-neon-yellow transition-colors">تماس</a>
+      </nav>
+
+      <a href="#contact" class="text-xs tracking-wide px-4 py-2 yellow-panel font-bold hover:bg-neon-yellowsoft transition-colors">
+        CONNECT
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="min-h-screen flex items-center pt-16 relative overflow-hidden">
+    <!-- Background grid -->
+    <div class="absolute inset-0 opacity-[0.04]" style="background-image: linear-gradient(#FFEE00 1px, transparent 1px), linear-gradient(90deg, #FFEE00 1px, transparent 1px); background-size: 32px 32px;"></div>
+    <div class="absolute top-1/4 right-1/4 w-80 h-80 bg-neon-yellow/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto px-6 w-full py-20 md:py-24 relative z-10">
+      <div class="grid lg:grid-cols-12 gap-10 items-center">
+
+        <!-- Text -->
+        <div class="lg:col-span-6 space-y-7">
+          <div class="animate-fade-in">
+            <div class="inline-flex items-center gap-2 px-3 py-1 border border-neon-yellow/40 bg-neon-yellow/5 mb-5">
+              <span class="w-1.5 h-1.5 bg-neon-yellow animate-pulse"></span>
+              <span class="text-[10px] tracking-[0.25em] text-neon-yellow uppercase font-mono">2K.045_FETCHING</span>
+            </div>
+          </div>
+
+          <h1 class="font-display text-5xl sm:text-6xl md:text-7xl font-bold leading-[0.92] tracking-tight animate-slide-up">
+            <span class="text-white">BRAIN</span><br>
+            <span class="neon-yellow-text animate-glitch-text">MATER</span>
+          </h1>
+
+          <p class="text-lg text-acid-400 leading-relaxed max-w-md animate-slide-up" style="animation-delay:100ms">
+            داده. اعوجاج. کلاژ دیجیتال.<br>
+            جایی که مغز و ماشین در هم فرو می‌روند.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-1 animate-slide-up" style="animation-delay:200ms">
+            <a href="#signal" class="inline-flex items-center gap-2 yellow-panel px-7 py-3.5 text-sm font-bold tracking-wide hover:bg-neon-yellowsoft transition-all">
+              EXECUTE
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/></svg>
+            </a>
+            <a href="#protocols" class="text-sm text-acid-400 hover:text-neon-yellow transition-colors font-mono border-b border-cyber-border hover:border-neon-yellow pb-0.5">
+              // protocols
+            </a>
+          </div>
+
+          <!-- Tech stats -->
+          <div class="flex gap-8 pt-6 font-mono text-xs animate-slide-up" style="animation-delay:300ms">
+            <div>
+              <p class="text-neon-yellow text-lg font-bold">04</p>
+              <p class="text-acid-500 tracking-wider">STYLE_ID</p>
+            </div>
+            <div>
+              <p class="text-white text-lg font-bold">CYBER</p>
+              <p class="text-acid-500 tracking-wider">MODE</p>
+            </div>
+            <div>
+              <p class="text-neon-yellow text-lg font-bold">LIVE</p>
+              <p class="text-acid-500 tracking-wider">STATUS</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual Panel (BRAIN MATER inspired) -->
+        <div class="lg:col-span-6 flex justify-center lg:justify-end animate-fade-in" style="animation-delay:150ms">
+          <div class="relative w-full max-w-md">
+            <!-- Outer tech frame -->
+            <div class="absolute -inset-2 border border-neon-yellow/30"></div>
+            <div class="absolute -inset-4 border border-cyber-border"></div>
+
+            <div class="relative yellow-panel scanline overflow-hidden">
+              <div class="aspect-[4/5] p-6 flex flex-col relative">
+                <!-- Top bar -->
+                <div class="flex items-center justify-between text-[10px] font-mono tracking-wider mb-4">
+                  <span>2K.045_FETCHING</span>
+                  <span class="flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 bg-cyber-black animate-pulse"></span>
+                    EXECUTING
+                  </span>
+                </div>
+
+                <!-- Abstract brain / neural shape -->
+                <div class="flex-1 flex items-center justify-center relative">
+                  <div class="relative w-40 h-40">
+                    <!-- Outer ring -->
+                    <div class="absolute inset-0 border-2 border-cyber-black rounded-full opacity-40"></div>
+                    <div class="absolute inset-3 border border-cyber-black rounded-full opacity-60"></div>
+                    
+                    <!-- Brain-like form -->
+                    <div class="absolute inset-6 bg-cyber-black/10 rounded-full flex items-center justify-center">
+                      <svg viewBox="0 0 80 80" class="w-20 h-20">
+                        <path d="M20 30 Q40 10 60 30 Q70 45 60 55 Q40 70 20 55 Q10 45 20 30" fill="none" stroke="#0A0A0A" stroke-width="2.5"/>
+                        <path d="M25 35 Q40 25 55 35" fill="none" stroke="#0A0A0A" stroke-width="1.5"/>
+                        <path d="M25 45 Q40 38 55 45" fill="none" stroke="#0A0A0A" stroke-width="1.5"/>
+                        <circle cx="32" cy="38" r="2.5" fill="#0A0A0A"/>
+                        <circle cx="48" cy="38" r="2.5" fill="#0A0A0A"/>
+                      </svg>
+                    </div>
+
+                    <!-- Corner tech marks -->
+                    <div class="absolute -top-1 -left-1 w-4 h-4 border-t-2 border-l-2 border-cyber-black"></div>
+                    <div class="absolute -top-1 -right-1 w-4 h-4 border-t-2 border-r-2 border-cyber-black"></div>
+                    <div class="absolute -bottom-1 -left-1 w-4 h-4 border-b-2 border-l-2 border-cyber-black"></div>
+                    <div class="absolute -bottom-1 -right-1 w-4 h-4 border-b-2 border-r-2 border-cyber-black"></div>
+                  </div>
+                </div>
+
+                <!-- Bottom data -->
+                <div class="mt-4 space-y-1 font-mono text-[10px]">
+                  <div class="flex justify-between">
+                    <span>TRACE_ROUTE</span>
+                    <span>■■■□□</span>
+                  </div>
+                  <div class="flex justify-between opacity-70">
+                    <span>NEURAL_LINK</span>
+                    <span>ACTIVE</span>
+                  </div>
+                  <div class="h-1 bg-cyber-black/20 mt-2">
+                    <div class="h-full bg-cyber-black w-3/4"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bottom label -->
+              <div class="bg-cyber-black text-neon-yellow px-5 py-3 flex items-center justify-between font-mono text-xs">
+                <span>BRAIN MATER</span>
+                <span class="tracking-widest">v0.4.5</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIGNAL / INTRO -->
+  <section id="signal" class="py-28 md:py-32">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-14 items-center">
+        <div>
+          <div class="accent-bar mb-6"></div>
+          <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-5">
+            کلاژ دیجیتال<br>
+            <span class="text-neon-yellow">+ اعوجاج کنترل‌شده</span>
+          </h2>
+          <p class="text-acid-400 leading-relaxed mb-8">
+            این قالب از پوستر BRAIN MATER الهام گرفته. زرد نئون تند، تایپوگرافی فشرده و المان‌های فنی، 
+            حس سایبرپانک و کلاژ دیجیتال را منتقل می‌کند.
+          </p>
+          <ul class="space-y-3 text-sm text-acid-300 font-mono">
+            <li class="flex items-center gap-3"><span class="text-neon-yellow">▸</span> پالت زرد نئون روی سیاه مطلق</li>
+            <li class="flex items-center gap-3"><span class="text-neon-yellow">▸</span> تایپوگرافی Display + Mono</li>
+            <li class="flex items-center gap-3"><span class="text-neon-yellow">▸</span> المان‌های فنی و بارکدمانند</li>
+            <li class="flex items-center gap-3"><span class="text-neon-yellow">▸</span> حس کلاژ و لایه‌های داده</li>
+          </ul>
+        </div>
+
+        <!-- Code terminal -->
+        <div class="bg-cyber-panel border border-cyber-border p-6 font-mono text-xs">
+          <div class="flex items-center gap-2 mb-5 text-acid-500">
+            <span class="w-2.5 h-2.5 rounded-full bg-neon-pink"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-neon-yellow"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-neon-green"></span>
+            <span class="mr-auto text-[10px]">terminal — brain_mater.sh</span>
+          </div>
+          <div class="space-y-2 text-acid-300">
+            <p><span class="text-neon-yellow">$</span> init_neural_core --mode=cyber</p>
+            <p><span class="text-neon-yellow">$</span> load_collage_layers 04</p>
+            <p><span class="text-neon-yellow">$</span> apply_glitch --intensity=0.3</p>
+            <p class="text-neon-green">→ SYSTEM READY</p>
+            <p class="text-acid-500">awaiting_command<span class="animate-pulse">_</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROTOCOLS -->
+  <section id="protocols" class="py-28 bg-cyber-dark">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="max-w-xl mb-16">
+        <div class="accent-bar mb-6"></div>
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-4">پروتکل‌های سبک</h2>
+        <p class="text-acid-400">سه قانون اصلی برای حفظ هویت سایبرپانک و کلاژ.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-cyber-panel border border-cyber-border p-7 hover:border-neon-yellow/40 transition-colors">
+          <div class="w-10 h-10 yellow-panel flex items-center justify-center font-display font-bold text-sm mb-5">01</div>
+          <h3 class="font-display text-lg font-bold text-white mb-3">کنتراست اسید</h3>
+          <p class="text-sm text-acid-400 leading-relaxed">زرد نئون فقط روی سیاه. هیچ خاکستری ملایمی وجود ندارد. کنتراست باید چشم را بزند.</p>
+        </div>
+        <div class="bg-cyber-panel border border-cyber-border p-7 hover:border-neon-yellow/40 transition-colors">
+          <div class="w-10 h-10 yellow-panel flex items-center justify-center font-display font-bold text-sm mb-5">02</div>
+          <h3 class="font-display text-lg font-bold text-white mb-3">تایپوگرافی خام</h3>
+          <p class="text-sm text-acid-400 leading-relaxed">فونت‌های فشرده، mono برای داده، و گاهی اعوجاج کنترل‌شده. متن خودش یک المان بصری است.</p>
+        </div>
+        <div class="bg-cyber-panel border border-cyber-border p-7 hover:border-neon-yellow/40 transition-colors">
+          <div class="w-10 h-10 yellow-panel flex items-center justify-center font-display font-bold text-sm mb-5">03</div>
+          <h3 class="font-display text-lg font-bold text-white mb-3">لایه‌های کلاژ</h3>
+          <p class="text-sm text-acid-400 leading-relaxed">عناصر فنی، خطوط، بارکد و داده‌های روی هم. حس ساخته‌شده و دست‌ساز دیجیتال.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATFORMS -->
+  <section id="platforms" class="py-28 md:py-32">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center max-w-xl mx-auto mb-16">
+        <div class="accent-bar mx-auto mb-6"></div>
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-4">برای هر جبهه</h2>
+        <p class="text-acid-400">وب، اپ و ایجنت — همه با زبان بصری یکسان.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="bg-cyber-panel border border-cyber-border p-7 hover:border-neon-yellow/30 transition-colors">
+          <div class="w-11 h-11 border border-cyber-border flex items-center justify-center mb-5">
+            <svg class="w-5 h-5 text-neon-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-white mb-2">وب‌سایت</h3>
+          <p class="text-sm text-acid-400 mb-5 leading-relaxed">لندینگ گیم، NFT، استودیوهای سایبر و برندهای دیجیتال‌آرت.</p>
+          <div class="flex gap-2">
+            <span class="text-[10px] px-2 py-1 border border-cyber-border text-acid-500 font-mono">GAME</span>
+            <span class="text-[10px] px-2 py-1 border border-cyber-border text-acid-500 font-mono">NFT</span>
+          </div>
+        </div>
+
+        <div class="bg-cyber-panel border border-cyber-border p-7 hover:border-neon-yellow/30 transition-colors">
+          <div class="w-11 h-11 border border-cyber-border flex items-center justify-center mb-5">
+            <svg class="w-5 h-5 text-neon-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-white mb-2">اپلیکیشن</h3>
+          <p class="text-sm text-acid-400 mb-5 leading-relaxed">اپ‌های هکری، ابزارهای داده، ترکرهای نورال و تجربه‌های immersive.</p>
+          <div class="flex gap-2">
+            <span class="text-[10px] px-2 py-1 border border-cyber-border text-acid-500 font-mono">DATA</span>
+            <span class="text-[10px] px-2 py-1 border border-cyber-border text-acid-500 font-mono">NEURAL</span>
+          </div>
+        </div>
+
+        <div class="bg-cyber-panel border border-cyber-border p-7 hover:border-neon-yellow/30 transition-colors">
+          <div class="w-11 h-11 border border-cyber-border flex items-center justify-center mb-5">
+            <svg class="w-5 h-5 text-neon-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-white mb-2">ایجنت هوشمند</h3>
+          <p class="text-sm text-acid-400 mb-5 leading-relaxed">رابط‌های دستوری، ترمینال‌مانند و ایجنت‌های تحلیلی با حس سایبر.</p>
+          <div class="flex gap-2">
+            <span class="text-[10px] px-2 py-1 border border-cyber-border text-acid-500 font-mono">CLI</span>
+            <span class="text-[10px] px-2 py-1 border border-cyber-border text-acid-500 font-mono">AGENT</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENT -->
+  <section id="agent" class="py-28 relative">
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(#FFEE00 1px, transparent 1px), linear-gradient(90deg, #FFEE00 1px, transparent 1px); background-size: 24px 24px;"></div>
+
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-14 items-center">
+        <div>
+          <p class="text-[11px] tracking-[0.25em] text-neon-yellow uppercase font-mono mb-4">NEURAL_AGENT</p>
+          <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-5">
+            ایجنتی که<br>
+            <span class="text-neon-yellow">داده را می‌جوید</span>
+          </h2>
+          <p class="text-acid-400 leading-relaxed mb-8">
+            رابط ایجنت در این سبک شبیه ترمینال است. زرد برای هشدار و اقدام، 
+            مونو‌اسپیس برای داده، و حس خام دیجیتال.
+          </p>
+          <div class="space-y-3 text-sm font-mono text-acid-300">
+            <div class="flex items-center gap-3"><span class="text-neon-yellow">●</span> خروجی لایه‌ای و ساختاریافته</div>
+            <div class="flex items-center gap-3"><span class="text-neon-yellow">●</span> وضعیت سیستم همیشه可见</div>
+            <div class="flex items-center gap-3"><span class="text-neon-yellow">●</span> دستورات کوتاه و دقیق</div>
+          </div>
+        </div>
+
+        <!-- Terminal-style Agent -->
+        <div class="bg-cyber-panel border border-cyber-border overflow-hidden">
+          <div class="px-4 py-3 border-b border-cyber-border flex items-center justify-between bg-cyber-dark">
+            <div class="flex items-center gap-2">
+              <div class="w-2 h-2 bg-neon-yellow animate-pulse"></div>
+              <span class="text-xs font-mono text-neon-yellow">MATER_AGENT</span>
+            </div>
+            <span class="text-[10px] font-mono text-acid-500">LINK_ACTIVE</span>
+          </div>
+
+          <div class="p-5 space-y-4 min-h-[200px] font-mono text-sm">
+            <div class="text-acid-400">
+              <span class="text-neon-yellow">›</span> سیستم آماده. فرمان؟
+            </div>
+            <div class="text-right">
+              <span class="inline-block yellow-panel px-3 py-1.5 text-xs font-bold">scan_trends 2026</span>
+            </div>
+            <div class="text-acid-300 text-xs leading-relaxed border-r-2 border-neon-yellow pr-3">
+              <p class="text-neon-green mb-1">✓ SCAN COMPLETE</p>
+              <p>cyberpunk + collage dominant</p>
+              <p>neon yellow rising in brand systems</p>
+              <p class="text-acid-500 mt-1">confidence: 0.87</p>
+            </div>
+          </div>
+
+          <div class="px-4 py-3 border-t border-cyber-border bg-cyber-dark flex gap-2">
+            <input type="text" placeholder="enter command..." class="flex-1 bg-cyber-black border border-cyber-border px-3 py-2 text-sm font-mono text-acid-200 placeholder-acid-500 focus:outline-none focus:border-neon-yellow/50">
+            <button class="yellow-panel px-4 font-bold text-sm hover:bg-neon-yellowsoft transition-colors">RUN</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="py-32">
+    <div class="max-w-2xl mx-auto px-6 text-center">
+      <div class="w-4 h-4 yellow-panel mx-auto mb-10 animate-pulse-yellow"></div>
+      <h2 class="font-display text-3xl md:text-5xl font-bold text-white mb-5">
+        آماده اتصال<br>
+        <span class="text-neon-yellow">به سیستم؟</span>
+      </h2>
+      <p class="text-acid-400 mb-10">داده منتظر است. فقط یک فرمان کافی است.</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="mailto:hello@parvizmoin.ir" class="yellow-panel px-10 py-4 text-sm font-bold tracking-wide hover:bg-neon-yellowsoft transition-colors">
+          INITIATE CONTACT
+        </a>
+        <a href="#" class="border border-cyber-border text-acid-300 px-10 py-4 text-sm font-medium hover:border-neon-yellow hover:text-neon-yellow transition-colors font-mono">
+          // view_docs
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-cyber-border">
+    <div class="max-w-6xl mx-auto px-6 py-10">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-acid-500">
+        <div class="flex items-center gap-3">
+          <div class="w-2 h-2 bg-neon-yellow"></div>
+          <span class="font-mono">© 2026 BRAIN MATER · Cyberpunk Template</span>
+        </div>
+        <div class="flex items-center gap-8">
+          <a href="#" class="hover:text-acid-300 transition-colors">حریم خصوصی</a>
+          <a href="#" class="hover:text-acid-300 transition-colors">شرایط</a>
+          <span>
+            by <a href="https://parvizmoin.ir" target="_blank" rel="noopener noreferrer" class="text-acid-400 hover:text-neon-yellow transition-colors underline underline-offset-2">parvizmoin.ir</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('section > div').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(22px)';
+      el.style.transition = 'opacity 0.7s ease-out, transform 0.7s ease-out';
+      obs.observe(el);
+    });
+  </script>
+</body>
+</html>

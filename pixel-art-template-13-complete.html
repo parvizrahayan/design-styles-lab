@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="قالب پیکسل آرت کامل – Pixel Art | 8-bit UI Template 2026" />
+  <title>Pixel Art – Complete Template</title>
+
+  <!-- Favicon – Pixel sunset -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231A0F0A'/%3E%3Crect x='10' y='8' width='12' height='12' fill='%23E85D04'/%3E%3Crect x='12' y='10' width='8' height='8' fill='%23F48C06'/%3E%3Crect x='14' y='12' width='4' height='4' fill='%23FFBA08'/%3E%3Crect x='4' y='22' width='8' height='6' fill='%236C584C'/%3E%3Crect x='20' y='20' width='10' height='8' fill='%234A3728'/%3E%3Crect x='12' y='24' width='6' height='4' fill='%232C1810'/%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231A0F0A'/%3E%3Crect x='10' y='8' width='12' height='12' fill='%23E85D04'/%3E%3Crect x='12' y='10' width='8' height='8' fill='%23F48C06'/%3E%3Crect x='14' y='12' width='4' height='4' fill='%23FFBA08'/%3E%3Crect x='4' y='22' width='8' height='6' fill='%236C584C'/%3E%3Crect x='20' y='20' width='10' height='8' fill='%234A3728'/%3E%3Crect x='12' y='24' width='6' height='4' fill='%232C1810'/%3E%3C/svg%3E">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Press+Start+2P&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            pixel: {
+              black: '#1A0F0A',
+              dark: '#2C1810',
+              brown: '#4A3728',
+              dirt: '#6C584C',
+              orange: '#E85D04',
+              amber: '#F48C06',
+              gold: '#FFBA08',
+              cream: '#F5E6C8',
+              sky: '#3D2B1F',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Space Grotesk', 'Inter', 'sans-serif'],
+            pixel: ['"Press Start 2P"', 'monospace'],
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.8s ease-out forwards',
+            'slide-up': 'slideUp 0.7s ease-out forwards',
+            'blink': 'blink 1.2s step-end infinite',
+          },
+          keyframes: {
+            fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+            slideUp: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+            blink: { '0%, 100%': { opacity: '1' }, '50%': { opacity: '0' } }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background-color: #1A0F0A;
+      color: #F5E6C8;
+      image-rendering: pixelated;
+    }
+    ::selection { background: #E85D04; color: #fff; }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #2C1810; }
+    ::-webkit-scrollbar-thumb { background: #E85D04; }
+
+    .font-display { font-family: 'Space Grotesk', sans-serif; }
+    .font-pixel { font-family: 'Press Start 2P', monospace; }
+
+    /* Pixel grid feel */
+    .pixel-border {
+      box-shadow:
+        4px 0 0 #1A0F0A,
+        -4px 0 0 #1A0F0A,
+        0 4px 0 #1A0F0A,
+        0 -4px 0 #1A0F0A;
+    }
+
+    /* Hard pixel shadow */
+    .pixel-shadow {
+      box-shadow: 4px 4px 0 #1A0F0A;
+    }
+  </style>
+</head>
+
+<body class="bg-pixel-black text-pixel-cream antialiased overflow-x-hidden">
+
+  <!-- NAV -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-pixel-black border-b-4 border-pixel-orange">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <div class="w-8 h-8 bg-pixel-orange pixel-shadow flex items-center justify-center">
+          <div class="w-3 h-3 bg-pixel-gold"></div>
+        </div>
+        <span class="font-pixel text-[10px] tracking-wider text-pixel-gold">PIXEL ART</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 text-xs font-bold text-pixel-dirt">
+        <a href="#world" class="hover:text-pixel-gold transition-colors">دنیا</a>
+        <a href="#rules" class="hover:text-pixel-gold transition-colors">قوانین</a>
+        <a href="#platforms" class="hover:text-pixel-gold transition-colors">پلتفرم</a>
+        <a href="#agent" class="hover:text-pixel-gold transition-colors">ایجنت</a>
+        <a href="#contact" class="hover:text-pixel-gold transition-colors">تماس</a>
+      </nav>
+
+      <a href="#contact" class="text-[10px] tracking-wide px-3 py-2 bg-pixel-orange text-pixel-black font-pixel hover:bg-pixel-gold transition-colors pixel-shadow">
+        START
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="min-h-screen flex items-center pt-16 relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6 w-full py-16 md:py-20 relative z-10">
+      <div class="grid lg:grid-cols-12 gap-10 items-center">
+
+        <!-- Text -->
+        <div class="lg:col-span-6 space-y-7">
+          <div class="animate-fade-in">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-pixel-dark text-[10px] font-pixel text-pixel-gold border-2 border-pixel-brown mb-5">
+              STYLE 13 · 8-BIT
+            </div>
+          </div>
+
+          <h1 class="font-pixel text-2xl sm:text-3xl md:text-4xl leading-relaxed tracking-wide animate-slide-up text-pixel-gold">
+            PIXEL<br>
+            <span class="text-pixel-orange">ART</span>
+          </h1>
+
+          <p class="text-base text-pixel-dirt leading-relaxed max-w-md animate-slide-up font-medium" style="animation-delay:100ms">
+            هر پیکسل یک تصمیم است.<br>
+            محدودیت رنگ، وضوح فرم، و حس بازی‌های کلاسیک.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-1 animate-slide-up" style="animation-delay:200ms">
+            <a href="#world" class="inline-flex items-center gap-2 bg-pixel-orange text-pixel-black px-5 py-3 text-[10px] font-pixel hover:bg-pixel-gold transition-colors pixel-shadow">
+              ENTER WORLD
+            </a>
+            <a href="#rules" class="text-xs font-bold text-pixel-dirt hover:text-pixel-gold transition-colors border-b-2 border-pixel-brown hover:border-pixel-gold pb-0.5">
+              قوانین پیکسل
+            </a>
+          </div>
+
+          <!-- Palette -->
+          <div class="flex gap-1 pt-4 animate-slide-up" style="animation-delay:300ms">
+            <div class="w-6 h-6 bg-pixel-black border border-pixel-brown"></div>
+            <div class="w-6 h-6 bg-pixel-dark border border-pixel-brown"></div>
+            <div class="w-6 h-6 bg-pixel-brown border border-pixel-brown"></div>
+            <div class="w-6 h-6 bg-pixel-dirt border border-pixel-brown"></div>
+            <div class="w-6 h-6 bg-pixel-orange border border-pixel-brown"></div>
+            <div class="w-6 h-6 bg-pixel-amber border border-pixel-brown"></div>
+            <div class="w-6 h-6 bg-pixel-gold border border-pixel-brown"></div>
+          </div>
+        </div>
+
+        <!-- Pixel landscape visual -->
+        <div class="lg:col-span-6 flex justify-center lg:justify-end animate-fade-in" style="animation-delay:150ms">
+          <div class="relative w-full max-w-sm">
+            <div class="border-4 border-pixel-orange pixel-shadow overflow-hidden bg-pixel-sky">
+              <div class="aspect-[4/5] relative">
+                <!-- Sky gradient via bands -->
+                <div class="absolute inset-0">
+                  <div class="h-1/4 bg-[#5C3D2E]"></div>
+                  <div class="h-1/4 bg-[#8B5A2B]"></div>
+                  <div class="h-1/4 bg-pixel-orange"></div>
+                  <div class="h-1/4 bg-pixel-amber"></div>
+                </div>
+
+                <!-- Sun -->
+                <div class="absolute top-[28%] left-1/2 -translate-x-1/2 w-16 h-16 bg-pixel-gold border-2 border-pixel-black">
+                  <div class="absolute inset-2 bg-pixel-amber"></div>
+                  <div class="absolute inset-4 bg-pixel-gold"></div>
+                </div>
+
+                <!-- Left mesa -->
+                <div class="absolute bottom-[22%] left-2 w-14 h-24 bg-pixel-brown">
+                  <div class="absolute top-0 left-0 right-0 h-3 bg-pixel-dirt"></div>
+                  <div class="absolute top-3 left-1 right-1 h-2 bg-pixel-dark"></div>
+                </div>
+
+                <!-- Right mesa -->
+                <div class="absolute bottom-[22%] right-2 w-16 h-28 bg-pixel-dark">
+                  <div class="absolute top-0 left-0 right-0 h-4 bg-pixel-brown"></div>
+                </div>
+
+                <!-- Ground -->
+                <div class="absolute bottom-0 left-0 right-0 h-[22%] bg-pixel-dark">
+                  <div class="absolute top-0 left-0 right-0 h-2 bg-pixel-brown"></div>
+                  <!-- Cacti dots -->
+                  <div class="absolute bottom-3 left-6 w-2 h-5 bg-pixel-dirt"></div>
+                  <div class="absolute bottom-3 right-10 w-2 h-4 bg-pixel-dirt"></div>
+                </div>
+
+                <!-- Rider silhouette -->
+                <div class="absolute bottom-[20%] left-1/2 -translate-x-1/2 flex flex-col items-center">
+                  <!-- Hat + head -->
+                  <div class="w-5 h-2 bg-pixel-black mb-0"></div>
+                  <div class="w-3 h-3 bg-pixel-black"></div>
+                  <!-- Body -->
+                  <div class="w-4 h-5 bg-pixel-black"></div>
+                  <!-- Horse body -->
+                  <div class="w-14 h-6 bg-pixel-black -mt-1 relative">
+                    <div class="absolute -left-2 top-1 w-3 h-3 bg-pixel-black"></div>
+                    <div class="absolute -right-1 bottom-0 w-2 h-4 bg-pixel-black"></div>
+                    <div class="absolute left-2 -bottom-3 w-2 h-3 bg-pixel-black"></div>
+                    <div class="absolute right-3 -bottom-3 w-2 h-3 bg-pixel-black"></div>
+                  </div>
+                </div>
+
+                <!-- Label -->
+                <div class="absolute top-3 right-3 bg-pixel-black/80 px-2 py-1">
+                  <span class="font-pixel text-[8px] text-pixel-gold">13</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORLD -->
+  <section id="world" class="py-24 md:py-28 bg-pixel-dark">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="w-12 h-2 bg-pixel-orange mb-6"></div>
+          <h2 class="font-display text-3xl md:text-4xl font-bold text-pixel-cream mb-5">
+            محدودیت<br>
+            <span class="text-pixel-orange">آزادی می‌سازد</span>
+          </h2>
+          <p class="text-pixel-dirt leading-relaxed mb-8">
+            پیکسل آرت با پالت محدود و وضوح شبکه‌ای کار می‌کند. 
+            هر مربع باید معنا داشته باشد. از غرب وحشی پیکسلی تا UIهای ۸بیتی — همه روی همین قانون می‌چرخند.
+          </p>
+          <ul class="space-y-3 text-sm font-semibold text-pixel-cream/80">
+            <li class="flex items-center gap-3">
+              <span class="w-6 h-6 bg-pixel-orange text-pixel-black flex items-center justify-center text-[10px] font-pixel">1</span>
+              پالت رنگی محدود (۸–۱۶ رنگ)
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-6 h-6 bg-pixel-amber text-pixel-black flex items-center justify-center text-[10px] font-pixel">2</span>
+              لبه‌های تیز، بدون antialias
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="w-6 h-6 bg-pixel-gold text-pixel-black flex items-center justify-center text-[10px] font-pixel">3</span>
+              تایپوگرافی پیکسلی یا mono
+            </li>
+          </ul>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div class="bg-pixel-orange p-5 pixel-shadow text-pixel-black">
+            <p class="font-pixel text-xs mb-2">COLOR</p>
+            <p class="text-xs font-bold opacity-80">محدود و قوی</p>
+          </div>
+          <div class="bg-pixel-gold p-5 pixel-shadow text-pixel-black">
+            <p class="font-pixel text-xs mb-2">GRID</p>
+            <p class="text-xs font-bold opacity-80">همه چیز روی شبکه</p>
+          </div>
+          <div class="bg-pixel-brown p-5 pixel-shadow text-pixel-cream">
+            <p class="font-pixel text-xs mb-2">SPRITE</p>
+            <p class="text-xs font-bold opacity-80">شخصیت در چند پیکسل</p>
+          </div>
+          <div class="bg-pixel-black border-2 border-pixel-orange p-5 text-pixel-gold">
+            <p class="font-pixel text-xs mb-2">LEVEL</p>
+            <p class="text-xs font-bold opacity-80">دنیای یک صفحه</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RULES -->
+  <section id="rules" class="py-24 md:py-28">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="max-w-xl mb-14">
+        <div class="w-12 h-2 bg-pixel-gold mb-6"></div>
+        <h2 class="font-display text-3xl md:text-4xl font-bold mb-4">سه قانون پیکسل</h2>
+        <p class="text-pixel-dirt">اگر تار است، هنوز پیکسل نیست.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="bg-pixel-dark border-2 border-pixel-orange p-6 pixel-shadow">
+          <p class="text-pixel-orange font-pixel text-[10px] mb-4">01</p>
+          <h3 class="font-display text-lg font-bold mb-3">وضوح سخت</h3>
+          <p class="text-sm text-pixel-dirt leading-relaxed">
+            هیچ نرم‌شدگی مجاز نیست. لبه‌ها باید پیکسل به پیکسل خوانا باشند.
+          </p>
+        </div>
+        <div class="bg-pixel-dark border-2 border-pixel-amber p-6 pixel-shadow">
+          <p class="text-pixel-amber font-pixel text-[10px] mb-4">02</p>
+          <h3 class="font-display text-lg font-bold mb-3">پالت محدود</h3>
+          <p class="text-sm text-pixel-dirt leading-relaxed">
+            کمتر رنگ، بیشتر شخصیت. غروب بیابان با ۷ رنگ تمام داستان را می‌گوید.
+          </p>
+        </div>
+        <div class="bg-pixel-dark border-2 border-pixel-gold p-6 pixel-shadow">
+          <p class="text-pixel-gold font-pixel text-[10px] mb-4">03</p>
+          <h3 class="font-display text-lg font-bold mb-3">خوانایی در مقیاس کوچک</h3>
+          <p class="text-sm text-pixel-dirt leading-relaxed">
+            آیکون و کاراکتر باید در ۱۶×۱۶ یا ۳۲×۳۲ هم قابل تشخیص باشند.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATFORMS -->
+  <section id="platforms" class="py-24 md:py-28 bg-pixel-dark">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center max-w-xl mx-auto mb-14">
+        <div class="w-12 h-2 bg-pixel-orange mx-auto mb-6"></div>
+        <h2 class="font-display text-3xl md:text-4xl font-bold mb-4">روی هر صفحه</h2>
+        <p class="text-pixel-dirt">پیکسل برای وب، اپ و ایجنت — با همان حس بازی.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="bg-pixel-black border-2 border-pixel-brown p-6 hover:border-pixel-orange transition-colors">
+          <div class="w-10 h-10 bg-pixel-orange flex items-center justify-center mb-5 font-pixel text-[10px] text-pixel-black">W</div>
+          <h3 class="font-display font-bold text-lg mb-2">وب‌سایت</h3>
+          <p class="text-sm text-pixel-dirt leading-relaxed mb-5">
+            لندینگ بازی‌های ایندی، پورتفولیو پیکسل‌آرتیست‌ها و برندهای نوستالژیک گیم.
+          </p>
+          <div class="flex gap-2">
+            <span class="text-[9px] px-2 py-1 bg-pixel-orange/20 text-pixel-orange font-bold">GAME</span>
+            <span class="text-[9px] px-2 py-1 bg-pixel-gold/15 text-pixel-gold font-bold">INDIE</span>
+          </div>
+        </div>
+
+        <div class="bg-pixel-black border-2 border-pixel-brown p-6 hover:border-pixel-amber transition-colors">
+          <div class="w-10 h-10 bg-pixel-amber flex items-center justify-center mb-5 font-pixel text-[10px] text-pixel-black">A</div>
+          <h3 class="font-display font-bold text-lg mb-2">اپلیکیشن</h3>
+          <p class="text-sm text-pixel-dirt leading-relaxed mb-5">
+            اپ‌های عادت، تایمر و ابزارهای ساده با حس ۸بیتی و فیدبک پیکسلی.
+          </p>
+          <div class="flex gap-2">
+            <span class="text-[9px] px-2 py-1 bg-pixel-amber/20 text-pixel-amber font-bold">RETRO</span>
+            <span class="text-[9px] px-2 py-1 bg-pixel-orange/15 text-pixel-orange font-bold">TOOL</span>
+          </div>
+        </div>
+
+        <div class="bg-pixel-black border-2 border-pixel-brown p-6 hover:border-pixel-gold transition-colors">
+          <div class="w-10 h-10 bg-pixel-gold flex items-center justify-center mb-5 font-pixel text-[10px] text-pixel-black">AI</div>
+          <h3 class="font-display font-bold text-lg mb-2">ایجنت هوشمند</h3>
+          <p class="text-sm text-pixel-dirt leading-relaxed mb-5">
+            ایجنت‌های بازی‌گونه با دیالوگ کوتاه، وضعیت HP/MP و فیدبک بصری بلوکی.
+          </p>
+          <div class="flex gap-2">
+            <span class="text-[9px] px-2 py-1 bg-pixel-gold/20 text-pixel-gold font-bold">NPC</span>
+            <span class="text-[9px] px-2 py-1 bg-pixel-orange/15 text-pixel-orange font-bold">QUEST</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENT -->
+  <section id="agent" class="py-24 md:py-28">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="text-[10px] tracking-widest text-pixel-orange uppercase font-pixel mb-4">NPC Agent</p>
+          <h2 class="font-display text-3xl md:text-4xl font-bold mb-5">
+            ایجنتی از<br>
+            <span class="text-pixel-orange">دنیای پیکسل</span>
+          </h2>
+          <p class="text-pixel-dirt leading-relaxed mb-8">
+            در پیکسل آرت، ایجنت مثل یک NPC است: 
+            دیالوگ کوتاه، وضعیت واضح، و بدون حاشیه نرم.
+          </p>
+          <div class="space-y-3 text-sm font-semibold">
+            <div class="flex items-center gap-3">
+              <div class="w-4 h-4 bg-pixel-orange"></div>
+              <span class="text-pixel-cream/80">جعبه دیالوگ با لبه تیز</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-4 h-4 bg-pixel-amber"></div>
+              <span class="text-pixel-cream/80">نشانگر چشمک‌زن</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-4 h-4 bg-pixel-gold"></div>
+              <span class="text-pixel-cream/80">پاسخ‌های کوتاه مثل کوئست</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pixel chat -->
+        <div class="bg-pixel-dark border-4 border-pixel-orange overflow-hidden pixel-shadow">
+          <div class="px-4 py-3 border-b-2 border-pixel-brown flex items-center justify-between bg-pixel-black">
+            <div class="flex items-center gap-2">
+              <div class="w-8 h-8 bg-pixel-orange flex items-center justify-center">
+                <div class="w-3 h-3 bg-pixel-gold"></div>
+              </div>
+              <div>
+                <p class="text-xs font-pixel text-pixel-gold">SPRITE</p>
+                <p class="text-[9px] text-pixel-dirt">HP 100 · ONLINE</p>
+              </div>
+            </div>
+            <span class="font-pixel text-[8px] text-pixel-orange animate-blink">▼</span>
+          </div>
+
+          <div class="p-4 space-y-3 min-h-[180px] font-mono text-sm">
+            <div class="flex justify-start">
+              <div class="bg-pixel-brown text-pixel-cream px-3 py-2 max-w-[85%] border border-pixel-dirt">
+                > غروب قشنگه. مأموریت چیه؟
+              </div>
+            </div>
+            <div class="flex justify-end">
+              <div class="bg-pixel-orange text-pixel-black px-3 py-2 max-w-[85%] border border-pixel-black font-bold">
+                یه لندینگ پیکسلی برای بازی ایندی
+              </div>
+            </div>
+            <div class="flex justify-start">
+              <div class="bg-pixel-brown text-pixel-cream px-3 py-2 max-w-[85%] border border-pixel-dirt">
+                > قبول. پالت غروب + اسپرایت سوار. بزن بریم.
+              </div>
+            </div>
+          </div>
+
+          <div class="px-4 py-3 border-t-2 border-pixel-brown flex gap-2 bg-pixel-black">
+            <input type="text" placeholder="> فرمان..." 
+                   class="flex-1 bg-pixel-dark border border-pixel-brown px-3 py-2 text-sm font-mono focus:outline-none focus:border-pixel-orange">
+            <button class="bg-pixel-orange text-pixel-black px-4 py-2 text-[10px] font-pixel hover:bg-pixel-gold transition-colors">
+              OK
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="py-28 md:py-36 bg-pixel-orange text-pixel-black">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <div class="flex justify-center gap-1 mb-8">
+        <div class="w-4 h-4 bg-pixel-black"></div>
+        <div class="w-4 h-4 bg-pixel-dark"></div>
+        <div class="w-4 h-4 bg-pixel-gold"></div>
+      </div>
+      
+      <h2 class="font-pixel text-xl md:text-2xl leading-relaxed mb-6">
+        PRESS START<br>
+        <span class="text-pixel-dark">TO BUILD</span>
+      </h2>
+      
+      <p class="text-sm font-bold mb-10 opacity-80 max-w-md mx-auto">
+        هر پیکسل یک قدم است. اولین مربع را بگذار.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="mailto:hello@parvizmoin.ir" 
+           class="inline-flex items-center justify-center bg-pixel-black text-pixel-gold px-8 py-3 text-[10px] font-pixel hover:bg-pixel-dark transition-colors pixel-shadow">
+          START PROJECT
+        </a>
+        <a href="#" 
+           class="inline-flex items-center justify-center border-2 border-pixel-black text-pixel-black px-8 py-3 text-[10px] font-pixel hover:bg-pixel-black hover:text-pixel-gold transition-colors">
+          VIEW DEMOS
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t-4 border-pixel-orange">
+    <div class="max-w-6xl mx-auto px-6 py-10">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-pixel-dirt">
+        <div class="flex items-center gap-3">
+          <div class="w-4 h-4 bg-pixel-orange"></div>
+          <span class="font-bold">© 2026 PIXEL ART · Template 13</span>
+        </div>
+        
+        <div class="flex items-center gap-6 font-medium">
+          <a href="#" class="hover:text-pixel-gold transition-colors">حریم خصوصی</a>
+          <a href="#" class="hover:text-pixel-gold transition-colors">شرایط</a>
+          <span>
+            by <a href="https://parvizmoin.ir" target="_blank" rel="noopener noreferrer" class="text-pixel-gold hover:text-pixel-orange transition-colors underline underline-offset-2 font-bold">parvizmoin.ir</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+    document.querySelectorAll('section > div').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(16px)';
+      el.style.transition = 'opacity 0.7s ease-out, transform 0.7s ease-out';
+      obs.observe(el);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="قالب پاپ آرت کامل – POP ART | Comic Book UI Template 2026" />
+  <title>POP ART – Complete Template</title>
+
+  <!-- Favicon – Pop Art starburst -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230A0A0A'/%3E%3Cpolygon points='16,2 19,12 30,12 21,19 24,30 16,23 8,30 11,19 2,12 13,12' fill='%23FF2D95'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23FFE600'/%3E%3Ctext x='16' y='19' text-anchor='middle' font-size='7' font-weight='bold' font-family='Arial Black,sans-serif' fill='%23000'%3EP%3C/text%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230A0A0A'/%3E%3Cpolygon points='16,2 19,12 30,12 21,19 24,30 16,23 8,30 11,19 2,12 13,12' fill='%23FF2D95'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23FFE600'/%3E%3Ctext x='16' y='19' text-anchor='middle' font-size='7' font-weight='bold' font-family='Arial Black,sans-serif' fill='%23000'%3EP%3C/text%3E%3C/svg%3E">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Bangers&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            pop: {
+              black: '#0A0A0A',
+              dark: '#141414',
+              yellow: '#FFE600',
+              pink: '#FF2D95',
+              cyan: '#00D4FF',
+              white: '#FFFFFF',
+              comic: '#1A1A1A',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Space Grotesk', 'Inter', 'sans-serif'],
+            comic: ['Bangers', 'Impact', 'sans-serif'],
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.7s ease-out forwards',
+            'slide-up': 'slideUp 0.6s ease-out forwards',
+            'pop-in': 'popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards',
+            'burst': 'burst 4s ease-in-out infinite',
+          },
+          keyframes: {
+            fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+            slideUp: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+            popIn: { '0%': { opacity: '0', transform: 'scale(0.8)' }, '100%': { opacity: '1', transform: 'scale(1)' } },
+            burst: { '0%, 100%': { transform: 'scale(1)' }, '50%': { transform: 'scale(1.03)' } }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background-color: #0A0A0A;
+      color: #FFFFFF;
+    }
+    ::selection { background: #FFE600; color: #000; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0A0A0A; }
+    ::-webkit-scrollbar-thumb { background: #FF2D95; border-radius: 2px; }
+
+    .font-display { font-family: 'Space Grotesk', sans-serif; }
+    .font-comic { font-family: 'Bangers', Impact, sans-serif; }
+
+    /* Ben-Day dots */
+    .benday {
+      background-image: radial-gradient(#FF2D95 1.5px, transparent 1.5px);
+      background-size: 8px 8px;
+    }
+    .benday-cyan {
+      background-image: radial-gradient(#00D4FF 1.5px, transparent 1.5px);
+      background-size: 8px 8px;
+    }
+    .benday-yellow {
+      background-image: radial-gradient(#FFE600 1.5px, transparent 1.5px);
+      background-size: 8px 8px;
+    }
+
+    /* Comic panel border */
+    .comic-border {
+      border: 4px solid #0A0A0A;
+      box-shadow: 4px 4px 0 #0A0A0A;
+    }
+
+    /* Starburst shape approximation via conic */
+    .starburst-bg {
+      background: conic-gradient(
+        from 0deg,
+        #00D4FF 0deg 20deg,
+        #FF2D95 20deg 40deg,
+        #00D4FF 40deg 60deg,
+        #FF2D95 60deg 80deg,
+        #00D4FF 80deg 100deg,
+        #FF2D95 100deg 120deg,
+        #00D4FF 120deg 140deg,
+        #FF2D95 140deg 160deg,
+        #00D4FF 160deg 180deg,
+        #FF2D95 180deg 200deg,
+        #00D4FF 200deg 220deg,
+        #FF2D95 220deg 240deg,
+        #00D4FF 240deg 260deg,
+        #FF2D95 260deg 280deg,
+        #00D4FF 280deg 300deg,
+        #FF2D95 300deg 320deg,
+        #00D4FF 320deg 340deg,
+        #FF2D95 340deg 360deg
+      );
+    }
+  </style>
+</head>
+
+<body class="bg-pop-black text-white antialiased overflow-x-hidden">
+
+  <!-- NAV -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-pop-black border-b-4 border-pop-yellow">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <div class="w-9 h-9 bg-pop-pink flex items-center justify-center border-2 border-pop-black comic-border" style="box-shadow: 2px 2px 0 #FFE600;">
+          <span class="font-comic text-pop-yellow text-lg leading-none">!</span>
+        </div>
+        <span class="font-comic text-xl tracking-wide text-pop-yellow">POP ART</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-7 text-sm font-bold text-white/70">
+        <a href="#pow" class="hover:text-pop-yellow transition-colors">POW</a>
+        <a href="#rules" class="hover:text-pop-pink transition-colors">قوانین</a>
+        <a href="#platforms" class="hover:text-pop-cyan transition-colors">پلتفرم</a>
+        <a href="#agent" class="hover:text-pop-yellow transition-colors">ایجنت</a>
+        <a href="#contact" class="hover:text-pop-pink transition-colors">تماس</a>
+      </nav>
+
+      <a href="#contact" class="text-xs tracking-wide px-4 py-2 bg-pop-yellow text-pop-black font-black border-2 border-pop-black hover:bg-pop-pink hover:text-white transition-colors" style="box-shadow: 3px 3px 0 #FF2D95;">
+        POP!
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="min-h-screen flex items-center pt-16 relative overflow-hidden">
+    <!-- Background rays suggestion -->
+    <div class="absolute inset-0 opacity-20 starburst-bg"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-pop-black via-transparent to-pop-black"></div>
+
+    <div class="max-w-6xl mx-auto px-6 w-full py-16 md:py-20 relative z-10">
+      <div class="grid lg:grid-cols-12 gap-10 items-center">
+
+        <!-- Text -->
+        <div class="lg:col-span-6 space-y-7">
+          <div class="animate-fade-in">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-pop-cyan text-pop-black text-xs font-black tracking-wider uppercase border-2 border-pop-black mb-5" style="box-shadow: 3px 3px 0 #FF2D95;">
+              Style 11 · Comic Energy
+            </div>
+          </div>
+
+          <h1 class="font-comic text-6xl sm:text-7xl md:text-8xl leading-none tracking-wide animate-slide-up">
+            <span class="text-pop-yellow drop-shadow-[4px_4px_0_#FF2D95]">POP!</span>
+          </h1>
+
+          <p class="text-lg text-white/75 leading-relaxed max-w-md font-semibold animate-slide-up" style="animation-delay:100ms">
+            رنگ‌های تخت، خطوط ضخیم، نقطه‌های Ben-Day و یک فریاد تصویری.<br>
+            هنر عامه که هنوز هم بلند حرف می‌زند.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 pt-1 animate-slide-up" style="animation-delay:200ms">
+            <a href="#pow" class="inline-flex items-center gap-2 bg-pop-pink text-white px-7 py-3.5 text-sm font-black tracking-wide border-2 border-pop-black hover:bg-pop-yellow hover:text-pop-black transition-colors" style="box-shadow: 4px 4px 0 #FFE600;">
+              BOOM — شروع کن
+            </a>
+            <a href="#rules" class="text-sm font-bold text-white/60 hover:text-pop-cyan transition-colors border-b-2 border-white/20 hover:border-pop-cyan pb-0.5">
+              قوانین کمیک
+            </a>
+          </div>
+
+          <!-- Color dots -->
+          <div class="flex gap-2 pt-4 animate-slide-up" style="animation-delay:300ms">
+            <div class="w-8 h-8 bg-pop-yellow border-2 border-pop-black"></div>
+            <div class="w-8 h-8 bg-pop-pink border-2 border-pop-black"></div>
+            <div class="w-8 h-8 bg-pop-cyan border-2 border-pop-black"></div>
+            <div class="w-8 h-8 bg-white border-2 border-pop-black"></div>
+          </div>
+        </div>
+
+        <!-- POP! Visual -->
+        <div class="lg:col-span-6 flex justify-center lg:justify-end animate-pop-in" style="animation-delay:150ms">
+          <div class="relative w-full max-w-md">
+            <!-- Outer comic frame -->
+            <div class="absolute -inset-2 bg-pop-black border-4 border-pop-yellow"></div>
+            <div class="absolute -inset-4 border-4 border-pop-pink opacity-60"></div>
+
+            <div class="relative border-4 border-pop-black overflow-hidden comic-border" style="box-shadow: 8px 8px 0 #FF2D95;">
+              <div class="aspect-square relative flex items-center justify-center starburst-bg">
+                <!-- Center burst -->
+                <div class="absolute inset-8 bg-pop-pink border-4 border-pop-black flex items-center justify-center animate-burst" style="clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);">
+                </div>
+                <div class="relative z-10 bg-pop-yellow border-4 border-pop-black px-6 py-3 -rotate-3" style="box-shadow: 4px 4px 0 #0A0A0A;">
+                  <span class="font-comic text-5xl md:text-6xl text-pop-black tracking-wide">POP!</span>
+                </div>
+
+                <!-- Corner dots -->
+                <div class="absolute top-3 left-3 w-6 h-6 benday rounded-full border-2 border-pop-black bg-white"></div>
+                <div class="absolute top-3 right-3 w-6 h-6 benday-cyan rounded-full border-2 border-pop-black bg-white"></div>
+                <div class="absolute bottom-3 left-3 w-6 h-6 benday-yellow rounded-full border-2 border-pop-black bg-white"></div>
+                <div class="absolute bottom-3 right-3 w-6 h-6 bg-pop-pink border-2 border-pop-black rounded-full"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POW / INTRO -->
+  <section id="pow" class="py-24 md:py-28 bg-pop-yellow text-pop-black">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="text-xs tracking-[0.2em] uppercase font-black mb-4 opacity-70">The Explosion</p>
+          <h2 class="font-comic text-4xl md:text-5xl leading-none mb-6">
+            هنر عامه<br>
+            <span class="text-pop-pink">با صدای بلند</span>
+          </h2>
+          <p class="text-lg font-semibold leading-relaxed mb-6 opacity-90">
+            پاپ آرت از کمیک‌استریپ، تبلیغات و فرهنگ توده می‌آید. 
+            رنگ تخت، خط سیاه ضخیم، نقطه‌های Ben-Day و کلمات انفجاری — همه چیز باید فوری و خوانا باشد.
+          </p>
+          <ul class="space-y-3 text-sm font-bold">
+            <li class="flex items-center gap-3"><span class="w-7 h-7 bg-pop-black text-pop-yellow flex items-center justify-center text-xs font-comic">1</span> رنگ‌های اولیه و متضاد</li>
+            <li class="flex items-center gap-3"><span class="w-7 h-7 bg-pop-black text-pop-pink flex items-center justify-center text-xs font-comic">2</span> خط ضخیم و کنتراست سخت</li>
+            <li class="flex items-center gap-3"><span class="w-7 h-7 bg-pop-black text-pop-cyan flex items-center justify-center text-xs font-comic">3</span> Ben-Day dots و الگو</li>
+            <li class="flex items-center gap-3"><span class="w-7 h-7 bg-pop-black text-white flex items-center justify-center text-xs font-comic">4</span> کلمات انفجاری (POP, POW, BAM)</li>
+          </ul>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div class="bg-pop-pink text-white p-5 border-4 border-pop-black" style="box-shadow: 4px 4px 0 #0A0A0A;">
+            <p class="font-comic text-2xl mb-1">POW!</p>
+            <p class="text-xs font-bold opacity-90">قدرت بصری</p>
+          </div>
+          <div class="bg-pop-cyan text-pop-black p-5 border-4 border-pop-black" style="box-shadow: 4px 4px 0 #0A0A0A;">
+            <p class="font-comic text-2xl mb-1">BAM!</p>
+            <p class="text-xs font-bold opacity-80">ضربه آنی</p>
+          </div>
+          <div class="bg-pop-black text-pop-yellow p-5 border-4 border-pop-yellow" style="box-shadow: 4px 4px 0 #FF2D95;">
+            <p class="font-comic text-2xl mb-1">ZAP!</p>
+            <p class="text-xs font-bold opacity-80">انرژی رنگی</p>
+          </div>
+          <div class="bg-white text-pop-black p-5 border-4 border-pop-black" style="box-shadow: 4px 4px 0 #00D4FF;">
+            <p class="font-comic text-2xl mb-1">WOW!</p>
+            <p class="text-xs font-bold opacity-70">تأثیر فوری</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RULES -->
+  <section id="rules" class="py-24 md:py-28">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="max-w-xl mb-14">
+        <div class="w-16 h-2 bg-pop-pink mb-5"></div>
+        <h2 class="font-display text-3xl md:text-4xl font-black mb-4">سه قانون پاپ</h2>
+        <p class="text-white/50">اگر نرم به نظر می‌رسد، هنوز پاپ نیست.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="bg-pop-dark border-4 border-pop-yellow p-7" style="box-shadow: 6px 6px 0 #FFE600;">
+          <p class="text-pop-yellow font-comic text-xl mb-3">01</p>
+          <h3 class="font-display text-xl font-black mb-3">تخت و درشت</h3>
+          <p class="text-sm text-white/60 leading-relaxed">
+            بدون گرادیان نرم. رنگ‌ها یکدست، خطوط سیاه ضخیم، و فرم‌ها واضح مثل پنل کمیک.
+          </p>
+        </div>
+        <div class="bg-pop-dark border-4 border-pop-pink p-7" style="box-shadow: 6px 6px 0 #FF2D95;">
+          <p class="text-pop-pink font-comic text-xl mb-3">02</p>
+          <h3 class="font-display text-xl font-black mb-3">نقطه و الگو</h3>
+          <p class="text-sm text-white/60 leading-relaxed">
+            Ben-Day dots میراث چاپ ارزان کمیک‌اند. از آن‌ها برای بافت و سایه تخت استفاده کن.
+          </p>
+        </div>
+        <div class="bg-pop-dark border-4 border-pop-cyan p-7" style="box-shadow: 6px 6px 0 #00D4FF;">
+          <p class="text-pop-cyan font-comic text-xl mb-3">03</p>
+          <h3 class="font-display text-xl font-black mb-3">فریاد بصری</h3>
+          <p class="text-sm text-white/60 leading-relaxed">
+            عنوان‌ها باید مثل onomatopoeia باشند: کوتاه، بلند و غیرقابل نادیده گرفتن.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATFORMS -->
+  <section id="platforms" class="py-24 md:py-28 bg-pop-dark">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center max-w-xl mx-auto mb-14">
+        <div class="w-16 h-2 bg-pop-cyan mx-auto mb-5"></div>
+        <h2 class="font-display text-3xl md:text-4xl font-black mb-4">روی هر پنل</h2>
+        <p class="text-white/50">پاپ آرت برای وب، اپ و ایجنت — با همان انفجار رنگی.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="bg-pop-black border-4 border-white p-7 hover:border-pop-yellow transition-colors">
+          <div class="w-12 h-12 bg-pop-yellow text-pop-black flex items-center justify-center mb-5 font-comic text-xl border-2 border-pop-black">W</div>
+          <h3 class="font-display font-black text-lg mb-2">وب‌سایت</h3>
+          <p class="text-sm text-white/55 leading-relaxed mb-5">
+            برندهای جوان، کمپین‌های تبلیغاتی، فستیوال‌ها و صفحات محصول پرانرژی.
+          </p>
+          <div class="flex gap-2">
+            <span class="text-[10px] px-2 py-1 bg-pop-yellow/20 text-pop-yellow font-bold">CAMPAIGN</span>
+            <span class="text-[10px] px-2 py-1 bg-pop-pink/20 text-pop-pink font-bold">YOUTH</span>
+          </div>
+        </div>
+
+        <div class="bg-pop-black border-4 border-white p-7 hover:border-pop-pink transition-colors">
+          <div class="w-12 h-12 bg-pop-pink text-white flex items-center justify-center mb-5 font-comic text-xl border-2 border-pop-black">A</div>
+          <h3 class="font-display font-black text-lg mb-2">اپلیکیشن</h3>
+          <p class="text-sm text-white/55 leading-relaxed mb-5">
+            اپ‌های سرگرمی، بازی سبک، شبکه‌های اجتماعی و تجربه‌های شاد و رنگی.
+          </p>
+          <div class="flex gap-2">
+            <span class="text-[10px] px-2 py-1 bg-pop-cyan/20 text-pop-cyan font-bold">FUN</span>
+            <span class="text-[10px] px-2 py-1 bg-pop-yellow/20 text-pop-yellow font-bold">GAME</span>
+          </div>
+        </div>
+
+        <div class="bg-pop-black border-4 border-white p-7 hover:border-pop-cyan transition-colors">
+          <div class="w-12 h-12 bg-pop-cyan text-pop-black flex items-center justify-center mb-5 font-comic text-xl border-2 border-pop-black">AI</div>
+          <h3 class="font-display font-black text-lg mb-2">ایجنت هوشمند</h3>
+          <p class="text-sm text-white/55 leading-relaxed mb-5">
+            ایجنت‌های شوخ و خلاق با پاسخ‌های کوتاه، رنگی و پر از علامت تعجب.
+          </p>
+          <div class="flex gap-2">
+            <span class="text-[10px] px-2 py-1 bg-pop-pink/20 text-pop-pink font-bold">FUNNY</span>
+            <span class="text-[10px] px-2 py-1 bg-pop-cyan/20 text-pop-cyan font-bold">BOLD</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENT -->
+  <section id="agent" class="py-24 md:py-28">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="text-xs tracking-[0.2em] text-pop-pink uppercase font-black mb-4">Comic Agent</p>
+          <h2 class="font-display text-3xl md:text-4xl font-black mb-5">
+            ایجنتی که<br>
+            <span class="text-pop-yellow">POP می‌کند</span>
+          </h2>
+          <p class="text-white/55 leading-relaxed mb-8">
+            در پاپ آرت، ایجنت هم باید مثل یک شخصیت کمیک باشد: 
+            حباب‌های گفتگو با خط ضخیم، رنگ‌های تخت و جواب‌های کوتاه و پرجنب‌وجوش.
+          </p>
+          <div class="space-y-3 text-sm font-semibold">
+            <div class="flex items-center gap-3">
+              <div class="w-4 h-4 bg-pop-yellow border-2 border-pop-black"></div>
+              <span class="text-white/70">حباب‌های کمیک با گوشه تیز</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-4 h-4 bg-pop-pink border-2 border-pop-black"></div>
+              <span class="text-white/70">رنگ برای هر نوع پیام</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-4 h-4 bg-pop-cyan border-2 border-pop-black"></div>
+              <span class="text-white/70">کلمات انفجاری به‌جای آیکون خشک</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pop chat -->
+        <div class="bg-pop-dark border-4 border-pop-black overflow-hidden" style="box-shadow: 6px 6px 0 #FFE600;">
+          <div class="px-4 py-3 border-b-4 border-pop-black flex items-center justify-between bg-pop-pink">
+            <div class="flex items-center gap-2">
+              <div class="w-8 h-8 bg-pop-yellow border-2 border-pop-black flex items-center justify-center font-comic text-pop-black text-sm">P</div>
+              <div>
+                <p class="text-sm font-black text-white">POP Agent</p>
+                <p class="text-[10px] font-bold text-white/80">ONLINE · LOUD</p>
+              </div>
+            </div>
+            <span class="text-[10px] font-black bg-pop-yellow text-pop-black px-2 py-0.5 border border-pop-black">POW!</span>
+          </div>
+
+          <div class="p-4 space-y-3 min-h-[200px]">
+            <div class="flex justify-start">
+              <div class="bg-pop-yellow text-pop-black px-3 py-2 max-w-[80%] border-2 border-pop-black font-bold text-sm" style="box-shadow: 2px 2px 0 #0A0A0A;">
+                آماده‌ای یه چیزی بترکونی؟
+              </div>
+            </div>
+            <div class="flex justify-end">
+              <div class="bg-pop-cyan text-pop-black px-3 py-2 max-w-[80%] border-2 border-pop-black font-bold text-sm" style="box-shadow: 2px 2px 0 #0A0A0A;">
+                یه کمپین رنگی برای برند جوان
+              </div>
+            </div>
+            <div class="flex justify-start">
+              <div class="bg-pop-pink text-white px-3 py-2 max-w-[80%] border-2 border-pop-black font-bold text-sm" style="box-shadow: 2px 2px 0 #0A0A0A;">
+                عالی! زرد + صورتی + cyan + یک POP! بزرگ. بزن بریم.
+              </div>
+            </div>
+          </div>
+
+          <div class="px-4 py-3 border-t-4 border-pop-black flex gap-2 bg-pop-black">
+            <input type="text" placeholder="یه چیز بلند بنویس..." 
+                   class="flex-1 bg-pop-dark border-2 border-white/30 px-3 py-2 text-sm font-medium focus:outline-none focus:border-pop-yellow">
+            <button class="bg-pop-yellow text-pop-black px-4 py-2 font-black text-sm border-2 border-pop-black hover:bg-pop-pink hover:text-white transition-colors">
+              POP
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="py-28 md:py-36 bg-pop-pink text-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <div class="flex justify-center gap-2 mb-8">
+        <div class="w-8 h-8 bg-pop-yellow border-2 border-pop-black"></div>
+        <div class="w-8 h-8 bg-pop-cyan border-2 border-pop-black"></div>
+        <div class="w-8 h-8 bg-white border-2 border-pop-black"></div>
+      </div>
+      
+      <h2 class="font-comic text-5xl md:text-7xl leading-none mb-6">
+        READY TO<br>
+        <span class="text-pop-yellow drop-shadow-[3px_3px_0_#0A0A0A]">POP?</span>
+      </h2>
+      
+      <p class="text-lg font-bold mb-10 opacity-90 max-w-md mx-auto">
+        اگر هنوز نرم است، رنگ بیشتری بریز و خط را ضخیم‌تر کن.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="mailto:hello@parvizmoin.ir" 
+           class="inline-flex items-center justify-center bg-pop-yellow text-pop-black px-10 py-4 text-sm font-black tracking-wide border-4 border-pop-black hover:bg-white transition-colors" style="box-shadow: 4px 4px 0 #0A0A0A;">
+          شروع پروژه
+        </a>
+        <a href="#" 
+           class="inline-flex items-center justify-center border-4 border-white text-white px-10 py-4 text-sm font-black tracking-wide hover:bg-white hover:text-pop-black transition-colors">
+          مشاهده نمونه‌ها
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t-4 border-pop-yellow bg-pop-black">
+    <div class="max-w-6xl mx-auto px-6 py-10">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-sm">
+        <div class="flex items-center gap-3">
+          <div class="flex gap-0.5">
+            <div class="w-3 h-3 bg-pop-yellow"></div>
+            <div class="w-3 h-3 bg-pop-pink"></div>
+            <div class="w-3 h-3 bg-pop-cyan"></div>
+          </div>
+          <span class="font-bold text-white/60">© 2026 POP ART · Template 11</span>
+        </div>
+        
+        <div class="flex items-center gap-8 text-white/50 font-medium">
+          <a href="#" class="hover:text-pop-yellow transition-colors">حریم خصوصی</a>
+          <a href="#" class="hover:text-pop-pink transition-colors">شرایط</a>
+          <span>
+            by <a href="https://parvizmoin.ir" target="_blank" rel="noopener noreferrer" class="text-white/70 hover:text-pop-yellow transition-colors underline underline-offset-2 font-bold">parvizmoin.ir</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+    document.querySelectorAll('section > div').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(16px)';
+      el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+      obs.observe(el);
+    });
+  </script>
+</body>
+</html>
